@@ -156,7 +156,7 @@ async function mountApp({ enabled = true, status = resting, nativeErrors = { aut
     '@tauri-apps/plugin-notification': { sendNotification: noop, onAction: async () => ({ unregister: async () => {} }), isPermissionGranted: async () => true, requestPermission: async () => 'granted' },
     '@lucide/vue': new Proxy({}, { get: () => ({ render: noop }) }),
     './components/ReminderPopup.vue': { default: { render: noop } },
-    './components/AppSidebar.vue': { default: { render: noop } },
+    './components/AppTopBar.vue': { default: { render: noop } },
     './components/EventsView.vue': { default: { render: noop } },
     './components/RestView.vue': { default: { render: noop } },
     './components/SettingsView.vue': { default: { render: noop } },
@@ -624,7 +624,7 @@ test('test break notifications use backend rest state even with reminders disabl
   assert.equal(app.state.nextRestTrigger.value, null)
   assert.equal(app.state.restProgress.value, 0)
   // 文案已下沉到 RestView，这里断言状态与文案来源保持一致，避免依赖界面文本。
-  assert.equal(app.state.restStatusText.value, '正在休息中')
+  assert.equal(app.state.restStatusText.value, '正在歇息')
 })
 
 test('a slow status read cannot restore the countdown after a resting event', async () => {

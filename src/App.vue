@@ -6,7 +6,7 @@ import { getCurrentWindow } from '@tauri-apps/api/window'
 import { ask, confirm, open } from '@tauri-apps/plugin-dialog'
 import { isPermissionGranted, requestPermission } from '@tauri-apps/plugin-notification'
 import ReminderPopup from './components/ReminderPopup.vue'
-import AppSidebar from './components/AppSidebar.vue'
+import AppTopBar from './components/AppTopBar.vue'
 import EventsView from './components/EventsView.vue'
 import RestView from './components/RestView.vue'
 import SettingsView from './components/SettingsView.vue'
@@ -28,7 +28,7 @@ const systemDark = ref(systemTheme.matches)
 const data = ref<AppData>(defaultData())
 const displayedTheme = computed(() => data.value.settings.theme === 'system' ? (systemDark.value ? 'dark' : 'light') : data.value.settings.theme)
 const currentView = ref<View>('rest')
-const settingsTab = ref<SettingsTab>('general')
+const settingsTab = ref<SettingsTab>('rhythm')
 const showForm = ref(false)
 const editingId = ref<string | null>(null)
 const actionMessage = ref('')
@@ -872,11 +872,13 @@ onUnmounted(() => {
 <template>
   <ReminderPopup v-if="isPopup" />
   <div v-else :class="['app-shell', `theme-${displayedTheme}`, `accent-${data.settings.accentColor}`]">
-    <AppSidebar
+    <div class="ambient" aria-hidden="true"><i class="orb orb-a"></i><i class="orb orb-b"></i><i class="orb orb-c"></i></div>
+
+    <AppTopBar
       :current-view="currentView"
       :language="data.settings.language"
       :app-version="appVersion"
-      @navigate="currentView = $event; settingsTab = 'general'"
+      @navigate="currentView = $event; settingsTab = 'rhythm'"
     />
 
     <main :class="['content', { 'content-about': currentView === 'about' }]">
@@ -888,6 +890,7 @@ onUnmounted(() => {
         <button v-if="!schedulerError" class="button" type="button" @click="retryPersistence">{{ t('common.retry') }}</button>
       </div>
 
+      <Transition name="view" mode="out-in">
       <EventsView
         v-if="currentView === 'events'"
         :language="data.settings.language"
@@ -926,7 +929,7 @@ onUnmounted(() => {
         :status="restStatusText"
         :action-message="actionMessage"
         @test-notification="testNotification('rest')"
-        @preview-settings="settingsTab = 'popup'; currentView = 'settings'"
+        @preview-settings="settingsTab = 'stage'; currentView = 'settings'"
         @update:enabled="updateSetting('restEnabled', $event)"
         @update:interval="updateRestInterval"
         @update:message="restMessageDraft = $event"
@@ -965,6 +968,7 @@ onUnmounted(() => {
         :language="data.settings.language"
         :app-version="appVersion"
       />
+      </Transition>
     </main>
   </div>
 </template>

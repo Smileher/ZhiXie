@@ -22,13 +22,13 @@ test('settings tabs follow navigation and numeric settings clamp before emitting
     '@lucide/vue': {}, '../i18n': { translate }, './PopupBackground.vue': {},
   }
   runInNewContext(code, { exports, require: (name) => modules[name] })
-  const props = vue.reactive({ initialTab: 'popup', settings: defaultData().settings, language: 'zh-CN' })
+  const props = vue.reactive({ initialTab: 'stage', settings: defaultData().settings, language: 'zh-CN' })
   const emitted = []
   const state = exports.default.setup(props, { expose() {}, emit: (...args) => emitted.push(args) })
-  assert.equal(state.activeTab.value, 'popup')
-  props.initialTab = 'general'
+  assert.equal(state.activeTab.value, 'stage')
+  props.initialTab = 'system'
   await vue.nextTick()
-  assert.equal(state.activeTab.value, 'general')
+  assert.equal(state.activeTab.value, 'system')
   state.activeTab.value = 'data'
   await vue.nextTick()
   assert.deepEqual(emitted.at(-1), ['update:initialTab', 'data'])

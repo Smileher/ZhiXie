@@ -60,16 +60,16 @@ onMounted(() => {
   void fitPreviewText()
 })
 onUnmounted(() => previewObserver?.disconnect())
-const activeTab = ref(props.initialTab || 'general')
-watch(() => props.initialTab, (tab) => { activeTab.value = tab || 'general' })
+const activeTab = ref(props.initialTab || 'rhythm')
+watch(() => props.initialTab, (tab) => { activeTab.value = tab || 'rhythm' })
 watch(activeTab, (tab) => emit('update:initialTab', tab))
 const tabs = [
-  { id: 'popup', label: 'settings.groupPopup' },
-  { id: 'general', label: 'settings.groupGeneral' },
-  { id: 'appearance', label: 'settings.groupAppearance' },
-  { id: 'notification', label: 'settings.groupNotification' },
-  { id: 'data', label: 'settings.groupData' },
+  { id: 'rhythm', label: 'settings.groupRhythm', hint: 'settings.groupRhythmHint' },
+  { id: 'stage', label: 'settings.groupStage', hint: 'settings.groupStageHint' },
+  { id: 'system', label: 'settings.groupSystem', hint: 'settings.groupSystemHint' },
+  { id: 'data', label: 'settings.groupData', hint: 'settings.groupDataHint' },
 ] as const
+const activeHint = computed(() => t(tabs.find(tab => tab.id === activeTab.value)?.hint ?? 'settings.groupRhythmHint'))
 
 function navigateTabs(event: KeyboardEvent) {
   const index = tabs.findIndex(tab => tab.id === activeTab.value)
@@ -127,26 +127,28 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
     <div class="settings-tabs" role="tablist" :aria-label="t('settings.title')" @keydown="navigateTabs">
       <button v-for="tab in tabs" :id="`settings-tab-${tab.id}`" :key="tab.id" type="button" role="tab" :aria-selected="activeTab === tab.id" :aria-controls="`settings-panel-${tab.id}`" :tabindex="activeTab === tab.id ? 0 : -1" @click="activeTab = tab.id">{{ t(tab.label) }}</button>
     </div>
+    <p class="settings-tab-hint">{{ activeHint }}</p>
 
-    <div v-show="activeTab === 'general'" id="settings-panel-general" class="settings-group" role="tabpanel" aria-labelledby="settings-tab-general">
-      <div class="setting-card setting-choice">
-        <div><strong>{{ t('settings.language') }}</strong><span>{{ t('settings.languageHint') }}</span></div>
-        <div class="segmented">
-          <button :class="{ selected: settings.language === 'zh-CN' }" type="button" @click="emit('update:setting', 'language', 'zh-CN')">{{ t('settings.zh') }}</button>
-          <button :class="{ selected: settings.language === 'en' }" type="button" @click="emit('update:setting', 'language', 'en')">{{ t('settings.en') }}</button>
-        </div>
-      </div>
+    <div v-show="activeTab === 'rhythm'" id="settings-panel-rhythm" class="settings-group" role="tabpanel" aria-labelledby="settings-tab-rhythm">
       <label class="setting-card setting-toggle">
-        <div><strong>{{ t('settings.autostart') }}</strong><span>{{ t('settings.autostartHint') }}</span><span v-if="autostartNotice && autostartNotice !== autostartError">{{ autostartNotice }}</span><small v-if="autostartError" class="setting-error">{{ autostartError }}</small></div>
-        <input :checked="settings.autostart" type="checkbox" @change="emit('update:setting', 'autostart', ($event.target as HTMLInputElement).checked)" />
+        <div><strong>{{ t('settings.fullscreenPopup') }}</strong><span>{{ t('settings.fullscreenPopupHint') }}</span></div>
+        <input :checked="settings.popupFullscreen" :aria-label="t('settings.fullscreenPopup')" type="checkbox" @change="emit('update:setting', 'popupFullscreen', ($event.target as HTMLInputElement).checked)" />
       </label>
       <label class="setting-card setting-toggle">
-        <div><strong>{{ t('settings.startHidden') }}</strong><span>{{ t('settings.startHiddenHint') }}</span></div>
-        <input :checked="settings.minimizeToTray" type="checkbox" @change="emit('update:setting', 'minimizeToTray', ($event.target as HTMLInputElement).checked)" />
+        <div><strong>{{ t('settings.alwaysOnTop') }}</strong><span>{{ t('settings.alwaysOnTopHint') }}</span></div>
+        <input :checked="settings.popupAlwaysOnTop" :aria-label="t('settings.alwaysOnTop')" type="checkbox" @change="emit('update:setting', 'popupAlwaysOnTop', ($event.target as HTMLInputElement).checked)" />
+      </label>
+      <label class="setting-card setting-toggle">
+        <div><strong>{{ t('settings.systemNotification') }}</strong><span>{{ t('settings.systemNotificationHint') }}</span><small v-if="notificationError" class="setting-error">{{ notificationError }}</small></div>
+        <input :checked="settings.systemNotificationEnabled" type="checkbox" @change="emit('update:setting', 'systemNotificationEnabled', ($event.target as HTMLInputElement).checked)" />
+      </label>
+      <label class="setting-card setting-toggle">
+        <div><strong>{{ t('settings.popupFade') }}</strong><span>{{ t('settings.popupFadeHint') }}</span></div>
+        <input :checked="settings.popupFadeEnabled" type="checkbox" @change="emit('update:setting', 'popupFadeEnabled', ($event.target as HTMLInputElement).checked)" />
       </label>
     </div>
 
-    <div v-show="activeTab === 'appearance'" id="settings-panel-appearance" class="settings-group" role="tabpanel" aria-labelledby="settings-tab-appearance">
+    <div v-show="activeTab === 'stage'" id="settings-panel-stage" class="settings-group" role="tabpanel" aria-labelledby="settings-tab-stage">
       <div class="setting-card setting-choice">
         <div><strong>{{ t('settings.appearance') }}</strong><span>{{ t('settings.appearanceHint') }}</span></div>
         <div class="segmented">
@@ -169,17 +171,6 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
           ></button>
         </div>
       </div>
-    </div>
-
-    <div v-show="activeTab === 'popup'" id="settings-panel-popup" class="settings-group" role="tabpanel" aria-labelledby="settings-tab-popup">
-      <label class="setting-card setting-toggle">
-        <div><strong>{{ t('settings.fullscreenPopup') }}</strong><span>{{ t('settings.fullscreenPopupHint') }}</span></div>
-        <input :checked="settings.popupFullscreen" :aria-label="t('settings.fullscreenPopup')" type="checkbox" @change="emit('update:setting', 'popupFullscreen', ($event.target as HTMLInputElement).checked)" />
-      </label>
-      <label class="setting-card setting-toggle">
-        <div><strong>{{ t('settings.alwaysOnTop') }}</strong><span>{{ t('settings.alwaysOnTopHint') }}</span></div>
-        <input :checked="settings.popupAlwaysOnTop" :aria-label="t('settings.alwaysOnTop')" type="checkbox" @change="emit('update:setting', 'popupAlwaysOnTop', ($event.target as HTMLInputElement).checked)" />
-      </label>
       <div class="setting-card stacked-setting">
         <div><strong>{{ t('settings.popupBackground') }}</strong><span>{{ t('settings.popupBackgroundHint') }}</span></div>
         <div class="background-picker">
@@ -209,10 +200,6 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
           <em>{{ previewSettings.popupOverlayOpacity }}%</em>
         </label>
       </div>
-      <label class="setting-card setting-toggle">
-        <div><strong>{{ t('settings.popupFade') }}</strong><span>{{ t('settings.popupFadeHint') }}</span></div>
-        <input :checked="settings.popupFadeEnabled" type="checkbox" @change="emit('update:setting', 'popupFadeEnabled', ($event.target as HTMLInputElement).checked)" />
-      </label>
       <div class="setting-card">
         <div><strong>{{ t('settings.popupText') }}</strong><span>{{ t('settings.popupTextHint') }}</span></div>
         <div class="text-controls">
@@ -239,10 +226,21 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
       </div>
     </div>
 
-    <div v-show="activeTab === 'notification'" id="settings-panel-notification" class="settings-group" role="tabpanel" aria-labelledby="settings-tab-notification">
+    <div v-show="activeTab === 'system'" id="settings-panel-system" class="settings-group" role="tabpanel" aria-labelledby="settings-tab-system">
+      <div class="setting-card setting-choice">
+        <div><strong>{{ t('settings.language') }}</strong><span>{{ t('settings.languageHint') }}</span></div>
+        <div class="segmented">
+          <button :class="{ selected: settings.language === 'zh-CN' }" type="button" @click="emit('update:setting', 'language', 'zh-CN')">{{ t('settings.zh') }}</button>
+          <button :class="{ selected: settings.language === 'en' }" type="button" @click="emit('update:setting', 'language', 'en')">{{ t('settings.en') }}</button>
+        </div>
+      </div>
       <label class="setting-card setting-toggle">
-        <div><strong>{{ t('settings.systemNotification') }}</strong><span>{{ t('settings.systemNotificationHint') }}</span><small v-if="notificationError" class="setting-error">{{ notificationError }}</small></div>
-        <input :checked="settings.systemNotificationEnabled" type="checkbox" @change="emit('update:setting', 'systemNotificationEnabled', ($event.target as HTMLInputElement).checked)" />
+        <div><strong>{{ t('settings.autostart') }}</strong><span>{{ t('settings.autostartHint') }}</span><span v-if="autostartNotice && autostartNotice !== autostartError">{{ autostartNotice }}</span><small v-if="autostartError" class="setting-error">{{ autostartError }}</small></div>
+        <input :checked="settings.autostart" type="checkbox" @change="emit('update:setting', 'autostart', ($event.target as HTMLInputElement).checked)" />
+      </label>
+      <label class="setting-card setting-toggle">
+        <div><strong>{{ t('settings.startHidden') }}</strong><span>{{ t('settings.startHiddenHint') }}</span></div>
+        <input :checked="settings.minimizeToTray" type="checkbox" @change="emit('update:setting', 'minimizeToTray', ($event.target as HTMLInputElement).checked)" />
       </label>
     </div>
 

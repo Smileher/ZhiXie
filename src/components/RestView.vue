@@ -101,7 +101,7 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
         <input v-model="messageDraft" type="text" maxlength="120" @focus="editingMessage = true" @blur="editingMessage = false" @change="commitMessage" @keydown.enter="finishInput" />
       </label>
       <div class="setting-card">
-        <div><strong>{{ t('settings.groupPopup') }}</strong></div>
+        <div><strong>{{ t('settings.stageEntry') }}</strong></div>
         <button class="button popup-settings-link" type="button" @click="emit('previewSettings')"><Settings2 :size="14" />{{ t('rest.previewSettings') }}<ArrowUpRight :size="14" /></button>
       </div>
     </div>

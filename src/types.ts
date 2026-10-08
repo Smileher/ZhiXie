@@ -7,7 +7,7 @@ export type AccentColor = 'mint' | 'blue' | 'violet' | 'amber' | 'cyan' | 'rose'
 export type PowerAction = 'shutdown' | 'lock' | 'restart'
 export type TestReminderKind = 'event' | 'rest'
 export type PopupBackgroundFit = 'stretch' | 'contain'
-export type SettingsTab = 'general' | 'appearance' | 'popup' | 'notification' | 'data'
+export type SettingsTab = 'rhythm' | 'stage' | 'system' | 'data'
 
 export interface ReminderForm {
   title: string
