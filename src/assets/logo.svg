@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#141C26"/>
+  <!-- 月牙：知时而歇 -->
+  <path d="M330 118a162 162 0 1 0 0 276 138 138 0 1 1 0-276Z" fill="#73E2AC"/>
+  <!-- 星点：节奏与节律 -->
+  <circle cx="212" cy="158" r="19" fill="#FFFFFF"/>
+  <circle cx="150" cy="286" r="13" fill="#FFFFFF" opacity=".72"/>
+  <circle cx="234" cy="356" r="9" fill="#FFFFFF" opacity=".5"/>
+</svg>
