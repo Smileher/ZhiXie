@@ -14,6 +14,15 @@
       "presentation": { "reveal": "always", "panel": "dedicated" }
     },
     {
+      "label": "知歇: 构建 Debug 可执行文件",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["tauri:build", "--debug", "--no-bundle"],
+      "detail": "构建含前端资源的 Debug 可执行文件，供 CodeLLDB 调试；不生成安装包，无热更新。macOS 产物为 src-tauri/target/debug/zhixie，Windows 为 zhixie.exe。",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
       "label": "知歇: 类型检查与前端构建",
       "type": "shell",
       "command": "pnpm",

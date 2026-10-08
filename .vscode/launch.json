@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "知歇: 开发运行（热更新）",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm tauri:dev",
+      "cwd": "${workspaceFolder}",
+      "autoAttachChildProcesses": false
+    },
+    {
+      "name": "知歇: Rust 断点调试（Debug 可执行文件）",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/src-tauri/target/debug/${input:pickTarget}",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "知歇: 构建 Debug 可执行文件",
+      "sourceLanguages": ["rust"],
+      "env": {
+        "RUST_BACKTRACE": "1"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "pickTarget",
+      "type": "promptString",
+      "description": "Debug 构建产物名（macOS 为 zhixie，Windows 为 zhixie.exe）",
+      "default": "zhixie"
+    }
+  ]
+}
