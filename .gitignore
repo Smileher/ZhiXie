@@ -4,3 +4,9 @@ src-tauri/target/
 src-tauri/gen/
 .workbuddy/
 .DS_Store
+
+# 本地生成工具与中间产物
+.build-assets/
+.build-docx/
+参赛材料/知歇-路演/.cache/
+参赛材料/知歇-路演/.slidep/
