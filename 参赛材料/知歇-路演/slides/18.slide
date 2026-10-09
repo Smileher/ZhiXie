@@ -1,0 +1,17 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 680, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 22 }}>
+        <svg width={520} height={168} viewBox='0 0 520 168'>
+            <circle cx='260' cy='168' r='150' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.18' />
+            <circle cx='260' cy='168' r='112' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.30' />
+            <circle cx='260' cy='168' r='74' fill='none' stroke='#4FE0B0' strokeWidth='1.5' opacity='0.50' />
+            <path d='M110 168 A150 150 0 0 1 410 168' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.9' />
+            <circle cx='260' cy='18' r='6' fill='#4FE0B0' />
+            <path d='M260 18 L260 44' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.6' />
+        </svg>
+        <Text style={{ fontSize: 56, fontWeight: 'bold', color: '#E8EEF7', letterSpacing: 4 }}>知时而歇，张弛有度</Text>
+        <Text style={{ fontSize: 20, color: '#4FE0B0', letterSpacing: 2 }}>知歇 ZhiXie · 会听人话的桌面休息提醒</Text>
+        <Box style={{ height: 3, width: 140, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2, marginTop: 6 }} />
+        <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.62, marginTop: 4 }}>我们希望做的，不是一个催你干活的工具，而是一个提醒你停下来的工具。</Text>
+        <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1, marginTop: 10 }}>无锡开放大学 · 指导教师 王敏 · 创新主赛道 AIGC 创新组</Text>
+    </Box>
+</Slide>

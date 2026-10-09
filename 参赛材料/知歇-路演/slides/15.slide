@@ -1,0 +1,50 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>谁在什么时候用</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>四类场景，一个主要人群</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>15</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 32 }}>
+        <Box style={{ width: 700, flexDirection: 'column', gap: 12 }}>
+            <Box style={{ height: 114, flexDirection: 'column', gap: 8, padding: '16px 20px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#E8EEF7' }}>高校机房与实训室</Text>
+                    <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0' }}>主场景</Text>
+                </Box>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.82, lineHeight: 1.55 }}>学生长时间上机实训，教师希望统一引入休息节律；弹窗文案可换成校风文案，零账号、零联网，适合机房批量部署。</Text>
+            </Box>
+            <Box style={{ height: 114, flexDirection: 'column', gap: 8, padding: '16px 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#E8EEF7' }}>备考与自学</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.55 }}>番茄式节奏但不拘泥于固定 25 分钟：休息间隔与提示语随时可调，语言表达自由，无需迁就关键词模板。</Text>
+            </Box>
+            <Box style={{ height: 114, flexDirection: 'column', gap: 8, padding: '16px 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#E8EEF7' }}>远程办公与自由职业</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.55 }}>久坐人群需要"到点真正离开屏幕"的约束力：可附加锁屏 / 关机 / 重启，触发前有 60 秒可撤销倒计时。</Text>
+            </Box>
+            <Box style={{ height: 114, flexDirection: 'column', gap: 8, padding: '16px 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#E8EEF7' }}>家庭电脑</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.55 }}>家长为孩子管理电脑使用时段：每天 / 每周 / 每月重复锚点，到点弹窗并可锁屏，无需为孩子注册任何账号。</Text>
+            </Box>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 16 }}>
+            <Box style={{ height: 262, flexDirection: 'column', gap: 14, padding: 22, background: 'rgba(232,238,247,0.05)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>主要用户</Text>
+                <Text style={{ fontSize: 21, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.45 }}>日均在电脑前 4 小时以上的<br />学生与年轻职场人</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.6 }}>典型画像：知道自己"该休息"，但一进入专注状态就忘记时间；嫌传统提醒工具配置繁琐，更愿意"说一句话"。</Text>
+                <Box style={{ marginTop: 'auto', paddingTop: 12, borderTop: '1px solid rgba(232,238,247,0.14)' }}>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.55, lineHeight: 1.5 }}>年龄区间约 18—30 岁。</Text>
+                </Box>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 10, padding: 22, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>次要用户</Text>
+                <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>家长（孩子用电脑时段管理）<br />教师 / 机房管理员（统一休息节律）</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>15 / 18</Text>
+    </Box>
+</Slide>

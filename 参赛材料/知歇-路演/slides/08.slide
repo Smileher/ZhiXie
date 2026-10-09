@@ -1,0 +1,51 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>本机规则引擎：断网也能听懂你</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>面向中文口语表达优化的五类高频句式</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>08</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 32 }}>
+        <Box style={{ width: 340, flexDirection: 'column', justifyContent: 'space-between', padding: 24, background: 'rgba(79,224,176,0.08)', border: '1px solid rgba(79,224,176,0.35)', borderRadius: 14 }}>
+            <Box style={{ flexDirection: 'column', gap: 14 }}>
+                <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.35 }}>纯 Rust 实现<br />零外部依赖</Text>
+                <Box style={{ height: 3, width: 80, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
+                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>不联网、不需要账号、不产生接口费用。未配置密钥时即为默认工作模式，安装完就能用。</Text>
+            </Box>
+            <Box style={{ flexDirection: 'column', gap: 8, paddingTop: 16, borderTop: '1px solid rgba(232,238,247,0.14)' }}>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.5 }}>无关键词的句子会回落为「单次提醒」，并保留原句作为标题——不报错、不丢输入。</Text>
+            </Box>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 12 }}>
+            <Box style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 8, borderBottom: '1px solid rgba(232,238,247,0.14)' }}>
+                <Text style={{ width: 420, fontSize: 14, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1 }}>你说的（自然表达）</Text>
+                <Text style={{ flex: 1, fontSize: 14, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1 }}>智能体解析出的（结构化规则）</Text>
+            </Box>
+            <Box style={{ height: 78, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ width: 420, fontSize: 17, color: '#E8EEF7' }}>「每天<span style={{ color: '#4FE0B0' }}>下午三点</span>提醒我喝水」</Text>
+                <Text style={{ flex: 1, fontSize: 17, color: '#4FE0B0' }}>每天 · 15:00 · 中文数字时间</Text>
+            </Box>
+            <Box style={{ height: 78, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ width: 420, fontSize: 17, color: '#E8EEF7' }}>「<span style={{ color: '#4FE0B0' }}>30分钟后</span>提醒我休息一下」</Text>
+                <Text style={{ flex: 1, fontSize: 17, color: '#4FE0B0' }}>单次 · 当前时间 +30 分钟 · 相对时间</Text>
+            </Box>
+            <Box style={{ height: 78, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ width: 420, fontSize: 17, color: '#E8EEF7' }}>「<span style={{ color: '#4FE0B0' }}>每周一三五</span> 17:30 提醒我锁屏」</Text>
+                <Text style={{ flex: 1, fontSize: 17, color: '#4FE0B0' }}>每周 · 周一 / 周三 / 周五 · 附加锁屏</Text>
+            </Box>
+            <Box style={{ height: 78, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ width: 420, fontSize: 17, color: '#E8EEF7' }}>「<span style={{ color: '#4FE0B0' }}>明天</span>早上八点提醒我交作业」</Text>
+                <Text style={{ flex: 1, fontSize: 17, color: '#4FE0B0' }}>单次 · 次日 08:00 · 日期词</Text>
+            </Box>
+            <Box style={{ height: 78, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ width: 420, fontSize: 17, color: '#E8EEF7' }}>「晚上十一点提醒我锁屏睡觉」</Text>
+                <Text style={{ flex: 1, fontSize: 17, color: '#4FE0B0' }}>每天 · 23:00 · 系统操作词</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>08 / 18</Text>
+    </Box>
+</Slide>

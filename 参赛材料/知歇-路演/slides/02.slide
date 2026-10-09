@@ -1,0 +1,52 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>目录</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>三章，回答评委最关心的三个问题</Text>
+        </Box>
+        <Text style={{ fontSize: 14, color: '#4FE0B0', letterSpacing: 3, opacity: 0.85 }}>CONTENTS</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 44 }}>
+        <Box style={{ width: 288, flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
+            <Text style={{ fontSize: 21, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.7 }}>需求是真的吗？<br />智能体是怎么做的？<br />工程上靠得住吗？</Text>
+            <Box style={{ height: 3, width: 88, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, lineHeight: 1.6 }}>本演示共 18 页，按路演 6—8 分钟节奏编排，每个数据均可现场核验。</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 18, justifyContent: 'center' }}>
+            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 24, padding: '20px 24px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Box style={{ width: 60, height: 60, borderRadius: 30, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>01</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column', gap: 6 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>问题与定位</Text>
+                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>现有提醒工具的两个毛病：配置门槛高、提醒机械；知歇的定位由此而来。</Text>
+                </Box>
+                <Text style={{ fontSize: 14, color: '#4FE0B0', opacity: 0.85 }}>P03–P05</Text>
+            </Box>
+            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 24, padding: '20px 24px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Box style={{ width: 60, height: 60, borderRadius: 30, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>02</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column', gap: 6 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>智能体开发过程</Text>
+                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>双通道架构、本机规则引擎、校验优先落库，以及低代码/无代码的使用方式。</Text>
+                </Box>
+                <Text style={{ fontSize: 14, color: '#4FE0B0', opacity: 0.85 }}>P06–P10</Text>
+            </Box>
+            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 24, padding: '20px 24px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Box style={{ width: 60, height: 60, borderRadius: 30, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>03</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column', gap: 6 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>工程质量与应用价值</Text>
+                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>138 项自动化测试、数据不出本机、适用场景、创新点与横向对比。</Text>
+                </Box>
+                <Text style={{ fontSize: 14, color: '#4FE0B0', opacity: 0.85 }}>P11–P17</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>02 / 18</Text>
+    </Box>
+</Slide>

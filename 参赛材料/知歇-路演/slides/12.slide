@@ -1,0 +1,47 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>可靠性由测试保证</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>不靠演示运气，靠可重复的结果</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>质量证据</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 56 }}>
+        <Box style={{ width: 470, flexDirection: 'column', justifyContent: 'center', gap: 4 }}>
+            <Text style={{ fontSize: 150, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>138</Text>
+            <Text style={{ fontSize: 26, color: '#E8EEF7', marginTop: 14 }}>项自动化测试</Text>
+            <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.6, marginTop: 6 }}>全部通过 · 0 失败</Text>
+            <Box style={{ height: 3, width: 96, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2, marginTop: 20 }} />
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.6, marginTop: 20 }}>这个数字意味着：每次改动后全量重跑，新功能不会悄悄破坏既有行为——演示时看到的每个结果都是可复现的。</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 14, justifyContent: 'center' }}>
+            <Box style={{ height: 66, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '0 22px', background: 'rgba(232,238,247,0.05)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 18, color: '#E8EEF7' }}>前端单元测试</Text>
+                <Text style={{ fontSize: 22, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>77 项</Text>
+            </Box>
+            <Box style={{ height: 66, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '0 22px', background: 'rgba(232,238,247,0.05)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 18, color: '#E8EEF7' }}>Rust 单元测试</Text>
+                <Text style={{ fontSize: 22, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>61 项</Text>
+            </Box>
+            <Box style={{ height: 66, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '0 22px', background: 'rgba(232,238,247,0.05)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 18, color: '#E8EEF7' }}>通过率</Text>
+                <Text style={{ fontSize: 22, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>100%</Text>
+            </Box>
+            <Box style={{ flexDirection: 'row', gap: 14, marginTop: 6 }}>
+                <Box style={{ flex: 1, padding: '14px 12px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.88, textAlign: 'center' }}>双平台构建通过</Text>
+                </Box>
+                <Box style={{ flex: 1, padding: '14px 12px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.88, textAlign: 'center' }}>类型全量检查</Text>
+                </Box>
+                <Box style={{ flex: 1, padding: '14px 12px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.88, textAlign: 'center' }}>数据原子写入</Text>
+                </Box>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>12 / 18</Text>
+    </Box>
+</Slide>

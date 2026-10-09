@@ -1,0 +1,94 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>模型提建议，系统说了算</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>校验优先落库 —— 本作品最关键的设计选择</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>核心论点</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 28 }}>
+        <Box style={{ width: 700, flexDirection: 'column', gap: 12 }}>
+            <Text style={{ fontSize: 18, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>五类字段全部走白名单：任何一项不合法，要么被过滤，要么回落到默认值。</Text>
+            <Table
+                style={{ width: 700, height: 392 }}
+                defaultTextStyle={{ fontSize: 15, textAlign: 'left', color: '#E8EEF7' }}
+                defaultCellStyle={{
+                    border: {
+                        left: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                        right: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                        top: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                        bottom: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                    },
+                }}
+                cells={[
+                    [
+                        { text: '字段', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
+                        { text: '合法取值范围', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
+                        { text: '非法时的处理', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
+                    ],
+                    [
+                        { text: '类型', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                        '单次 / 每天 / 每周 / 每月',
+                        { text: '回落为「单次」', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        '时间',
+                        '合法 HH:MM（时≤23、分≤59）',
+                        { text: '回落为 09:00', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        { text: '星期', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                        '整数且限定 0–6',
+                        { text: '越界值被过滤', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        '日期',
+                        '整数且限定 1–31',
+                        { text: '越界值被过滤', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        { text: '系统操作', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                        '锁屏 / 关机 / 重启 / 空',
+                        { text: '非法值置空', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        '标题',
+                        '非空',
+                        { text: '回落为用户原句', textStyle: { color: '#4FE0B0' } },
+                    ],
+                ]}
+            />
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 14 }}>
+            <Box style={{ height: 250, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 6, background: 'rgba(232,238,247,0.03)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <svg width={360} height={220} viewBox='0 0 360 220'>
+                    <rect x='70' y='4' width='220' height='40' rx='8' fill='rgba(232,238,247,0.07)' stroke='rgba(232,238,247,0.20)' />
+                    <path d='M180 44 L180 64' fill='none' stroke='#4FE0B0' strokeWidth='2' />
+                    <path d='M174 58 L180 66 L186 58 Z' fill='#4FE0B0' />
+                    <rect x='70' y='68' width='220' height='40' rx='8' fill='rgba(79,224,176,0.14)' stroke='#4FE0B0' />
+                    <path d='M180 108 L180 122 L96 122 L96 140' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.55' />
+                    <path d='M180 108 L180 122 L264 122 L264 140' fill='none' stroke='#4FE0B0' strokeWidth='2' />
+                    <path d='M258 134 L264 142 L270 134 Z' fill='#4FE0B0' />
+                    <rect x='30' y='146' width='132' height='42' rx='8' fill='rgba(232,238,247,0.05)' stroke='rgba(232,238,247,0.18)' />
+                    <path d='M88 158 L104 178 M104 158 L88 178' fill='none' stroke='#E8EEF7' strokeWidth='2' opacity='0.45' />
+                    <rect x='198' y='146' width='132' height='42' rx='8' fill='rgba(79,224,176,0.10)' stroke='#4FE0B0' />
+                    <circle cx='216' cy='167' r='5' fill='#4FE0B0' />
+                </svg>
+                <Box style={{ flexDirection: 'row', gap: 22 }}>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.6 }}>不合法 → 拦截</Text>
+                    <Text style={{ fontSize: 14, color: '#4FE0B0' }}>合法 → 写入提醒数据</Text>
+                </Box>
+            </Box>
+            <Box style={{ padding: '16px 18px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
+                <Text style={{ fontSize: 16, color: '#E8EEF7', lineHeight: 1.55 }}>模型负责<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>提出建议</span>，系统负责<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>判断能否执行</span>；结果以表单呈现，<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>用户确认后才写入</span>——人始终在最终决策位。</Text>
+            </Box>
+            <Box style={{ paddingTop: 12, borderTop: '1px solid rgba(232,238,247,0.12)' }}>
+                <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.5 }}>有测试作证据：构造「非法类型 + 非法时间 + 越界星期 + 越界日期」的脏数据，验证全部被正确拦截。</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>09 / 18</Text>
+    </Box>
+</Slide>

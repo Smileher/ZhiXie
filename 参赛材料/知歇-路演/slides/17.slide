@@ -1,0 +1,85 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>对比与价值</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>差异化不在"提醒"，而在创建成本与约束力</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>17</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'column', gap: 20 }}>
+        <Table
+            style={{ width: 1152, height: 292 }}
+            defaultTextStyle={{ fontSize: 15, textAlign: 'center', color: '#E8EEF7' }}
+            defaultCellStyle={{
+                border: {
+                    left: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                    right: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                    top: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                    bottom: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                },
+            }}
+            cells={[
+                [
+                    { text: '对比维度', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#E8EEF7' } } },
+                    { text: '系统自带提醒', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#E8EEF7' } } },
+                    { text: '番茄钟类工具', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#E8EEF7' } } },
+                    { text: '知歇 ZhiXie', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
+                ],
+                [
+                    { text: '一句话创建提醒', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                    '不支持',
+                    '不支持',
+                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
+                ],
+                [
+                    '离线可用',
+                    '支持',
+                    '部分需联网',
+                    { text: '支持（含智能体）', textStyle: { bold: true, color: '#4FE0B0' } },
+                ],
+                [
+                    { text: '系统操作 · 锁屏 / 关机', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                    '部分支持',
+                    '不支持',
+                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
+                ],
+                [
+                    '数据本地化 · 无需账号',
+                    '支持',
+                    '部分需登录',
+                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
+                ],
+                [
+                    { text: 'AI 输出经校验后落库', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                    '—',
+                    '—',
+                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
+                ],
+                [
+                    '跨平台（同一套代码）',
+                    '各自独立',
+                    '部分',
+                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
+                ],
+            ]}
+        />
+        <Box style={{ flex: 1, flexDirection: 'row', gap: 20 }}>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.05)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>健康价值</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>久坐是学生与办公人群的高频健康风险，定时强制休息是最直接的干预手段。</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.05)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>教育价值</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>为"AI 辅助开发"提供一个可检验的案例：用 AI 把一个人的想法做成工程级作品。</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.05)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>推广价值</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>零账号、默认零联网、零广告，适合机房批量部署与家庭场景推广。</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>17 / 18</Text>
+    </Box>
+</Slide>

@@ -1,0 +1,71 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>双通道架构</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>云端提升上限，本机保底可用，校验优先落库</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>核心架构</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'column', gap: 16 }}>
+        <Box style={{ alignItems: 'center' }}>
+            <Box style={{ width: 980, height: 58, justifyContent: 'center', alignItems: 'center', background: 'rgba(232,238,247,0.06)', border: '1px solid rgba(232,238,247,0.18)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 17, color: '#E8EEF7' }}>用户自然语言输入　「每周一三五下午三点半提醒我起来活动，顺便锁屏」</Text>
+            </Box>
+        </Box>
+        <svg width={980} height={28} viewBox='0 0 980 28'>
+            <path d='M490 0 L490 12' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M245 12 L735 12' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M245 12 L245 26' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M735 12 L735 26' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M239 20 L245 28 L251 20 Z' fill='#4FE0B0' opacity='0.9' />
+            <path d='M729 20 L735 28 L741 20 Z' fill='#4FE0B0' opacity='0.9' />
+        </svg>
+        <Box style={{ flexDirection: 'row', gap: 32 }}>
+            <Box style={{ flex: 1, height: 108, flexDirection: 'column', gap: 8, padding: '16px 20px', background: 'rgba(79,224,176,0.08)', border: '1px solid rgba(79,224,176,0.45)', borderRadius: 12 }}>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#E8EEF7' }}>云端大模型通道</Text>
+                    <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0' }}>可选 · 需用户主动开启</Text>
+                </Box>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.5 }}>OpenAI 兼容接口（默认 DeepSeek）· 系统提示词约束输出固定字段 · temperature 0.2 · 40 秒超时保护</Text>
+            </Box>
+            <Box style={{ flex: 1, height: 108, flexDirection: 'column', gap: 8, padding: '16px 20px', background: 'rgba(79,224,176,0.08)', border: '1px solid rgba(79,224,176,0.45)', borderRadius: 12 }}>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#E8EEF7' }}>本机规则引擎</Text>
+                    <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0' }}>默认 · 离线可用</Text>
+                </Box>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.5 }}>纯 Rust 实现，零外部依赖；未配置密钥 / 断网 / 接口报错时自动接手，功能不中断</Text>
+            </Box>
+        </Box>
+        <svg width={980} height={28} viewBox='0 0 980 28'>
+            <path d='M245 0 L245 14' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M735 0 L735 14' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M245 14 L735 14' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M490 14 L490 26' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.75' />
+            <path d='M484 20 L490 28 L496 20 Z' fill='#4FE0B0' opacity='0.9' />
+        </svg>
+        <Box style={{ alignItems: 'center' }}>
+            <Box style={{ width: 980, height: 62, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 16, background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 10 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>统一字段校验层</Text>
+                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.7 }}>→　合法字段写入提醒数据；非法字段被过滤或回落默认值</Text>
+            </Box>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'row', gap: 20 }}>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 6, padding: 14, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>云端提升上限</Text>
+                <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.68, lineHeight: 1.5 }}>更自由的表达方式交给大模型理解，用户不必迁就关键词模板。</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 6, padding: 14, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>本机保底可用</Text>
+                <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.68, lineHeight: 1.5 }}>断网、未配置、接口报错都不影响使用——网络是可选增强，不是必要依赖。</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 6, padding: 14, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>校验优先落库</Text>
+                <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.68, lineHeight: 1.5 }}>模型只负责提出建议，能否写入由系统判定，幻觉不会污染用户数据。</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>07 / 18</Text>
+    </Box>
+</Slide>

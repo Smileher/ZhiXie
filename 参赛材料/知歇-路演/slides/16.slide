@@ -1,0 +1,60 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>五个创新点</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>每条都落到一个具体动作，不只是概念</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>核心创新</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 36 }}>
+        <Box style={{ width: 332, flexDirection: 'column', justifyContent: 'space-between', padding: 24, background: 'rgba(79,224,176,0.08)', border: '1px solid rgba(79,224,176,0.35)', borderRadius: 14 }}>
+            <Box style={{ flexDirection: 'column', gap: 14 }}>
+                <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.4 }}>从交互到工程的<br />五个差异点</Text>
+                <Box style={{ height: 3, width: 80, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
+                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>前三条解决"好不好用"，第四条回答"怎么做的"，第五条说明"站什么立场"。</Text>
+            </Box>
+            <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.6 }}>其中第四条是本项目作为 AIGC 作品最想强调的开发方式本身。</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 12 }}>
+            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>01</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>一句话生成提醒规则</Text>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：配置门槛从"学一套概念"降到"说一句话"。</Text>
+                </Box>
+            </Box>
+            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>02</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>云端 + 本机双通道</Text>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：既拿到大模型的理解力，又不牺牲离线可用性。</Text>
+                </Box>
+            </Box>
+            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>03</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>校验优先的落地设计</Text>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：AI 的不确定性被挡在用户数据之外。</Text>
+                </Box>
+            </Box>
+            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>04</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>人机协同的开发范式</Text>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：学生独立主导，AI 辅助实现，138 项测试形成闭环。</Text>
+                </Box>
+            </Box>
+            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>05</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>温和的休息倡议</Text>
+                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：产品立场是"知时而歇"，不是效率压榨。</Text>
+                </Box>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>16 / 18</Text>
+    </Box>
+</Slide>

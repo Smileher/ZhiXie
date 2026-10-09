@@ -1,0 +1,83 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>全程不写一行代码</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>低代码 / 无代码：两档用户，同一套能力</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>10</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'column', gap: 18 }}>
+        <Box style={{ height: 208, flexDirection: 'row', gap: 28, padding: 22, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 250, flexDirection: 'column', gap: 8 }}>
+                <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>普通用户</Text>
+                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.4 }}>装完即用<br />零配置、零联网</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.5, marginTop: 'auto' }}>不需要账号，不需要密钥，不产生任何费用。</Text>
+            </Box>
+            <svg width={520} height={164} viewBox='0 0 520 164'>
+                <rect x='6' y='26' width='140' height='112' rx='10' fill='rgba(232,238,247,0.05)' stroke='rgba(232,238,247,0.16)' />
+                <rect x='190' y='26' width='140' height='112' rx='10' fill='rgba(232,238,247,0.05)' stroke='rgba(232,238,247,0.16)' />
+                <rect x='374' y='26' width='140' height='112' rx='10' fill='rgba(79,224,176,0.12)' stroke='#4FE0B0' />
+                <path d='M150 82 L182 82' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.8' />
+                <path d='M176 76 L186 82 L176 88 Z' fill='#4FE0B0' />
+                <path d='M334 82 L366 82' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.8' />
+                <path d='M360 76 L370 82 L360 88 Z' fill='#4FE0B0' />
+                <circle cx='76' cy='62' r='16' fill='none' stroke='#4FE0B0' strokeWidth='1.5' opacity='0.7' />
+                <path d='M76 54 L76 66 M70 60 L82 60' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.7' />
+                <circle cx='260' cy='62' r='16' fill='none' stroke='#4FE0B0' strokeWidth='1.5' opacity='0.7' />
+                <path d='M253 62 L258 68 L268 56' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.7' />
+                <circle cx='444' cy='62' r='16' fill='#4FE0B0' />
+                <path d='M437 62 L442 68 L452 56' fill='none' stroke='#0B1220' strokeWidth='2.5' />
+                <rect x='46' y='94' width='60' height='10' rx='5' fill='rgba(232,238,247,0.35)' />
+                <rect x='230' y='94' width='60' height='10' rx='5' fill='rgba(232,238,247,0.35)' />
+                <rect x='414' y='94' width='60' height='10' rx='5' fill='rgba(11,18,32,0.4)' />
+                <rect x='56' y='114' width='40' height='8' rx='4' fill='rgba(232,238,247,0.18)' />
+                <rect x='240' y='114' width='40' height='8' rx='4' fill='rgba(232,238,247,0.18)' />
+                <rect x='424' y='114' width='40' height='8' rx='4' fill='rgba(11,18,32,0.25)' />
+            </svg>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 10, justifyContent: 'center' }}>
+                <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.85 }}>① 安装应用　→　② 打开即用　→　③ 智能体已在工作</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.6 }}>默认即以本机规则引擎模式运行，用户不需要知道"模型""接口""密钥"这些词。</Text>
+            </Box>
+        </Box>
+        <Box style={{ height: 208, flexDirection: 'row', gap: 28, padding: 22, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 250, flexDirection: 'column', gap: 8 }}>
+                <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>进阶用户（可选）</Text>
+                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.4 }}>三格表单<br />完成接入</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.5, marginTop: 'auto' }}>兼容任意 OpenAI 格式接口，不限于默认服务商。</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'row', gap: 16, alignItems: 'center' }}>
+                <Box style={{ flex: 1, height: 110, flexDirection: 'column', gap: 8, padding: '14px 16px', background: 'rgba(232,238,247,0.05)', border: '1px solid rgba(232,238,247,0.16)', borderRadius: 10 }}>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.55 }}>接口地址</Text>
+                    <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0' }}>https://api.deepseek.com/…</Text>
+                    <Box style={{ marginTop: 'auto', height: 8, flexDirection: 'row', gap: 6 }}>
+                        <Box style={{ width: 60, height: 8, background: 'rgba(79,224,176,0.5)', borderRadius: 4 }} />
+                        <Box style={{ flex: 1, height: 8, background: 'rgba(232,238,247,0.12)', borderRadius: 4 }} />
+                    </Box>
+                </Box>
+                <Box style={{ flex: 1, height: 110, flexDirection: 'column', gap: 8, padding: '14px 16px', background: 'rgba(232,238,247,0.05)', border: '1px solid rgba(232,238,247,0.16)', borderRadius: 10 }}>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.55 }}>模型名称</Text>
+                    <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0' }}>deepseek-chat</Text>
+                    <Box style={{ marginTop: 'auto', height: 8, flexDirection: 'row', gap: 6 }}>
+                        <Box style={{ width: 90, height: 8, background: 'rgba(79,224,176,0.5)', borderRadius: 4 }} />
+                        <Box style={{ flex: 1, height: 8, background: 'rgba(232,238,247,0.12)', borderRadius: 4 }} />
+                    </Box>
+                </Box>
+                <Box style={{ flex: 1, height: 110, flexDirection: 'column', gap: 8, padding: '14px 16px', background: 'rgba(232,238,247,0.05)', border: '1px solid rgba(232,238,247,0.16)', borderRadius: 10 }}>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.55 }}>API 密钥</Text>
+                    <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0' }}>•••••••••••••••</Text>
+                    <Box style={{ marginTop: 'auto', height: 8, flexDirection: 'row', gap: 6 }}>
+                        <Box style={{ width: 120, height: 8, background: 'rgba(79,224,176,0.5)', borderRadius: 4 }} />
+                        <Box style={{ flex: 1, height: 8, background: 'rgba(232,238,247,0.12)', borderRadius: 4 }} />
+                    </Box>
+                </Box>
+            </Box>
+        </Box>
+        <Box style={{ padding: '14px 20px', background: 'rgba(79,224,176,0.10)', borderRadius: 10 }}>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.9 }}>低代码体现在三处：<span style={{ color: '#4FE0B0' }}>可视化配置</span>（三格表单完成接入）·<span style={{ color: '#4FE0B0' }}>可视化确认</span>（解析结果确认后才写入）·<span style={{ color: '#4FE0B0' }}>可视化调校</span>（弹窗样式实时预览）。</Text>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>10 / 18</Text>
+    </Box>
+</Slide>

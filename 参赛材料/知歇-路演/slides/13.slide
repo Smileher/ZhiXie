@@ -1,0 +1,66 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>测什么：容易出错的地方</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>测试集中在时序与状态——功能演示时看不出来、但真实使用中一定会踩的坑</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>13</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'column', gap: 20 }}>
+        <Box style={{ height: 280, flexDirection: 'column', gap: 14 }}>
+            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 20, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Box style={{ width: 250, flexDirection: 'column', gap: 2 }}>
+                    <Text style={{ fontSize: 18, color: '#E8EEF7' }}>触发 A</Text>
+                    <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.5 }}>00:00 到点 · 先发生</Text>
+                </Box>
+                <svg width={120} height={40} viewBox='0 0 120 40'>
+                    <path d='M0 20 L104 20' fill='none' stroke='#E8EEF7' strokeWidth='2' strokeDasharray='6 6' opacity='0.35' />
+                    <path d='M98 14 L108 20 L98 26 Z' fill='#E8EEF7' opacity='0.35' />
+                </svg>
+                <Box style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                    <svg width={26} height={26} viewBox='0 0 26 26'>
+                        <circle cx='13' cy='13' r='12' fill='none' stroke='#E8EEF7' strokeWidth='1.5' opacity='0.4' />
+                        <path d='M8 8 L18 18 M18 8 L8 18' fill='none' stroke='#E8EEF7' strokeWidth='2' opacity='0.45' />
+                    </svg>
+                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.6 }}>延迟到达 · 不能覆盖后到的触发</Text>
+                </Box>
+            </Box>
+            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 20, padding: '0 22px', background: 'rgba(79,224,176,0.10)', border: '1px solid #4FE0B0', borderRadius: 10 }}>
+                <Box style={{ width: 250, flexDirection: 'column', gap: 2 }}>
+                    <Text style={{ fontSize: 18, color: '#E8EEF7' }}>触发 B</Text>
+                    <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0' }}>00:01 到点 · 后发生</Text>
+                </Box>
+                <svg width={120} height={40} viewBox='0 0 120 40'>
+                    <path d='M0 20 L104 20' fill='none' stroke='#4FE0B0' strokeWidth='2' />
+                    <path d='M98 14 L108 20 L98 26 Z' fill='#4FE0B0' />
+                </svg>
+                <Box style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                    <svg width={26} height={26} viewBox='0 0 26 26'>
+                        <circle cx='13' cy='13' r='12' fill='#4FE0B0' />
+                        <path d='M7 13 L11 18 L19 8' fill='none' stroke='#0B1220' strokeWidth='2.5' />
+                    </svg>
+                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.9 }}>成为当前弹窗 · 旧状态被正确丢弃</Text>
+                </Box>
+            </Box>
+            <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.55, lineHeight: 1.5 }}>这类竞态在手动测试里极难复现，只能靠针对性的单元测试守住。同批测试还覆盖：按 Escape 关闭不会重复隐藏前端状态、关机失败时弹窗保留并提供重试。</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'row', gap: 20 }}>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 10, padding: 20, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#4FE0B0' }}>时序</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.6 }}>延迟旧触发不覆盖新触发；弹窗状态机幂等；暂停与恢复不丢轮次。</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 10, padding: 20, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#4FE0B0' }}>数据</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.6 }}>原子写入中途失败不损坏原文件；导入文件校验；旧版本配置先备份再重建。</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 10, padding: 20, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#4FE0B0' }}>智能体</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.6 }}>中文时间与周几解析；系统操作识别；云端结果校验；JSON 提取容错。</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>13 / 18</Text>
+    </Box>
+</Slide>
