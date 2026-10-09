@@ -92,11 +92,12 @@ jobs:
 
       - name: 组装便携包
         run: |
+          # 压缩包内直接放 .app，解压即用，不再套一层目录。
           mkdir -p portable
           cp -R src-tauri/target/aarch64-apple-darwin/release/bundle/macos/*.app portable/
           cp README.md portable/
           ls -la portable
-          zip -qry zhixie-macos-arm64-portable.zip portable
+          (cd portable && zip -qry "$GITHUB_WORKSPACE/zhixie-macos-arm64-portable.zip" .)
 
       - uses: actions/upload-artifact@v4
         with:
