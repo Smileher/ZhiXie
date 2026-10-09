@@ -150,7 +150,7 @@ export const defaultData = (language: Language = 'zh-CN'): AppData => ({
     restMessage: translate(language, 'rest.defaultMessage'),
     systemNotificationEnabled: true,
     theme: 'system',
-    accentColor: 'mint',
+    accentColor: 'blue',
     popupBackgroundFit: 'stretch',
     popupBackgroundScale: 100,
     popupBackgroundOffsetX: 0,

@@ -187,7 +187,11 @@ async function mountApp({ enabled = true, status = resting, nativeErrors = { aut
         removeEventListener: (name) => { windowListeners.delete(name) },
       },
       localStorage: { getItem: () => null, setItem: noop },
-      document: appearanceDocument ?? { visibilityState: 'visible', hasFocus: () => true },
+      document: appearanceDocument ?? {
+        visibilityState: 'visible',
+        hasFocus: () => true,
+        documentElement: { classList: { add: noop, remove: noop } },
+      },
       console,
       crypto: { randomUUID },
     })
@@ -576,7 +580,7 @@ test('appearance snapshots preserve save rollback and fall back if the transitio
   assert.equal(await app.state.updateSetting('theme', 'dark', event), true)
   assert.equal(animations[0].frames.clipPath[0], 'circle(0px at 120px 215px)')
   assert.equal(animations[0].options.pseudoElement, '::view-transition-new(root)')
-  assert.equal(classes.size, 0)
+  assert.ok(!classes.has('appearance-changing'))
   assert.equal(await app.state.updateSetting('accentColor', 'rose', event), true)
   assert.deepEqual(Array.from(animations[1].frames.opacity), [0, 1])
   assert.equal(animations[1].options.duration, 480)
@@ -597,12 +601,12 @@ test('appearance snapshots preserve save rollback and fall back if the transitio
   app.setSaveData(async () => { throw new Error('disk full') })
   assert.equal(await app.state.updateSetting('theme', 'light', event), false)
   assert.equal(app.state.data.value.settings.theme, 'dark')
-  assert.equal(classes.size, 0)
+  assert.ok(!classes.has('appearance-changing'))
   app.setSaveData(async data => data)
   appearanceDocument.startViewTransition = () => { throw new Error('snapshot unavailable') }
   assert.equal(await app.state.updateSetting('theme', 'light', event), true)
   assert.equal(app.state.data.value.settings.theme, 'light')
-  assert.equal(classes.size, 0)
+  assert.ok(!classes.has('appearance-changing'))
 })
 
 test('failed theme save restores the previous preference without changing the app theme', async () => {

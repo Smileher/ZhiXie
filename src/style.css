@@ -9,14 +9,14 @@
   --font-section: 16px;
   --font-title: 24px;
   --font-display: 32px;
-  --page-bg: #202225;
-  --sidebar-bg: #181a1d;
-  --surface: #292b2f;
-  --surface-hover: #31343a;
-  --border: #3d4148;
-  --text: #f3f4f6;
-  --muted: #a6abb3;
-  --subtle: #7d848e;
+  --page-bg: #0e131c;
+  --sidebar-bg: #0a0e16;
+  --surface: #151c29;
+  --surface-hover: #1c2534;
+  --border: #2a3345;
+  --text: #eef1f6;
+  --muted: #9aa4b5;
+  --subtle: #6f7a8e;
   --sidebar-text: #aeb4bd;
   --sidebar-heading: #f5f6f8;
   --sidebar-hover: rgba(255, 255, 255, .06);
@@ -236,10 +236,10 @@ button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px 
 .settings-group + .settings-group { margin-top: 14px; }
 .preferences-page .settings-group { margin-top: 0; }
 .preferences-page .page-header { min-height: 68px; }
-.settings-tabs { position: sticky; top: -26px; z-index: 5; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-bottom: 4px; padding: 8px 0; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--page-bg) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-.settings-tabs button { min-height: 38px; border: 1px solid transparent; border-radius: 9px; padding: 6px 8px; color: var(--muted); background: transparent; transition: color .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease; }
-.settings-tabs button:hover { color: var(--text); background: var(--surface-hover); }
-.settings-tabs button[aria-selected="true"] { color: var(--accent-ink); background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 42%, transparent); font-weight: 700; box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 16%, transparent), inset 0 -2px 0 var(--accent-ink); }
+.settings-tabs { position: sticky; top: -26px; z-index: 5; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin-bottom: 10px; padding: 4px; border: 1px solid var(--border); border-radius: 11px; background: var(--surface-hover); }
+.settings-tabs button { min-height: 32px; border: 0; border-radius: 8px; padding: 5px 8px; color: var(--muted); background: transparent; transition: color .16s ease, background .16s ease; }
+.settings-tabs button:hover { color: var(--text); }
+.settings-tabs button[aria-selected="true"] { color: var(--text); background: var(--surface); font-weight: 700; box-shadow: 0 1px 3px rgba(0, 0, 0, .22), inset 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent); }
 .settings-tab-hint { margin: 0 0 10px; color: var(--subtle); font-size: var(--font-xs); letter-spacing: .02em; }
 .danger-actions { border-color: color-mix(in srgb, var(--danger) 38%, var(--border)); }
 .button.danger { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 42%, var(--border)); }
@@ -486,9 +486,10 @@ button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px 
 .agent-switch-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; }
 .agent-switch-row span { color: var(--text); font-size: var(--font-sm); }
 
-/* —— 顶栏：智能体入口常亮 —— */
-.topbar-pill.featured { color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 30%, transparent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
-.topbar-pill.featured:hover { background: color-mix(in srgb, var(--accent) 18%, transparent); }
+/* —— 顶栏：智能体入口常亮（只点亮图标，不与选中态的底色冲突） —— */
+.topbar-pill.featured { color: var(--accent-ink); }
+.topbar-pill.featured svg { filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 65%, transparent)); }
+.topbar-pill.featured.active svg { filter: none; }
 
 /* —— 关于页团队区 —— */
 .about-team { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }

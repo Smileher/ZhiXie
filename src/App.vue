@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch, watchEffect } from 'vue'
 import { getVersion } from '@tauri-apps/api/app'
 import { invoke } from '@tauri-apps/api/core'
 import { getCurrentWindow } from '@tauri-apps/api/window'
@@ -27,6 +27,16 @@ const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
 const systemDark = ref(systemTheme.matches)
 const data = ref<AppData>(defaultData())
 const displayedTheme = computed(() => data.value.settings.theme === 'system' ? (systemDark.value ? 'dark' : 'light') : data.value.settings.theme)
+
+// 主题变量同时挂到 html 根节点：body 背景、原生控件 color-scheme，以及
+// 弹窗等不经过 app-shell 的节点都能跟着深浅色走，不只靠 app-shell 一个类。
+if (!isPopup) {
+  watchEffect(() => {
+    const root = document.documentElement
+    root.classList.remove('theme-light', 'theme-dark', 'theme-system')
+    root.classList.add(`theme-${displayedTheme.value}`)
+  })
+}
 const currentView = ref<View>('rest')
 const settingsTab = ref<SettingsTab>('rhythm')
 const showForm = ref(false)

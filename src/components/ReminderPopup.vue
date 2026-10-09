@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { getCurrentWindow } from '@tauri-apps/api/window'
 import { invoke } from '@tauri-apps/api/core'
 import { confirm } from '@tauri-apps/plugin-dialog'
@@ -67,6 +67,14 @@ const popupClass = computed(() => [
 // 背景图没有配置项：文件存在就显示，删掉文件就没有背景。
 const popupBackgroundUrl = ref('')
 let imageReadToken = 0
+
+// 弹窗窗口没有 app-shell 包裹，主题变量挂到 html 根上，
+// body 底色与原生控件的 color-scheme 才能跟随深浅色。
+watch(() => settings.value.theme, (theme) => {
+  const root = document.documentElement
+  root.classList.remove('theme-light', 'theme-dark', 'theme-system')
+  root.classList.add(`theme-${theme}`)
+}, { immediate: true })
 
 async function refreshPopupBackground() {
   const token = ++imageReadToken

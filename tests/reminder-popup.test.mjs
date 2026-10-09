@@ -235,7 +235,11 @@ async function mountPopup({ label = 'reminder', active = null, readActive } = {}
       addEventListener: (name, callback) => windowListeners.set(name, callback),
       removeEventListener: (name) => windowListeners.delete(name),
     },
-    document: { addEventListener: noop, removeEventListener: noop },
+    document: {
+      addEventListener: noop,
+      removeEventListener: noop,
+      documentElement: { classList: { add: noop, remove: noop } },
+    },
     localStorage: { getItem: () => null, setItem: noop },
     Date: class extends Date { static now() { return clockNow } },
     console,
