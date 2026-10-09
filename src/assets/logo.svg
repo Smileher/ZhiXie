@@ -1,9 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="120" fill="#141C26"/>
-  <!-- 月牙：知时而歇 -->
-  <path d="M330 118a162 162 0 1 0 0 276 138 138 0 1 1 0-276Z" fill="#73E2AC"/>
-  <!-- 星点：节奏与节律 -->
-  <circle cx="212" cy="158" r="19" fill="#FFFFFF"/>
-  <circle cx="150" cy="286" r="13" fill="#FFFFFF" opacity=".72"/>
-  <circle cx="234" cy="356" r="9" fill="#FFFFFF" opacity=".5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#46E6A6"/>
+      <stop offset="1" stop-color="#0C7C8C"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D6FFF0"/>
+    </linearGradient>
+    <mask id="bite">
+      <rect width="128" height="128" fill="#fff"/>
+      <circle cx="72" cy="46" r="27" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="128" height="128" rx="29" fill="url(#bg)"/>
+  <g mask="url(#bite)">
+    <circle cx="50" cy="64" r="31" fill="url(#ink)"/>
+  </g>
+  <rect x="84" y="46" width="10" height="36" rx="5" fill="url(#ink)"/>
+  <rect x="100" y="46" width="10" height="36" rx="5" fill="url(#ink)"/>
 </svg>

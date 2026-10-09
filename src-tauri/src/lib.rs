@@ -139,7 +139,7 @@ fn default_popup_title_size() -> u32 {
 }
 
 fn default_popup_overlay_opacity() -> u32 {
-    55
+    30
 }
 
 fn default_popup_fade_enabled() -> bool {
@@ -213,10 +213,10 @@ impl Default for AppSettings {
             system_notification_enabled: true,
             theme: Theme::System,
             accent_color: AccentColor::Blue,
-            popup_background_fit: PopupBackgroundFit::Contain,
-            popup_background_scale: 40,
-            popup_background_offset_x: 35,
-            popup_background_offset_y: 25,
+            popup_background_fit: PopupBackgroundFit::Stretch,
+            popup_background_scale: 100,
+            popup_background_offset_x: 0,
+            popup_background_offset_y: 0,
             popup_fade_enabled: default_popup_fade_enabled(),
             popup_text_color: String::new(),
             popup_title_size: default_popup_title_size(),
@@ -3097,10 +3097,10 @@ mod tests {
         settings.popup_background_scale = 99;
         initialize_popup_image(&directory, &mut settings).unwrap();
         assert_eq!(fs::read(&target).unwrap(), DEFAULT_POPUP_IMAGE);
-        assert_eq!(settings.popup_background_scale, 40);
-        assert_eq!(settings.popup_background_offset_x, 35);
-        assert_eq!(settings.popup_background_offset_y, 25);
-        assert_eq!(settings.popup_background_fit, PopupBackgroundFit::Contain);
+        assert_eq!(settings.popup_background_scale, 100);
+        assert_eq!(settings.popup_background_offset_x, 0);
+        assert_eq!(settings.popup_background_offset_y, 0);
+        assert_eq!(settings.popup_background_fit, PopupBackgroundFit::Stretch);
         fs::remove_file(&target).unwrap();
         initialize_popup_image(&directory, &mut settings).unwrap();
         assert!(!target.exists());

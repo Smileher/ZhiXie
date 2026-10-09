@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Sparkles } from '@lucide/vue'
+import { BadgeCheck, School, Sparkles, UserCheck } from '@lucide/vue'
 import brandIcon from '../assets/logo.svg'
 import { translate } from '../i18n'
 import type { MessageKey } from '../i18n'
@@ -32,9 +32,28 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
     </div>
 
     <div class="about-card">
+      <span class="about-card-icon"><BadgeCheck :size="18" /></span>
       <div>
         <strong>{{ t('about.stackTitle') }}</strong>
         <p>{{ t('about.stackBody') }}</p>
+      </div>
+    </div>
+
+    <div class="about-team">
+      <div class="about-card">
+        <span class="about-card-icon"><School :size="18" /></span>
+        <div>
+          <strong>{{ t('about.schoolTitle') }}</strong>
+          <p>{{ t('about.schoolBody') }}</p>
+        </div>
+      </div>
+      <div class="about-card about-mentor">
+        <span class="about-card-icon"><UserCheck :size="18" /></span>
+        <div>
+          <strong>{{ t('about.mentorLabel') }}</strong>
+          <p class="about-mentor-name">{{ t('about.mentorName') }}</p>
+          <span class="about-mentor-school">{{ t('about.schoolName') }}</span>
+        </div>
       </div>
     </div>
 

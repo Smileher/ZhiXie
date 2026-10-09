@@ -15,10 +15,10 @@ const props = defineProps<{
 
 const emit = defineEmits<{ navigate: [view: View] }>()
 
-const items: { id: View; label: MessageKey; icon: typeof Coffee }[] = [
+const items: { id: View; label: MessageKey; icon: typeof Coffee; featured?: boolean }[] = [
   { id: 'rest', label: 'nav.rest', icon: Coffee },
   { id: 'events', label: 'nav.events', icon: CalendarClock },
-  { id: 'agent', label: 'nav.agent', icon: Sparkles },
+  { id: 'agent', label: 'nav.agent', icon: Sparkles, featured: true },
   { id: 'settings', label: 'nav.settings', icon: SlidersHorizontal },
   { id: 'about', label: 'nav.about', icon: Info },
 ]
@@ -46,7 +46,7 @@ function select(view: View) {
       <button
         v-for="item in items"
         :key="item.id"
-        :class="['topbar-pill', { active: currentView === item.id }]"
+        :class="['topbar-pill', { active: currentView === item.id, featured: item.featured && currentView !== item.id }]"
         type="button"
         :aria-current="currentView === item.id ? 'page' : undefined"
         @click="select(item.id)"

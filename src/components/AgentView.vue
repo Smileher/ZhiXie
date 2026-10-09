@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { Sparkles, Plus, Save } from '@lucide/vue'
+import { Sparkles, Plus, Save, Plug, Zap, Wand } from '@lucide/vue'
 import { invoke } from '@tauri-apps/api/core'
 import { translate } from '../i18n'
 import type { MessageKey } from '../i18n'
@@ -22,6 +22,9 @@ const config = ref<AgentConfig>(defaultAgentConfig())
 const configMessage = ref('')
 const advice = ref<AgentAdvice | null>(null)
 const adviceLoading = ref(false)
+const panel = ref<'usage' | 'config'>('usage')
+
+const examples = ['agent.example1', 'agent.example2', 'agent.example3'] as const
 
 function t(key: MessageKey, params: Record<string, string | number> = {}) {
   return translate(props.language, key, params)
@@ -131,75 +134,94 @@ const typeLabel = computed(() => {
 </script>
 
 <template>
-  <section class="page-section agent-section">
-    <header class="page-header">
-      <div>
-        <h2>{{ t('agent.heading') }}</h2>
-        <p class="page-subtitle">{{ t('about.agentBody') }}</p>
+  <section class="page-section agent-page">
+    <header class="agent-hero">
+      <span class="agent-hero-badge">{{ t('agent.badge') }}<i></i></span>
+      <div class="agent-hero-copy">
+        <h1>{{ t('agent.heading') }}</h1>
+        <p>{{ t('agent.heroSub') }}</p>
       </div>
+      <span :class="['agent-mode', config.enabled ? 'is-cloud' : 'is-local']">
+        <component :is="config.enabled ? Zap : Plug" :size="13" />
+        {{ config.enabled ? t('agent.statusCloud') : t('agent.statusLocal') }}
+      </span>
     </header>
 
-    <div class="agent-composer">
-      <textarea
-        v-model="request"
-        class="agent-input"
-        rows="3"
-        :placeholder="t('agent.placeholder')"
-        @keydown.enter.meta="parseRequest"
-      ></textarea>
-      <div class="agent-composer-actions">
-        <button class="button button-primary" type="button" :disabled="parsing" @click="parseRequest">
-          <Sparkles :size="15" />{{ parsing ? t('agent.parsing') : t('agent.parse') }}
+    <div class="agent-tabs" role="tablist" :aria-label="t('agent.badge')">
+      <button type="button" role="tab" :aria-selected="panel === 'usage'" @click="panel = 'usage'">{{ t('agent.tabUsage') }}</button>
+      <button type="button" role="tab" :aria-selected="panel === 'config'" @click="panel = 'config'">{{ t('agent.tabConfig') }}</button>
+    </div>
+
+    <div v-show="panel === 'usage'" class="agent-usage">
+      <div class="agent-composer">
+        <textarea
+          v-model="request"
+          class="agent-input"
+          rows="3"
+          :placeholder="t('agent.placeholder')"
+          @keydown.enter.meta="parseRequest"
+        ></textarea>
+        <div class="agent-composer-actions">
+          <button class="agent-run" type="button" :disabled="parsing" @click="parseRequest">
+            <Sparkles :size="16" />{{ parsing ? t('agent.parsing') : t('agent.parse') }}
+          </button>
+          <span v-if="result" class="agent-source">{{ result.source === 'cloud' ? t('agent.sourceCloud') : t('agent.sourceLocal') }}</span>
+        </div>
+        <div class="agent-examples">
+          <span class="agent-examples-label">{{ t('agent.examplesLabel') }}</span>
+          <button v-for="example in examples" :key="example" class="agent-chip" type="button" @click="request = t(example)">
+            <Wand :size="12" />{{ t(example) }}
+          </button>
+        </div>
+      </div>
+
+      <p v-if="parseError" class="page-message" role="alert">{{ parseError }}</p>
+      <p v-if="result?.note" class="agent-note" role="status">{{ t('agent.fallbackNote') }}</p>
+
+      <div v-if="result" class="agent-result">
+        <h3 class="card-label">{{ t('agent.resultTitle') }}</h3>
+        <dl class="agent-fields">
+          <div><dt>{{ t('agent.field.type') }}</dt><dd>{{ typeLabel }}</dd></div>
+          <div><dt>{{ t('agent.field.time') }}</dt><dd>{{ timeLabel }}</dd></div>
+          <div><dt>{{ t('agent.field.repeat') }}</dt><dd>{{ repeatLabel }}</dd></div>
+          <div><dt>{{ t('agent.field.power') }}</dt><dd>{{ powerLabel }}</dd></div>
+          <div v-if="result.draft.popupMessage"><dt>{{ t('agent.field.popup') }}</dt><dd>{{ result.draft.popupMessage }}</dd></div>
+        </dl>
+        <div class="agent-result-title">
+          <strong>{{ result.draft.title }}</strong>
+          <button class="button button-primary" type="button" @click="addReminder">
+            <Plus :size="15" />{{ t('agent.addReminder') }}
+          </button>
+        </div>
+      </div>
+
+      <div class="agent-result agent-advice-card">
+        <h3 class="card-label">{{ t('agent.adviceTitle') }}</h3>
+        <p class="agent-advice">{{ adviceLoading ? t('agent.adviceLoading') : (advice?.advice ?? '') }}</p>
+        <button class="button" type="button" :disabled="adviceLoading" @click="refreshAdvice">
+          <Sparkles :size="15" />{{ t('agent.advice') }}
         </button>
-        <span v-if="result" class="agent-source">{{ result.source === 'cloud' ? t('agent.sourceCloud') : t('agent.sourceLocal') }}</span>
       </div>
     </div>
 
-    <p v-if="parseError" class="page-message" role="alert">{{ parseError }}</p>
-    <p v-if="result?.note" class="agent-note" role="status">{{ t('agent.fallbackNote') }}</p>
-
-    <div v-if="result" class="agent-result">
-      <h3 class="card-label">{{ t('agent.resultTitle') }}</h3>
-      <dl class="agent-fields">
-        <div><dt>{{ t('agent.field.type') }}</dt><dd>{{ typeLabel }}</dd></div>
-        <div><dt>{{ t('agent.field.time') }}</dt><dd>{{ timeLabel }}</dd></div>
-        <div><dt>{{ t('agent.field.repeat') }}</dt><dd>{{ repeatLabel }}</dd></div>
-        <div><dt>{{ t('agent.field.power') }}</dt><dd>{{ powerLabel }}</dd></div>
-        <div v-if="result.draft.popupMessage"><dt>{{ t('agent.field.popup') }}</dt><dd>{{ result.draft.popupMessage }}</dd></div>
-      </dl>
-      <div class="agent-result-title">
-        <strong>{{ result.draft.title }}</strong>
-        <button class="button button-primary" type="button" @click="addReminder">
-          <Plus :size="15" />{{ t('agent.addReminder') }}
-        </button>
+    <div v-show="panel === 'config'" class="agent-config">
+      <div class="setting-card stacked-setting">
+        <div><strong>{{ t('agent.configTitle') }}</strong><span>{{ t('agent.configHint') }}</span></div>
+        <label class="agent-switch-row">
+          <span>{{ t('agent.enabled') }}</span>
+          <button :class="['switch', { on: config.enabled }]" type="button" role="switch" :aria-checked="config.enabled" @click="config.enabled = !config.enabled"><i></i></button>
+        </label>
+        <div class="agent-config-grid">
+          <label class="field"><span>{{ t('agent.endpoint') }}</span><input v-model="config.endpoint" type="text" /></label>
+          <label class="field"><span>{{ t('agent.model') }}</span><input v-model="config.model" type="text" /></label>
+          <label class="field"><span>{{ t('agent.apiKey') }}</span><input v-model="config.apiKey" type="password" /></label>
+        </div>
+        <p class="setting-note">{{ t('agent.apiKeyHint') }}</p>
+        <div class="action-row">
+          <button class="button button-primary" type="button" @click="saveConfig"><Save :size="15" />{{ t('agent.save') }}</button>
+        </div>
+        <p v-if="configMessage" class="form-message" role="status">{{ configMessage }}</p>
       </div>
-    </div>
-
-    <div class="agent-result">
-      <h3 class="card-label">{{ t('agent.adviceTitle') }}</h3>
-      <p class="agent-advice">{{ adviceLoading ? t('agent.adviceLoading') : (advice?.advice ?? '') }}</p>
-      <button class="button" type="button" :disabled="adviceLoading" @click="refreshAdvice">
-        <Sparkles :size="15" />{{ t('agent.advice') }}
-      </button>
-    </div>
-
-    <div class="setting-card">
-      <h3 class="card-label">{{ t('agent.configTitle') }}</h3>
-      <p class="setting-note">{{ t('agent.configHint') }}</p>
-      <label class="setting-toggle">
-        <span>{{ t('agent.enabled') }}</span>
-        <button :class="['switch', { on: config.enabled }]" type="button" role="switch" :aria-checked="config.enabled" @click="config.enabled = !config.enabled"><i></i></button>
-      </label>
-      <div class="agent-config-grid">
-        <label class="field"><span>{{ t('agent.endpoint') }}</span><input v-model="config.endpoint" type="text" /></label>
-        <label class="field"><span>{{ t('agent.model') }}</span><input v-model="config.model" type="text" /></label>
-        <label class="field"><span>{{ t('agent.apiKey') }}</span><input v-model="config.apiKey" type="password" /></label>
-      </div>
-      <p class="setting-note">{{ t('agent.apiKeyHint') }}</p>
-      <div class="action-row">
-        <button class="button" type="button" @click="saveConfig"><Save :size="15" />{{ t('agent.save') }}</button>
-      </div>
-      <p v-if="configMessage" class="form-message" role="status">{{ configMessage }}</p>
     </div>
   </section>
 </template>
