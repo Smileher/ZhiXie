@@ -142,7 +142,7 @@ pub async fn agent_break_advice(
     let config = load_agent_config(app)?;
     if config.enabled && !config.api_key.is_empty() && !config.endpoint.is_empty() {
         let prompt = format!(
-            "用户每 {} 分钟休息一次，今日已触发 {} 次提醒，本次已连续工作 {} 分钟。请给出一句简短、具体、温和的中文休息建议，不超过 30 字，不要客套话。",
+            "用户每 {} 分钟休息一次，今日已触发 {} 次提醒，本次已连续学习 {} 分钟。请给出一句简短、具体、温和的中文休息建议，不超过 30 字，不要客套话。",
             rest_interval_minutes, reminder_count, elapsed_minutes
         );
         if let Ok(advice) = request_text(&config, &prompt).await {
@@ -476,39 +476,18 @@ fn detect_month_days(text: &str) -> Vec<u8> {
     let mut cursor = 0;
     while let Some(offset) = text[cursor..].find(|ch: char| ch == '号' || ch == '日') {
         let position = cursor + offset;
-        let before = &text[..position];
-        let digits: String = before
-            .chars()
-            .rev()
-            .take_while(|ch| ch.is_ascii_digit())
-            .collect::<Vec<_>>()
-            .into_iter()
-            .rev()
-            .collect();
-        if let Ok(day) = digits.parse::<u8>() {
+        // 中文数字同样支持：每月十五号。
+        if let Some(day) = trailing_number(&text[..position]) {
             if (1..=31).contains(&day) {
-                days.push(day);
+                days.push(day as u8);
             }
         }
-        cursor = position + 1;
+        // 号/日 都是三字节字符，按字节长度推进，避免落在字符中间。
+        cursor = position + '号'.len_utf8();
     }
     days.sort_unstable();
     days.dedup();
     days
-}
-
-fn digits_before(text: &str, unit: &str) -> Option<u32> {
-    let position = text.find(unit)?;
-    let before = &text[..position];
-    let digits: String = before
-        .chars()
-        .rev()
-        .take_while(|ch| ch.is_ascii_digit())
-        .collect::<Vec<_>>()
-        .into_iter()
-        .rev()
-        .collect();
-    digits.parse::<u32>().ok()
 }
 
 fn time_of_day(text: &str) -> Option<(u32, u32)> {
@@ -556,6 +535,95 @@ fn time_of_day(text: &str) -> Option<(u32, u32)> {
     None
 }
 
+/// 解析“30分钟后”“三十分钟后”“半小时后”“三天后”这类相对时长。
+///
+/// 只认后面紧跟“后 / 之后 / 以后”的时间单位，避免把“每天”“后天”误当成时长。
+fn relative_duration(text: &str) -> Option<Duration> {
+    // 单位顺序即优先级；同单位内取第一个带“后”的写法。
+    const UNITS: [(&str, i64); 7] = [
+        ("小时", 60),
+        ("钟头", 60),
+        ("分钟", 1),
+        ("星期", 7 * 24 * 60),
+        ("礼拜", 7 * 24 * 60),
+        ("周", 7 * 24 * 60),
+        ("天", 24 * 60),
+    ];
+    const MARKERS: [&str; 3] = ["后", "之后", "以后"];
+
+    for (unit, minutes_per_unit) in UNITS {
+        let mut cursor = 0;
+        while let Some(offset) = text[cursor..].find(unit) {
+            let position = cursor + offset;
+            let after = text[position + unit.len()..].trim_start();
+            if MARKERS.iter().any(|marker| after.starts_with(marker)) {
+                return Some(duration_before(text, position, minutes_per_unit));
+            }
+            cursor = position + unit.len();
+        }
+    }
+    None
+}
+
+/// 取时间单位之前的数量，“半”按半个单位计算（半小时 = 30 分钟，两个半小时 = 150 分钟）。
+fn duration_before(text: &str, position: usize, minutes_per_unit: i64) -> Duration {
+    let before = text[..position].trim_end();
+    if let Some(whole) = before.strip_suffix('半') {
+        let whole = whole.trim_end();
+        let whole = whole.strip_suffix('个').unwrap_or(whole).trim_end();
+        let amount = trailing_number(whole).unwrap_or(0) as i64;
+        return Duration::minutes(amount * minutes_per_unit + (minutes_per_unit / 2).max(1));
+    }
+    let before = before.strip_suffix('个').unwrap_or(before);
+    let amount = trailing_number(before.trim_end()).unwrap_or(1) as i64;
+    Duration::minutes(amount * minutes_per_unit)
+}
+
+/// 删掉标题里的相对时长短语，避免“三十分钟后锁屏”在标题里残留“三十”。
+fn strip_relative_phrases(text: &str) -> String {
+    const UNITS: [&str; 7] = ["小时", "钟头", "分钟", "星期", "礼拜", "周", "天"];
+    let chars: Vec<char> = text.chars().collect();
+    let mut drop = vec![false; chars.len()];
+
+    for unit in UNITS {
+        let unit_chars: Vec<char> = unit.chars().collect();
+        let length = unit_chars.len();
+        let mut index = 0;
+        while index + length <= chars.len() {
+            if chars[index..index + length] != unit_chars[..] {
+                index += 1;
+                continue;
+            }
+            // 只有带“后”的时长表达才整体删除，否则保留“每天”“后天”这类原意。
+            let mut end = index + length;
+            if chars.get(end) == Some(&'后') {
+                end += 1;
+            } else if chars[end..].starts_with(&['之', '后']) || chars[end..].starts_with(&['以', '后']) {
+                end += 2;
+            } else {
+                index += 1;
+                continue;
+            }
+            let mut start = index;
+            while start > 0 && is_chinese_numeral(chars[start - 1]) {
+                start -= 1;
+            }
+            while start > 0 && matches!(chars[start - 1], '半' | '个') {
+                start -= 1;
+            }
+            while start > 0 && chars[start - 1].is_whitespace() {
+                start -= 1;
+            }
+            for flag in drop.iter_mut().take(end).skip(start) {
+                *flag = true;
+            }
+            index = end;
+        }
+    }
+
+    chars.iter().enumerate().filter(|(position, _)| !drop[*position]).map(|(_, ch)| *ch).collect()
+}
+
 fn relative_trigger(text: &str, fallback_hour: u32, fallback_minute: u32) -> String {
     let now = Local::now();
     let zeroed = |value: chrono::DateTime<chrono::Local>| {
@@ -567,16 +635,9 @@ fn relative_trigger(text: &str, fallback_hour: u32, fallback_minute: u32) -> Str
             .to_rfc3339()
     };
 
-    // “30分钟后”“2小时后”这类相对表达优先于具体时间点。
-    if has(text, &["分钟后", "分钟之后"]) {
-        if let Some(minutes) = digits_before(text, "分钟") {
-            return zeroed(now + Duration::minutes(minutes as i64));
-        }
-    }
-    if has(text, &["小时后", "小时之后"]) {
-        if let Some(hours) = digits_before(text, "小时") {
-            return zeroed(now + Duration::hours(hours as i64));
-        }
+    // 相对时长优先于具体时间点。
+    if let Some(offset) = relative_duration(text) {
+        return zeroed(now + offset);
     }
 
     let day_offset = if has(text, &["后天"]) {
@@ -601,7 +662,7 @@ fn clean_title(text: &str) -> String {
         "分钟后", "分钟之后", "小时后", "小时之后", "点", "分", "：", ":", "提醒我", "提醒", "帮我",
         "设置一个", "创建", "添加", "记一下", "上午", "下午", "中午", "晚上", "早上", "凌晨",
     ];
-    let mut title = text.to_string();
+    let mut title = strip_relative_phrases(text);
     for item in noise {
         title = title.replace(item, " ");
     }
@@ -634,18 +695,18 @@ fn parse_hhmm(value: &str) -> Option<(u32, u32)> {
 fn local_advice(rest_interval_minutes: u32, reminder_count: usize, elapsed_minutes: u32) -> String {
     if elapsed_minutes >= rest_interval_minutes * 2 {
         return format!(
-            "你已经连续工作 {} 分钟，先站起来走几步，喝口水再回来。",
+            "你已经连着学了 {} 分钟，先站起来走几步，喝口水再回来。",
             elapsed_minutes
         );
     }
     if reminder_count >= 6 {
-        return "今天提醒已经触发很多次了，考虑收个尾，把剩下的事留到明天。".into();
+        return "今天提醒已经触发很多次了，考虑收个尾，把剩下的作业留到明天。".into();
     }
     if elapsed_minutes >= rest_interval_minutes {
         return "到点了，抬头看看远处，活动一下肩膀和手腕。".into();
     }
     match reminder_count {
-        0 => "刚开始工作，先把手头这件事做完再说。".into(),
+        0 => "刚开始学习，先把这一节看完再说。".into(),
         1..=2 => "状态还行，记得喝口水。".into(),
         _ => "节奏挺稳的，保持这个间隔就好。".into(),
     }
@@ -677,6 +738,64 @@ mod tests {
         assert_eq!(draft.reminder_type, "once");
         assert!(draft.trigger_at.is_some());
         assert!(draft.time.is_none());
+    }
+
+    /// 相对时长的落地时间与当前时刻相差多少分钟，用来断言“30 分钟后”这类表达。
+    fn trigger_offset_minutes(draft: &AgentDraft) -> i64 {
+        let trigger = chrono::DateTime::parse_from_rfc3339(draft.trigger_at.as_deref().unwrap()).unwrap();
+        // 秒被清零，允许跨过一整分钟的下取整误差。
+        (trigger.timestamp() - Local::now().timestamp()) / 60
+    }
+
+    #[test]
+    fn local_parser_understands_chinese_relative_time() {
+        let draft = parse_locally("三十分钟后锁屏，让我休息一下");
+        assert_eq!(draft.reminder_type, "once");
+        assert_eq!(draft.power_action.as_deref(), Some("lock"));
+        assert_eq!(draft.title, "让我休息一下");
+        assert!((29..=30).contains(&trigger_offset_minutes(&draft)));
+    }
+
+    #[test]
+    fn local_parser_understands_half_and_whole_units() {
+        let half = parse_locally("半小时后提醒我起身活动");
+        assert_eq!(half.title, "起身活动");
+        assert!((29..=30).contains(&trigger_offset_minutes(&half)));
+
+        let two_and_half = parse_locally("两个半小时后提醒我接热水");
+        assert!((149..=150).contains(&trigger_offset_minutes(&two_and_half)));
+
+        let hours = parse_locally("两个小时后提醒我去取快递");
+        assert!((119..=120).contains(&trigger_offset_minutes(&hours)));
+    }
+
+    #[test]
+    fn local_parser_understands_relative_days_and_weeks() {
+        let days = parse_locally("三天后提醒我交作业");
+        assert_eq!(days.title, "交作业");
+        let trigger = chrono::DateTime::parse_from_rfc3339(days.trigger_at.as_deref().unwrap()).unwrap();
+        assert_eq!(trigger.date_naive(), (Local::now() + Duration::days(3)).date_naive());
+
+        let weeks = parse_locally("一周后提醒我提交报告");
+        assert_eq!(weeks.title, "提交报告");
+        let trigger = chrono::DateTime::parse_from_rfc3339(weeks.trigger_at.as_deref().unwrap()).unwrap();
+        assert_eq!(trigger.date_naive(), (Local::now() + Duration::days(7)).date_naive());
+    }
+
+    #[test]
+    fn local_parser_understands_chinese_month_days() {
+        let draft = parse_locally("每月十五号提醒我交作业");
+        assert_eq!(draft.reminder_type, "monthly");
+        assert_eq!(draft.month_days, vec![15]);
+    }
+
+    #[test]
+    fn relative_phrases_do_not_leak_into_titles() {
+        assert_eq!(strip_relative_phrases("三十分钟后锁屏"), "锁屏");
+        assert_eq!(strip_relative_phrases("半小时后提醒我"), "提醒我");
+        // “每天”“后天”不是时长，必须原样保留。
+        assert_eq!(strip_relative_phrases("每天十点"), "每天十点");
+        assert_eq!(strip_relative_phrases("后天交作业"), "后天交作业");
     }
 
     #[test]
@@ -729,10 +848,10 @@ mod tests {
     }
 
     #[test]
-    fn local_advice_escalates_with_work_time() {
+    fn local_advice_escalates_with_study_time() {
         assert!(local_advice(40, 0, 5).contains("刚开始"));
         assert!(local_advice(40, 1, 45).contains("抬头看看远处"));
-        assert!(local_advice(40, 3, 90).contains("连续工作"));
+        assert!(local_advice(40, 3, 90).contains("连着学了"));
         assert!(local_advice(40, 8, 10).contains("收个尾"));
     }
 }
