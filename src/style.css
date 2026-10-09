@@ -546,7 +546,7 @@ button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px 
 /* —— 关于页学校 / 指导老师 —— */
 .about-school-card { align-items: center; gap: 20px; }
 /* 校徽本身带透明底，用一层径向柔光 + 图片投影叠出辉光。 */
-.about-school-logo { display: grid; place-items: center; flex: 0 0 auto; width: 176px; padding: 12px; border-radius: 14px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 24%, transparent), transparent); }
+.about-school-logo { display: grid; place-items: center; flex: 0 0 auto; width: 212px; padding: 14px; border-radius: 14px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 30%, transparent), transparent); }
 .about-school-logo img { display: block; width: 100%; height: auto;
   filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 70%, transparent)) drop-shadow(0 0 20px color-mix(in srgb, var(--accent) 42%, transparent)); }
 .about-school-copy { min-width: 0; }
