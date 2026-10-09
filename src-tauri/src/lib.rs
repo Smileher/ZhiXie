@@ -2681,8 +2681,8 @@ fn setup_tray(app: &tauri::App, language: Language) -> tauri::Result<()> {
     TrayIconBuilder::with_id(TRAY_ID)
         .menu(&menu)
         .show_menu_on_left_click(false)
-        // 托盘图标用带留白的专用版本：macOS 菜单栏与 Windows 托盘高度有限，
-        // 全出血图形会被裁到只剩一角。
+        // 托盘图标用带 12/128 留白的专用版本：菜单栏可用高度只有 18pt，
+        // 全出血版本在这个尺寸下没有呼吸感，比系统图标更抢眼。
         .icon(tauri::include_image!("icons/tray.png"))
         .tooltip("知歇")
         .on_tray_icon_event(|tray, event| {
