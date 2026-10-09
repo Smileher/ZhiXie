@@ -492,10 +492,8 @@ button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px 
 .topbar-pill.featured.active svg { filter: none; }
 
 /* —— 关于页团队区 —— */
-.about-team { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.about-mentor-name { margin: 6px 0 0; color: var(--accent-ink); font-size: var(--font-title); font-weight: 700; letter-spacing: .08em; opacity: 1; }
-.about-mentor-school { color: var(--subtle); font-size: var(--font-xs); }
-@media (max-width: 860px) { .about-team { grid-template-columns: minmax(0, 1fr); } }
+/* 学校与指导老师是参赛主体，单独成行并放大呈现。 */
+.about-team { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
 
 /* —— 关于页信息卡 —— */
 .agent-section { display: grid; gap: 18px; }
@@ -544,3 +542,19 @@ button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px 
 .about-card:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); box-shadow: 0 0 0 3px var(--accent-soft); }
 .about-card p { margin: 6px 0 0; line-height: 1.7; opacity: .82; }
 .about-card-icon { display: inline-flex; padding: 8px; border-radius: 8px; background: var(--accent-soft, transparent); color: var(--accent); }
+
+/* —— 关于页学校 / 指导老师 —— */
+.about-school-card { align-items: center; gap: 20px; }
+/* 校徽本身带透明底，用一层径向柔光 + 图片投影叠出辉光。 */
+.about-school-logo { display: grid; place-items: center; flex: 0 0 auto; width: 176px; padding: 12px; border-radius: 14px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 24%, transparent), transparent); }
+.about-school-logo img { display: block; width: 100%; height: auto;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 70%, transparent)) drop-shadow(0 0 20px color-mix(in srgb, var(--accent) 42%, transparent)); }
+.about-school-copy { min-width: 0; }
+.about-school-name { display: block; color: var(--text); font-size: 21px; font-weight: 800; letter-spacing: .04em; }
+.about-school-role { display: inline-block; margin-top: 6px; padding: 3px 10px; border-radius: 999px; color: var(--accent-ink); background: var(--accent-soft); font-size: var(--font-xs); letter-spacing: .05em; }
+.about-school-copy p { margin: 10px 0 0; line-height: 1.7; opacity: .82; }
+.about-mentor { align-items: center; }
+.about-mentor-label { display: block; color: var(--subtle); font-size: var(--font-xs); letter-spacing: .2em; }
+.about-mentor-name { display: block; margin-top: 4px; color: var(--accent-ink); font-size: 26px; font-weight: 800; letter-spacing: .12em; }
+.about-mentor-school { display: block; margin-top: 4px; color: var(--subtle); font-size: var(--font-sm); }
+@media (max-width: 620px) { .about-school-card { flex-direction: column; align-items: flex-start; } }

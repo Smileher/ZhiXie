@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { BadgeCheck, School, Sparkles, UserCheck } from '@lucide/vue'
+import { BadgeCheck, Sparkles, UserCheck } from '@lucide/vue'
 import brandIcon from '../assets/logo.svg'
+import schoolLogo from '../assets/wxkd-logo.png'
 import { translate } from '../i18n'
 import type { MessageKey } from '../i18n'
 import type { Language } from '../types'
@@ -40,18 +41,19 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
     </div>
 
     <div class="about-team">
-      <div class="about-card">
-        <span class="about-card-icon"><School :size="18" /></span>
-        <div>
-          <strong>{{ t('about.schoolTitle') }}</strong>
+      <div class="about-card about-school-card">
+        <span class="about-school-logo"><img :src="schoolLogo" alt="" /></span>
+        <div class="about-school-copy">
+          <strong class="about-school-name">{{ t('about.schoolName') }}</strong>
+          <span class="about-school-role">{{ t('about.schoolRole') }}</span>
           <p>{{ t('about.schoolBody') }}</p>
         </div>
       </div>
       <div class="about-card about-mentor">
-        <span class="about-card-icon"><UserCheck :size="18" /></span>
+        <span class="about-card-icon"><UserCheck :size="20" /></span>
         <div>
-          <strong>{{ t('about.mentorLabel') }}</strong>
-          <p class="about-mentor-name">{{ t('about.mentorName') }}</p>
+          <span class="about-mentor-label">{{ t('about.mentorLabel') }}</span>
+          <strong class="about-mentor-name">{{ t('about.mentorName') }}</strong>
           <span class="about-mentor-school">{{ t('about.schoolName') }}</span>
         </div>
       </div>
