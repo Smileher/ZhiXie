@@ -12,6 +12,6 @@
         <Text style={{ fontSize: 20, color: '#4FE0B0', letterSpacing: 2 }}>知歇 ZhiXie · 会听人话的桌面休息提醒</Text>
         <Box style={{ height: 3, width: 140, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2, marginTop: 6 }} />
         <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.62, marginTop: 4 }}>我们希望做的，不是一个催你干活的工具，而是一个提醒你停下来的工具。</Text>
-        <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1, marginTop: 10 }}>无锡开放大学 · 指导教师 王敏 · 创新主赛道 AIGC 创新组</Text>
+        <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1, marginTop: 10 }}>创新主赛道 · AIGC 创新组</Text>
     </Box>
 </Slide>

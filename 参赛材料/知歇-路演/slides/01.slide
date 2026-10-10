@@ -13,7 +13,7 @@
         <Text style={{ fontSize: 26, color: '#4FE0B0', letterSpacing: 3 }}>知时而歇，张弛有度</Text>
         <Box style={{ height: 3, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
         <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>一款融合智能体的桌面休息提醒工具。<br />说一句话，智能体把它变成可执行的休息节律。</Text>
-        <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, marginTop: 10 }}>无锡开放大学 · 指导教师 王敏 · 创新主赛道 AIGC 创新组</Text>
+        <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1, marginTop: 10 }}>创新主赛道 · AIGC 创新组</Text>
     </Box>
     <Box style={{ width: 440, height: 440, justifyContent: 'center', alignItems: 'center' }}>
         <svg width={440} height={440} viewBox='0 0 440 440'>
