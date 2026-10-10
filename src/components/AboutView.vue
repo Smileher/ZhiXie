@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { BadgeCheck, Sparkles, UserCheck } from '@lucide/vue'
 import brandIcon from '../assets/logo.svg'
-import schoolLogo from '../assets/wxkd-logo.png'
+import schoolLogo from '../assets/school-badge.png'
 import { translate } from '../i18n'
 import type { MessageKey } from '../i18n'
 import type { Language } from '../types'
@@ -14,6 +15,34 @@ const props = defineProps<{
 function t(key: MessageKey, params: Record<string, string | number> = {}) {
   return translate(props.language, key, params)
 }
+
+// 团队信息默认隐藏：连续点击版本号 5 次，或按 Ctrl/Cmd + Shift + K 切换显示。
+const TAP_COUNT = 5
+const TAP_INTERVAL = 2000
+const teamVisible = ref(false)
+let tapCount = 0
+let lastTapAt = 0
+
+function toggleTeam() {
+  teamVisible.value = !teamVisible.value
+  tapCount = 0
+}
+
+function handleVersionTap() {
+  const now = Date.now()
+  tapCount = now - lastTapAt > TAP_INTERVAL ? 1 : tapCount + 1
+  lastTapAt = now
+  if (tapCount >= TAP_COUNT) toggleTeam()
+}
+
+function handleShortcut(event: KeyboardEvent) {
+  if (!event.shiftKey || !(event.ctrlKey || event.metaKey) || event.key.toLowerCase() !== 'k') return
+  event.preventDefault()
+  toggleTeam()
+}
+
+onMounted(() => window.addEventListener('keydown', handleShortcut))
+onBeforeUnmount(() => window.removeEventListener('keydown', handleShortcut))
 </script>
 
 <template>
@@ -21,7 +50,7 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
     <div class="about-overview">
       <img :src="brandIcon" alt="" />
       <div class="about-product"><h1>知歇</h1><p>{{ t('about.tagline') }}</p></div>
-      <span class="about-version">{{ t('about.version', { version: appVersion }) }}</span>
+      <span class="about-version" @click="handleVersionTap">{{ t('about.version', { version: appVersion }) }}</span>
     </div>
 
     <div class="about-card">
@@ -40,7 +69,7 @@ function t(key: MessageKey, params: Record<string, string | number> = {}) {
       </div>
     </div>
 
-    <div class="about-team">
+    <div v-if="teamVisible" class="about-team">
       <div class="about-card about-school-card">
         <span class="about-school-logo"><img :src="schoolLogo" alt="" /></span>
         <div class="about-school-copy">
