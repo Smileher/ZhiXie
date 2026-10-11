@@ -1,43 +1,38 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
     <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
         <Box style={{ flexDirection: 'column', gap: 6 }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>可靠性由测试保证</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>不靠演示运气，靠可重复的结果</Text>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>断网也照样用</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>网络只是加分项，不是必需品</Text>
         </Box>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>质量证据</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>12</Text>
     </Box>
-    <Box style={{ height: 500, flexDirection: 'row', gap: 56 }}>
-        <Box style={{ width: 470, flexDirection: 'column', justifyContent: 'center', gap: 4 }}>
-            <Text style={{ fontSize: 150, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>138</Text>
-            <Text style={{ fontSize: 26, color: '#E8EEF7', marginTop: 14 }}>项自动化测试</Text>
-            <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.6, marginTop: 6 }}>全部通过 · 0 失败</Text>
-            <Box style={{ height: 3, width: 96, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2, marginTop: 20 }} />
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.6, marginTop: 20 }}>这个数字意味着：每次改动后全量重跑，新功能不会悄悄破坏既有行为——演示时看到的每个结果都是可复现的。</Text>
+    <Box style={{ height: 500, flexDirection: 'column', gap: 14 }}>
+        <Box style={{ height: 190, flexDirection: 'row', gap: 24, padding: 20, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 300, flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
+                <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>没网的时候</Text>
+                <Text style={{ fontSize: 21, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.4 }}>软件自己顶上</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.68, lineHeight: 1.55 }}>它自带一套规则。断网、或者你什么都没配，那句话照样能解析，功能一点不断。</Text>
+            </Box>
+            <Box style={{ flex: 1, height: 160, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 6, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑬</Text>
+                <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>断网后的解析结果</Text>
+                <Text style={{ fontSize: 12, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.5 }}>建议画面：页面提示「云端不可用，<br />已自动切换本机规则引擎」</Text>
+            </Box>
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 14, justifyContent: 'center' }}>
-            <Box style={{ height: 66, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '0 22px', background: 'rgba(232,238,247,0.05)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 18, color: '#E8EEF7' }}>前端单元测试</Text>
-                <Text style={{ fontSize: 22, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>77 项</Text>
+        <Box style={{ height: 190, flexDirection: 'row', gap: 24, padding: 20, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 300, flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
+                <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>想让它更聪明</Text>
+                <Text style={{ fontSize: 21, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.4 }}>填三个格子就行</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.68, lineHeight: 1.55 }}>想接一个网上更聪明的大模型，填地址、模型名、密钥三个格子就完事，全程不用写代码；不填也完全能用。</Text>
             </Box>
-            <Box style={{ height: 66, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '0 22px', background: 'rgba(232,238,247,0.05)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 18, color: '#E8EEF7' }}>Rust 单元测试</Text>
-                <Text style={{ fontSize: 22, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>61 项</Text>
+            <Box style={{ flex: 1, height: 160, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 6, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑭</Text>
+                <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>智能体页 · 接入口三格表单</Text>
+                <Text style={{ fontSize: 12, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.5 }}>建议画面：接口地址 / 模型名称 / 密钥<br />三个输入框</Text>
             </Box>
-            <Box style={{ height: 66, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '0 22px', background: 'rgba(232,238,247,0.05)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 18, color: '#E8EEF7' }}>通过率</Text>
-                <Text style={{ fontSize: 22, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>100%</Text>
-            </Box>
-            <Box style={{ flexDirection: 'row', gap: 14, marginTop: 6 }}>
-                <Box style={{ flex: 1, padding: '14px 12px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.88, textAlign: 'center' }}>双平台构建通过</Text>
-                </Box>
-                <Box style={{ flex: 1, padding: '14px 12px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.88, textAlign: 'center' }}>类型全量检查</Text>
-                </Box>
-                <Box style={{ flex: 1, padding: '14px 12px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.88, textAlign: 'center' }}>数据原子写入</Text>
-                </Box>
-            </Box>
+        </Box>
+        <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', padding: '0 20px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 10 }}>
+            <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.9 }}>用不用网络由你决定：接上了，它更聪明；不接，它照样好用。这两条路的结果都会先过一遍检查。</Text>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>

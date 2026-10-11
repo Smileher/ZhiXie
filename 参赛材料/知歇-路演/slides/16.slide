@@ -1,55 +1,74 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
     <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
         <Box style={{ flexDirection: 'column', gap: 6 }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>五个创新点</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>每条都落到一个具体动作，不只是概念</Text>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>AI 说的，软件会再核一遍</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>不管结果是谁给的，写进数据前都得过这一关</Text>
         </Box>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>核心创新</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>可靠性设计</Text>
     </Box>
-    <Box style={{ height: 500, flexDirection: 'row', gap: 36 }}>
-        <Box style={{ width: 332, flexDirection: 'column', justifyContent: 'space-between', padding: 24, background: 'rgba(79,224,176,0.08)', border: '1px solid rgba(79,224,176,0.35)', borderRadius: 14 }}>
-            <Box style={{ flexDirection: 'column', gap: 14 }}>
-                <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.4 }}>从交互到工程的<br />五个差异点</Text>
-                <Box style={{ height: 3, width: 80, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
-                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>前三条解决"好不好用"，第四条回答"怎么做的"，第五条说明"站什么立场"。</Text>
-            </Box>
-            <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.6 }}>其中第四条是本项目作为 AIGC 作品最想强调的开发方式本身。</Text>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 28 }}>
+        <Box style={{ width: 700, flexDirection: 'column', gap: 12 }}>
+            <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>五类内容各有各的规矩：只认列举出来的这些，不合规就不写进去。</Text>
+            <Table
+                style={{ width: 700, height: 360 }}
+                defaultTextStyle={{ fontSize: 15, textAlign: 'left', color: '#E8EEF7' }}
+                defaultCellStyle={{
+                    border: {
+                        left: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                        right: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                        top: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                        bottom: { width: 1, color: 'rgba(232,238,247,0.12)' },
+                    },
+                }}
+                cells={[
+                    [
+                        { text: '检查什么', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
+                        { text: '只认这些', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
+                        { text: '不合规怎么办', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
+                    ],
+                    [
+                        { text: '类型', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                        '单次 / 每天 / 每周 / 每月',
+                        { text: '退回「单次」', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        '时间',
+                        '合法的 时:分',
+                        { text: '退回早上 9:00', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        { text: '星期', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                        '只能是 0–6',
+                        { text: '越界的直接丢掉', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        '日期',
+                        '只能是 1–31',
+                        { text: '越界的直接丢掉', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        { text: '系统操作', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
+                        '锁屏 / 关机 / 重启',
+                        { text: '置空，不执行', textStyle: { color: '#4FE0B0' } },
+                    ],
+                    [
+                        '标题',
+                        '不能为空',
+                        { text: '用你原来那句话', textStyle: { color: '#4FE0B0' } },
+                    ],
+                ]}
+            />
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 12 }}>
-            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>01</Text>
-                <Box style={{ flexDirection: 'column', gap: 4 }}>
-                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>一句话生成提醒规则</Text>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：配置门槛从"学一套概念"降到"说一句话"。</Text>
-                </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 14 }}>
+            <Box style={{ height: 200, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 6, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 10, padding: '0 14px' }}>
+                <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑯</Text>
+                <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>解析结果页（标注来源）</Text>
+                <Text style={{ fontSize: 12, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.5 }}>建议画面：展示结果旁边<br />「来自云端大模型 / 来自本机引擎」的标注</Text>
             </Box>
-            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>02</Text>
-                <Box style={{ flexDirection: 'column', gap: 4 }}>
-                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>云端 + 本机双通道</Text>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：既拿到大模型的理解力，又不牺牲离线可用性。</Text>
-                </Box>
-            </Box>
-            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>03</Text>
-                <Box style={{ flexDirection: 'column', gap: 4 }}>
-                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>校验优先的落地设计</Text>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：AI 的不确定性被挡在用户数据之外。</Text>
-                </Box>
-            </Box>
-            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>04</Text>
-                <Box style={{ flexDirection: 'column', gap: 4 }}>
-                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>人机协同的开发范式</Text>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：学生独立主导，AI 辅助实现，138 项测试形成闭环。</Text>
-                </Box>
-            </Box>
-            <Box style={{ height: 84, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 40, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>05</Text>
-                <Box style={{ flexDirection: 'column', gap: 4 }}>
-                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>温和的休息倡议</Text>
-                    <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.65 }}>意味着：产品立场是"知时而歇"，不是效率压榨。</Text>
-                </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', gap: 10, padding: '18px 20px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
+                <Text style={{ fontSize: 16, color: '#E8EEF7', lineHeight: 1.6 }}>大模型只负责<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>提个建议</span>，能不能写进去由<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>软件说了算</span>。</Text>
+                <Text style={{ fontSize: 16, color: '#E8EEF7', lineHeight: 1.6 }}>而且结果会先摆成一张表单，<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>你点确认才真的写进去</span>——人一直在最后一道。</Text>
+                <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.5, marginTop: 4 }}>这一条不是嘴上说说：有专门的检查会故意喂进去一堆乱七八糟的字段，验证它们全被挡下。</Text>
             </Box>
         </Box>
     </Box>

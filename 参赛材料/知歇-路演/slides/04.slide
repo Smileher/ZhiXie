@@ -1,46 +1,38 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
     <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
         <Box style={{ flexDirection: 'column', gap: 6 }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>两个绕不开的毛病</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>不是用户不想休息，是工具不好用</Text>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>不是不想休息，是工具不好用</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>说白了就两条：设置太烦、提醒太容易被忽略</Text>
         </Box>
         <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>04</Text>
     </Box>
     <Box style={{ height: 500, flexDirection: 'row', gap: 32 }}>
-        <Box style={{ width: 700, flexDirection: 'column', gap: 16, padding: 26, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
-            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>毛病一 · 配置门槛高</Text>
-            <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>想设一条「每周一三五下午三点半」，得先学会四套概念。</Text>
-            <svg width={648} height={214} viewBox='0 0 648 214'>
-                <rect x='0' y='10' width='150' height='54' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.16)' />
-                <rect x='0' y='80' width='150' height='54' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.16)' />
-                <rect x='0' y='150' width='150' height='54' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.16)' />
-                <rect x='182' y='10' width='150' height='54' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.16)' />
-                <rect x='182' y='80' width='150' height='54' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.16)' />
-                <rect x='182' y='150' width='150' height='54' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.16)' />
-                <path d='M364 107 L424 107' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.8' />
-                <path d='M424 107 L438 100 L438 114 Z' fill='#4FE0B0' />
-                <rect x='452' y='80' width='196' height='54' rx='8' fill='rgba(79,224,176,0.12)' stroke='#4FE0B0' />
-                <circle cx='478' cy='107' r='6' fill='#4FE0B0' />
-                <rect x='0' y='10' width='0' height='0' fill='none' />
-            </svg>
+        <Box style={{ width: 700, flexDirection: 'column', gap: 14, padding: 24, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
+            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>毛病一 · 设置太麻烦</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>想设一条「每周一三五下午三点半」，得先把一整套表单弄明白。</Text>
+            <Box style={{ height: 186, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 8, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ①</Text>
+                <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>传统提醒工具的设置界面</Text>
+                <Text style={{ fontSize: 13, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.5 }}>建议画面：时间选择器 + 重复规则 + 多级菜单，<br />让人一眼看上去就觉得麻烦</Text>
+            </Box>
             <Box style={{ marginTop: 'auto', padding: '14px 18px', background: 'rgba(79,224,176,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>门槛不在按钮多少，而在"单次 / 每天 / 每周 / 每月"这套概念本身——用户要先成为半个日程软件专家。</Text>
+                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>麻烦的不是点几下，而是得先弄懂「单次 / 每天 / 每周 / 每月」这套说法。</Text>
             </Box>
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 16, padding: 26, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
-            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>毛病二 · 提醒机械</Text>
-            <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>固定文案反复弹出，几轮之后被大脑自动过滤。</Text>
-            <svg width={376} height={214} viewBox='0 0 376 214'>
-                <rect x='0' y='14' width='376' height='40' rx='8' fill='rgba(232,238,247,0.08)' stroke='rgba(232,238,247,0.18)' />
-                <rect x='0' y='66' width='376' height='40' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.14)' opacity='0.85' />
-                <rect x='0' y='118' width='376' height='40' rx='8' fill='rgba(232,238,247,0.04)' stroke='rgba(232,238,247,0.10)' opacity='0.6' />
-                <rect x='0' y='170' width='376' height='40' rx='8' fill='rgba(232,238,247,0.02)' stroke='rgba(232,238,247,0.07)' opacity='0.4' />
-                <path d='M300 34 L344 34' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.7' />
-                <path d='M300 86 L320 86' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.35' />
-                <path d='M300 138 L308 138' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.18' />
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 14, padding: 24, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
+            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>毛病二 · 提醒看腻了</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>同一句固定文案弹几次，眼睛就自动跳过去了。</Text>
+            <svg width={360} height={186} viewBox='0 0 360 186'>
+                <rect x='0' y='8' width='360' height='36' rx='8' fill='rgba(232,238,247,0.08)' stroke='rgba(232,238,247,0.18)' />
+                <rect x='0' y='54' width='360' height='36' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.14)' opacity='0.85' />
+                <rect x='0' y='100' width='360' height='36' rx='8' fill='rgba(232,238,247,0.04)' stroke='rgba(232,238,247,0.10)' opacity='0.6' />
+                <rect x='0' y='146' width='360' height='36' rx='8' fill='rgba(232,238,247,0.02)' stroke='rgba(232,238,247,0.07)' opacity='0.4' />
+                <path d='M286 26 L332 26' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.7' />
+                <path d='M286 72 L306 72' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.35' />
+                <path d='M286 118 L294 118' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.18' />
             </svg>
             <Box style={{ marginTop: 'auto', padding: '14px 18px', background: 'rgba(79,224,176,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>提醒的强度随重复次数递减——第三次之后，它和桌面壁纸没有区别。</Text>
+                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>提醒的"劲儿"随着重复次数一路递减，第三次之后就跟壁纸没区别。</Text>
             </Box>
         </Box>
     </Box>

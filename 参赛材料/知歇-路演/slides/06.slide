@@ -1,11 +1,38 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
-    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
-        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.15, lineHeight: 1 }}>02</Text>
-        <Box style={{ flexDirection: 'column', gap: 20, width: 540 }}>
-            <Text style={{ fontSize: 60, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.15 }}>智能体开发过程</Text>
-            <Box style={{ height: 4, width: 110, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
-            <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.65 }}>本赛道最关心的一章。智能体在知歇里不是"加了个对话框"，而是<br />同时承担规则生成、休息建议与文案生成三件事。</Text>
-            <Text style={{ fontSize: 15, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>P06 – P10</Text>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
+        <Box style={{ flexDirection: 'column', gap: 6 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>打开软件，能看到什么</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>顶栏五个入口，各管一件事</Text>
+        </Box>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>06</Text>
+    </Box>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 36 }}>
+        <Box style={{ width: 660, height: 460, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 12, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 14 }}>
+            <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ④</Text>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>知歇主界面全貌</Text>
+            <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.7 }}>建议画面：停在「休息节律」页，<br />顶栏五个胶囊导航完整可见<br />（休息节律 / 时间锚点 / 智能体 / 偏好调校 / 关于）</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 10 }}>
+            <Box style={{ height: 80, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>休息节律</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.45 }}>开关休息提醒、设间隔、写自己想看的那句话</Text>
+            </Box>
+            <Box style={{ height: 80, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>时间锚点</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.45 }}>所有定时提醒都在这儿管：单次、每天、每周、每月</Text>
+            </Box>
+            <Box style={{ height: 80, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(79,224,176,0.10)', border: '1px solid #4FE0B0', borderRadius: 10 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>智能体</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.45 }}>说一句话，让它帮你把提醒生成出来</Text>
+            </Box>
+            <Box style={{ height: 80, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>偏好调校</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.45 }}>弹窗长什么样、开不开机自启、备份和迁移</Text>
+            </Box>
+            <Box style={{ height: 80, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>关于</Text>
+                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.45 }}>版本号和产品介绍</Text>
+            </Box>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>

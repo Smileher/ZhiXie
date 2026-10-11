@@ -1,80 +1,80 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
     <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
         <Box style={{ flexDirection: 'column', gap: 6 }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>对比与价值</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>差异化不在"提醒"，而在创建成本与约束力</Text>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>五个不一样的地方</Text>
+            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>每条都对应一个看得见的动作，不是说法</Text>
         </Box>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>17</Text>
+        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>创新点</Text>
     </Box>
-    <Box style={{ height: 500, flexDirection: 'column', gap: 20 }}>
-        <Table
-            style={{ width: 1152, height: 292 }}
-            defaultTextStyle={{ fontSize: 15, textAlign: 'center', color: '#E8EEF7' }}
-            defaultCellStyle={{
-                border: {
-                    left: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                    right: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                    top: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                    bottom: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                },
-            }}
-            cells={[
-                [
-                    { text: '对比维度', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#E8EEF7' } } },
-                    { text: '系统自带提醒', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#E8EEF7' } } },
-                    { text: '番茄钟类工具', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#E8EEF7' } } },
-                    { text: '知歇 ZhiXie', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
-                ],
-                [
-                    { text: '一句话创建提醒', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                    '不支持',
-                    '不支持',
-                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
-                ],
-                [
-                    '离线可用',
-                    '支持',
-                    '部分需联网',
-                    { text: '支持（含智能体）', textStyle: { bold: true, color: '#4FE0B0' } },
-                ],
-                [
-                    { text: '系统操作 · 锁屏 / 关机', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                    '部分支持',
-                    '不支持',
-                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
-                ],
-                [
-                    '数据本地化 · 无需账号',
-                    '支持',
-                    '部分需登录',
-                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
-                ],
-                [
-                    { text: 'AI 输出经校验后落库', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                    '—',
-                    '—',
-                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
-                ],
-                [
-                    '跨平台（同一套代码）',
-                    '各自独立',
-                    '部分',
-                    { text: '支持', textStyle: { bold: true, color: '#4FE0B0' } },
-                ],
-            ]}
-        />
-        <Box style={{ flex: 1, flexDirection: 'row', gap: 20 }}>
-            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.05)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>健康价值</Text>
-                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>久坐是学生与办公人群的高频健康风险，定时强制休息是最直接的干预手段。</Text>
+    <Box style={{ height: 500, flexDirection: 'row', gap: 32 }}>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 10 }}>
+            <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 38, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>01</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>说一句话就把提醒设好</Text>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.65 }}>不用点一堆表单，也不用先学一套说法。</Text>
+                </Box>
             </Box>
-            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.05)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>教育价值</Text>
-                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>为"AI 辅助开发"提供一个可检验的案例：用 AI 把一个人的想法做成工程级作品。</Text>
+            <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 38, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>02</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>没网也能听懂你</Text>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.65 }}>软件自带一套规则，断网照样解析，功能不断。</Text>
+                </Box>
             </Box>
-            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.05)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#4FE0B0' }}>推广价值</Text>
-                <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>零账号、默认零联网、零广告，适合机房批量部署与家庭场景推广。</Text>
+            <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 38, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>03</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>AI 说的会先核一遍</Text>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.65 }}>不合规的内容写不进你的提醒列表。</Text>
+                </Box>
+            </Box>
+            <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 38, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>04</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>一个人 + AI 助手做出来的</Text>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.65 }}>想法、结构、检查都是自己定的，AI 帮忙写代码，138 项检查兜底。</Text>
+                </Box>
+            </Box>
+            <Box style={{ height: 80, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 38, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>05</Text>
+                <Box style={{ flexDirection: 'column', gap: 4 }}>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: '#E8EEF7' }}>立场是让你休息</Text>
+                    <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.65 }}>不催你干活，不比谁更拼，文案也不制造焦虑。</Text>
+                </Box>
+            </Box>
+        </Box>
+        <Box style={{ width: 450, flexDirection: 'column', gap: 14 }}>
+            <Box style={{ flexDirection: 'column', gap: 10, padding: 20, background: 'rgba(232,238,247,0.05)', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#4FE0B0' }}>和现在常用的工具比</Text>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                    <Text style={{ width: 150, fontSize: 14, color: '#E8EEF7', opacity: 0.5 }}>对比项</Text>
+                    <Text style={{ flex: 1, fontSize: 14, color: '#E8EEF7', opacity: 0.5 }}>常用工具</Text>
+                    <Text style={{ flex: 1, fontSize: 14, color: '#4FE0B0' }}>知歇</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                    <Text style={{ width: 150, fontSize: 15, color: '#E8EEF7' }}>建一条提醒</Text>
+                    <Text style={{ flex: 1, fontSize: 14, color: '#E8EEF7', opacity: 0.55 }}>填一堆表单</Text>
+                    <Text style={{ flex: 1, fontSize: 15, fontWeight: 'bold', color: '#4FE0B0' }}>说一句话</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                    <Text style={{ width: 150, fontSize: 15, color: '#E8EEF7' }}>断网的时候</Text>
+                    <Text style={{ flex: 1, fontSize: 14, color: '#E8EEF7', opacity: 0.55 }}>多半歇菜</Text>
+                    <Text style={{ flex: 1, fontSize: 15, fontWeight: 'bold', color: '#4FE0B0' }}>照样能用</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                    <Text style={{ width: 150, fontSize: 15, color: '#E8EEF7' }}>到点锁屏 / 关机</Text>
+                    <Text style={{ flex: 1, fontSize: 14, color: '#E8EEF7', opacity: 0.55 }}>基本没有</Text>
+                    <Text style={{ flex: 1, fontSize: 15, fontWeight: 'bold', color: '#4FE0B0' }}>有，留 60 秒反悔</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                    <Text style={{ width: 150, fontSize: 15, color: '#E8EEF7' }}>要不要账号</Text>
+                    <Text style={{ flex: 1, fontSize: 14, color: '#E8EEF7', opacity: 0.55 }}>不少要登录</Text>
+                    <Text style={{ flex: 1, fontSize: 15, fontWeight: 'bold', color: '#4FE0B0' }}>不要，数据在本机</Text>
+                </Box>
+            </Box>
+            <Box style={{ flexDirection: 'column', justifyContent: 'center', padding: '16px 20px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
+                <Text style={{ fontSize: 16, color: '#E8EEF7', lineHeight: 1.6 }}>说到底就一句：把一件"知道该做、却懒得去设"的事，变成说一句话的事。</Text>
             </Box>
         </Box>
     </Box>
