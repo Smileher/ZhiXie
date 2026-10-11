@@ -32,8 +32,8 @@ function icon(name, className = '', size = 24) {
 
 // 每张下载卡片按优先级挑一个可用附件：安装包优先，其次便携包，都没有就退回版本列表页。
 const downloadTargets = [
-  { key: 'windows', icon: 'windows', platform: 'windows', candidates: ['windowsSetup', 'windowsPortable'] },
-  { key: 'mac', icon: 'apple', platform: 'macos', candidates: ['macPortable'] },
+  { key: 'windows', icon: 'windows', platform: 'windows', candidates: ['windowsPortable', 'windowsSetup'] },
+  { key: 'mac', icon: 'apple', platform: 'macos', candidates: ['macDisk', 'macPortable'] },
 ]
 
 function formatSize(bytes, locale) {
@@ -111,7 +111,7 @@ export function renderPage(language, release) {
   const other = language === 'zh' ? ['en', locales.en] : ['zh', locales.zh]
   const url = `${origin}${basePath}${t.path}`
   const primary = release
-    ? release.downloads.windowsSetup?.url ?? release.downloads.windowsPortable?.url ?? release.downloads.macPortable?.url ?? `${repository}/releases`
+    ? release.downloads.windowsPortable?.url ?? release.downloads.windowsSetup?.url ?? release.downloads.macDisk?.url ?? `${repository}/releases`
     : `${repository}/releases`
 
   const navLinks = ['features', 'download']

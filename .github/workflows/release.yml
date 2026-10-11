@@ -48,7 +48,8 @@ jobs:
         continue-on-error: true
         run: pnpm tauri build --target x86_64-pc-windows-msvc
 
-      - name: 组装便携包与安装包
+      # 便携版直接以 exe 发布，下载后双击就能运行，不再打压缩包。
+      - name: 取便携 exe 与安装包
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path packages | Out-Null
@@ -57,16 +58,13 @@ jobs:
             Where-Object { $_.Name -notlike '*.visualelementsmanifest.xml' } |
             Select-Object -First 1
           if (-not $exe) { Write-Error "No portable executable produced" }
-          New-Item -ItemType Directory -Force -Path portable-stage | Out-Null
-          Copy-Item $exe.FullName "portable-stage/ZhiXie.exe"
-          Copy-Item README.md portable-stage/
-          Compress-Archive -Path "portable-stage/*" -DestinationPath "packages/zhixie-windows-x64-portable.zip" -Force
+          Copy-Item $exe.FullName "packages/zhixie-windows-x64-portable.exe"
           $setup = Get-ChildItem -Path "$release/bundle/nsis" -Filter *.exe -File -ErrorAction SilentlyContinue |
             Where-Object { $_.Name -like '*setup*' } | Select-Object -First 1
           if ($setup) {
             Copy-Item $setup.FullName "packages/zhixie-windows-x64-setup.exe"
           } else {
-            Write-Warning "NSIS installer not produced, publishing the portable package only"
+            Write-Warning "NSIS installer not produced, publishing the portable executable only"
           }
           Get-ChildItem packages
 
@@ -102,17 +100,25 @@ jobs:
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 构建（只出 .app，不打 dmg）
-        run: pnpm tauri build --target aarch64-apple-darwin --bundles app
+      # dmg 是单个文件，下载后双击即可挂载使用，不必解压。
+      - name: 构建（.app 与 dmg 镜像）
+        continue-on-error: true
+        run: pnpm tauri build --target aarch64-apple-darwin --bundles app,dmg
 
-      - name: 组装便携包
+      - name: 取 dmg 镜像
         run: |
-          # 压缩包内直接放 .app，解压即用，不再套一层目录。
-          mkdir -p portable packages
-          cp -R src-tauri/target/aarch64-apple-darwin/release/bundle/macos/*.app portable/
-          cp README.md portable/
-          ls -la portable
-          (cd portable && zip -qry "$GITHUB_WORKSPACE/packages/zhixie-macos-arm64-portable.zip" .)
+          mkdir -p packages
+          bundle="src-tauri/target/aarch64-apple-darwin/release/bundle"
+          dmg=$(find "$bundle/dmg" -name '*.dmg' -maxdepth 1 2>/dev/null | head -n 1 || true)
+          if [ -n "$dmg" ]; then
+            cp "$dmg" packages/zhixie-macos-arm64.dmg
+          else
+            # 镜像生成失败才退回压缩包，保证 macOS 仍有无安装的可下载产物。
+            mkdir -p portable
+            cp -R "$bundle"/macos/*.app portable/
+            (cd portable && zip -qry "$GITHUB_WORKSPACE/packages/zhixie-macos-arm64-portable.zip" .)
+          fi
+          ls -la packages
 
       - uses: actions/upload-artifact@v4
         with:

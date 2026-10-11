@@ -16,25 +16,26 @@ const release = {
   prerelease: false,
   published_at: '2026-10-12T00:00:00Z',
   html_url: 'https://github.com/Smileher/ZhiXie/releases/tag/v1.0.0',
-  assets: [asset('windowsSetup', 6_553_600), asset('windowsPortable', 5_242_880), asset('macPortable', 4_718_592)],
+  assets: [asset('windowsPortable', 5_242_880), asset('macDisk', 6_291_456), asset('windowsSetup', 6_553_600)],
 }
 
 test('parseRelease keeps the version and downloads together', () => {
   const parsed = parseRelease(release)
   assert.equal(parsed.version, '1.0.0')
-  assert.equal(parsed.downloads.windowsSetup.size, 6_553_600)
-  assert.equal(parsed.downloads.macPortable.size, 4_718_592)
+  assert.equal(parsed.downloads.windowsPortable.size, 5_242_880)
+  assert.equal(parsed.downloads.macDisk.size, 6_291_456)
 })
 
 test('downloads always use the version-free latest path', () => {
   const parsed = parseRelease(release)
-  for (const [key, name] of Object.entries(assetNames)) {
-    assert.equal(parsed.downloads[key].url, `https://github.com/Smileher/ZhiXie/releases/latest/download/${name}`, key)
+  for (const [key, { url }] of Object.entries(parsed.downloads)) {
+    assert.equal(url, `https://github.com/Smileher/ZhiXie/releases/latest/download/${assetNames[key]}`, key)
   }
 })
 
-test('parseRelease tolerates an optional installer being absent', () => {
-  const parsed = parseRelease({ ...release, assets: [asset('windowsPortable', 5_242_880), asset('macPortable', 4_718_592)] })
+test('parseRelease tolerates optional packages being absent', () => {
+  const parsed = parseRelease({ ...release, assets: [asset('windowsPortable', 5_242_880)] })
+  assert.equal(parsed.downloads.macDisk, undefined)
   assert.equal(parsed.downloads.windowsSetup, undefined)
   assert.ok(parsed.downloads.windowsPortable)
 })
@@ -48,7 +49,7 @@ for (const [label, patch] of [
   ['prereleases', { prerelease: true }],
   ['unversioned tags', { tag_name: 'nightly' }],
   ['missing dates', { published_at: undefined }],
-  ['invalid sizes', { assets: [{ ...asset('macPortable', 0) }] }],
+  ['invalid sizes', { assets: [{ ...asset('macDisk', 0) }] }],
 ]) {
   test(`parseRelease rejects ${label}`, () => {
     assert.throws(() => parseRelease({ ...release, ...patch }), Error)
@@ -83,10 +84,10 @@ test('the download section falls back to the repository until a release exists',
   assert.ok(!html.includes('latest/download/'))
 })
 
-test('a published release puts stable links on both platform cards', () => {
+test('a published release puts stable portable links on both platform cards', () => {
   const html = renderPage('en', parseRelease(release))
-  assert.ok(html.includes('releases/latest/download/zhixie-windows-x64-setup.exe'))
-  assert.ok(html.includes('releases/latest/download/zhixie-macos-arm64-portable.zip'))
+  assert.ok(html.includes('releases/latest/download/zhixie-windows-x64-portable.exe'))
+  assert.ok(html.includes('releases/latest/download/zhixie-macos-arm64.dmg'))
   assert.ok(html.includes('v1.0.0'))
   assert.ok(html.includes('October 12, 2026'))
 })

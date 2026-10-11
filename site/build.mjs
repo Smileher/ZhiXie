@@ -11,8 +11,11 @@ const latestReleaseApi = 'https://api.github.com/repos/Smileher/ZhiXie/releases/
 // 发布附件使用固定英文名（不含版本号），页面才能一直用 latest 路径，链接不随版本失效。
 // 名字必须与「版本打包」工作流上传的附件一致。
 export const assetNames = {
+  // 便携版为可直接双击运行的单个文件：Windows 是 exe，macOS 是 dmg 镜像。
+  windowsPortable: 'zhixie-windows-x64-portable.exe',
+  macDisk: 'zhixie-macos-arm64.dmg',
+  // 可选产物：安装包供想装进开始菜单的用户使用；压缩包仅在 dmg 构建失败时出现。
   windowsSetup: 'zhixie-windows-x64-setup.exe',
-  windowsPortable: 'zhixie-windows-x64-portable.zip',
   macPortable: 'zhixie-macos-arm64-portable.zip',
 }
 

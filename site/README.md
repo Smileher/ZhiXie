@@ -25,7 +25,7 @@ node site/build.mjs
 
 版本号、发布日期、文件大小由 GitHub API 的最新正式 Release 提供，不从 `package.json` 回退，也不在访客浏览器里调用 API。仓库还没有正式 Release 时，构建同样成功，下载区退化为「查看全部版本 / 在 GitHub 打星」，首个安装包发布后自动切换为真实下载按钮。
 
-下载链接固定指向 `/releases/latest/download/<附件名>`，**不含版本号**，因此每次发版都不会让旧链接失效。附件名由「版本打包」工作流决定：`zhixie-windows-x64-setup.exe`、`zhixie-windows-x64-portable.zip`、`zhixie-macos-arm64-portable.zip`；三者都不是必需项，Release 里能命中哪个就展示哪个，安装包缺失时 Windows 卡片自动改用便携包。
+下载链接固定指向 `/releases/latest/download/<附件名>`，**不含版本号**，因此每次发版都不会让旧链接失效。附件名由「版本打包」工作流决定：`zhixie-windows-x64-portable.exe`（双击直接运行的便携 exe）、`zhixie-macos-arm64.dmg`（双击挂载的磁盘镜像）；两者都不是压缩包，下载后直接双击即可。`zhixie-windows-x64-setup.exe`（安装包）与 `zhixie-macos-arm64-portable.zip`（dmg 构建失败时的兜底）会一并上传，但页面优先展示便携 exe 与 dmg，只有对应的免压缩包产物缺失时才回退。
 
 页面保持单屏或接近单屏：Hero（一句话介绍 + 下载与源码入口）→ 功能与特点（六项短条目 + 适用场景）→ 下载（Windows / macOS 两张卡片）。所有区块内容都包在 `.shell` 容器内，左右留白由 `--gutter`、上下留白由 `--block` 统一控制。
 
