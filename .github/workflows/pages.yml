@@ -1,0 +1,58 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'src/assets/logo.svg'
+      - 'src-tauri/icons/128x128.png'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+  # 便携包由标签触发；发版后重新构建官网并带上最新正式版本。
+  workflow_run:
+    workflows: [便携包构建]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      # 便携包从标签构建；官网始终取 main 分支的源码。
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: 校验站点
+        run: node --test site/tests/*.test.mjs
+      - name: 构建站点
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node site/build.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
