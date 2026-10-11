@@ -1,0 +1,42 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
+        <Box style={{ flexDirection: 'column', gap: 4 }}>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>演示一 · 打开软件看到什么</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>五个入口，各管一件事</Text>
+        </Box>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>成品演示</Text>
+    </Box>
+    <Box style={{ height: 476, flexDirection: 'row', gap: 36 }}>
+        <Box style={{ width: 620, height: 440, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 12, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 14, padding: '0 20px' }}>
+            <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑤</Text>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>知歇主界面全貌</Text>
+            <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.7 }}>建议画面：停在「休息节律」页，<br />顶栏五个胶囊导航完整可见<br />（休息节律 / 时间锚点 / 智能体 / 偏好调校 / 关于）</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 8 }}>
+            <Box style={{ height: 86, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>休息节律</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.4 }}>开关提醒、设间隔</Text>
+            </Box>
+            <Box style={{ height: 86, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>时间锚点</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.4 }}>单次 / 每天 / 每周 / 每月</Text>
+            </Box>
+            <Box style={{ height: 86, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 10 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>智能体</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.4 }}>说一句话，生成提醒</Text>
+            </Box>
+            <Box style={{ height: 86, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>偏好调校</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.4 }}>弹窗样式、自启、备份</Text>
+            </Box>
+            <Box style={{ height: 86, flexDirection: 'column', justifyContent: 'center', gap: 4, padding: '0 18px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 10 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>关于</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.4 }}>版本号与产品介绍</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>21 / 30</Text>
+    </Box>
+</Slide>

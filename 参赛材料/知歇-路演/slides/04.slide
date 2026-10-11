@@ -1,43 +1,28 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
-    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
-        <Box style={{ flexDirection: 'column', gap: 6 }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>不是不想休息，是工具不好用</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>说白了就两条：设置太烦、提醒太容易被忽略</Text>
+    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
+        <Box style={{ flexDirection: 'column', gap: 4 }}>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>一坐就是三四个小时</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>不是不想休息，是一进入专注就忘了时间</Text>
         </Box>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>04</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>04</Text>
     </Box>
-    <Box style={{ height: 500, flexDirection: 'row', gap: 32 }}>
-        <Box style={{ width: 700, flexDirection: 'column', gap: 14, padding: 24, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
-            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>毛病一 · 设置太麻烦</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>想设一条「每周一三五下午三点半」，得先把一整套表单弄明白。</Text>
-            <Box style={{ height: 186, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 8, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ①</Text>
-                <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>传统提醒工具的设置界面</Text>
-                <Text style={{ fontSize: 13, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.5 }}>建议画面：时间选择器 + 重复规则 + 多级菜单，<br />让人一眼看上去就觉得麻烦</Text>
-            </Box>
-            <Box style={{ marginTop: 'auto', padding: '14px 18px', background: 'rgba(79,224,176,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>麻烦的不是点几下，而是得先弄懂「单次 / 每天 / 每周 / 每月」这套说法。</Text>
-            </Box>
+    <Box style={{ height: 476, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
+        <Box style={{ width: 560, height: 420, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 12, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 14, padding: '0 20px' }}>
+            <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ①</Text>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>长时间用电脑的画面</Text>
+            <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.7 }}>建议画面：能说明"连续用了几小时"的<br />界面或计时画面<br />（也可用系统的屏幕使用时间统计）</Text>
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 14, padding: 24, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
-            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>毛病二 · 提醒看腻了</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>同一句固定文案弹几次，眼睛就自动跳过去了。</Text>
-            <svg width={360} height={186} viewBox='0 0 360 186'>
-                <rect x='0' y='8' width='360' height='36' rx='8' fill='rgba(232,238,247,0.08)' stroke='rgba(232,238,247,0.18)' />
-                <rect x='0' y='54' width='360' height='36' rx='8' fill='rgba(232,238,247,0.06)' stroke='rgba(232,238,247,0.14)' opacity='0.85' />
-                <rect x='0' y='100' width='360' height='36' rx='8' fill='rgba(232,238,247,0.04)' stroke='rgba(232,238,247,0.10)' opacity='0.6' />
-                <rect x='0' y='146' width='360' height='36' rx='8' fill='rgba(232,238,247,0.02)' stroke='rgba(232,238,247,0.07)' opacity='0.4' />
-                <path d='M286 26 L332 26' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.7' />
-                <path d='M286 72 L306 72' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.35' />
-                <path d='M286 118 L294 118' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.18' />
-            </svg>
-            <Box style={{ marginTop: 'auto', padding: '14px 18px', background: 'rgba(79,224,176,0.10)', borderRadius: 10 }}>
-                <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>提醒的"劲儿"随着重复次数一路递减，第三次之后就跟壁纸没区别。</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 18 }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#4FE0B0', lineHeight: 1.4 }}>您上一次连续坐在电脑前，<br />是多久？</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>一进入专注，时间感就没了。</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>身体一直在发信号，只是被忽略。</Text>
+            <Box style={{ padding: '18px 22px', background: 'rgba(79,224,176,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.5 }}>谁能用上：<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>学生、久坐办公的人</span></Text>
             </Box>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>04 / 18</Text>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>04 / 30</Text>
     </Box>
 </Slide>

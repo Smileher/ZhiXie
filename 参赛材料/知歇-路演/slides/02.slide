@@ -1,52 +1,45 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
-    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
-        <Box style={{ flexDirection: 'column', gap: 6 }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>目录</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>三章，跟着软件走一遍</Text>
+    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
+        <Box style={{ flexDirection: 'column', gap: 4 }}>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>目录</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>三章：为什么做 → 怎么做的 → 做成什么样</Text>
         </Box>
-        <Text style={{ fontSize: 14, color: '#4FE0B0', letterSpacing: 3, opacity: 0.85 }}>CONTENTS</Text>
+        <Text style={{ fontSize: 22, color: '#4FE0B0', letterSpacing: 3, opacity: 0.85 }}>CONTENTS</Text>
     </Box>
-    <Box style={{ height: 500, flexDirection: 'row', gap: 44 }}>
-        <Box style={{ width: 288, flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
-            <Text style={{ fontSize: 21, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.7 }}>它是干嘛的？<br />具体怎么用？<br />做得怎么样？</Text>
-            <Box style={{ height: 3, width: 88, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, lineHeight: 1.6 }}>本演示共 18 页，中间一章是重点：跟着屏幕，从一句话走到弹窗。</Text>
+    <Box style={{ height: 476, flexDirection: 'column', gap: 20, justifyContent: 'center' }}>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 28, padding: '22px 28px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
+            <Box style={{ width: 76, height: 76, borderRadius: 38, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 26, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>01</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 4 }}>
+                <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#E8EEF7' }}>背景与方案</Text>
+                <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.45 }}>为什么要做这个东西，它到底是什么、从哪下载。</Text>
+            </Box>
+            <Text style={{ fontSize: 24, color: '#4FE0B0', opacity: 0.85 }}>P03–P07</Text>
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 18, justifyContent: 'center' }}>
-            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 24, padding: '20px 24px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Box style={{ width: 60, height: 60, borderRadius: 30, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 20, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>01</Text>
-                </Box>
-                <Box style={{ flexDirection: 'column', gap: 6 }}>
-                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>这是什么、给谁用</Text>
-                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>先讲清楚这是个什么东西、从哪下载、打开之后能看到什么、谁用得上。</Text>
-                </Box>
-                <Text style={{ fontSize: 14, color: '#4FE0B0', opacity: 0.85 }}>P03–P06</Text>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 28, padding: '22px 28px', background: 'rgba(79,224,176,0.08)', border: '1px solid rgba(79,224,176,0.30)', borderRadius: 14 }}>
+            <Box style={{ width: 76, height: 76, borderRadius: 38, background: 'rgba(79,224,176,0.14)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 26, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>02</Text>
             </Box>
-            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 24, padding: '20px 24px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Box style={{ width: 60, height: 60, borderRadius: 30, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 20, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>02</Text>
-                </Box>
-                <Box style={{ flexDirection: 'column', gap: 6 }}>
-                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>怎么用：从一句话到弹窗</Text>
-                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>三步建好一条提醒，到点弹出什么、怎么推迟、怎么反悔，断网时又怎么办。</Text>
-                </Box>
-                <Text style={{ fontSize: 14, color: '#4FE0B0', opacity: 0.85 }}>P07–P12</Text>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 4 }}>
+                <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#E8EEF7' }}>实现：怎么做出来的</Text>
+                <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.45 }}>架构与工作流程，以及用 AI 工具从零搭起来的全过程。</Text>
             </Box>
-            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 24, padding: '20px 24px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Box style={{ width: 60, height: 60, borderRadius: 30, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 20, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>03</Text>
-                </Box>
-                <Box style={{ flexDirection: 'column', gap: 6 }}>
-                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>做得怎么样</Text>
-                    <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.5 }}>已经做完的东西有多少、检查有多严、跟现在常用的工具有什么不一样。</Text>
-                </Box>
-                <Text style={{ fontSize: 14, color: '#4FE0B0', opacity: 0.85 }}>P13–P17</Text>
+            <Text style={{ fontSize: 24, color: '#4FE0B0', opacity: 0.85 }}>P08–P19</Text>
+        </Box>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 28, padding: '22px 28px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
+            <Box style={{ width: 76, height: 76, borderRadius: 38, background: 'rgba(79,224,176,0.10)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 26, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0' }}>03</Text>
             </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 4 }}>
+                <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#E8EEF7' }}>成果：成品演示与实际效果</Text>
+                <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.62, lineHeight: 1.45 }}>六段真实演示，加上完成度、创新点与横向对比。</Text>
+            </Box>
+            <Text style={{ fontSize: 24, color: '#4FE0B0', opacity: 0.85 }}>P20–P29</Text>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>02 / 18</Text>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>02 / 30</Text>
     </Box>
 </Slide>

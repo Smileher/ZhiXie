@@ -1,0 +1,37 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
+        <Box style={{ flexDirection: 'column', gap: 4 }}>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>演示五 · 休息节律与休息建议</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>不知道该干嘛的时候，它给一句能马上做的事</Text>
+        </Box>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>成品演示</Text>
+    </Box>
+    <Box style={{ height: 476, flexDirection: 'column', gap: 18 }}>
+        <Box style={{ flexDirection: 'row', gap: 28 }}>
+            <Box style={{ flex: 1, height: 300, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 14, padding: '0 18px' }}>
+                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑪</Text>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>休息节律页</Text>
+                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>建议画面：间隔设置<br />+ 本轮进度条</Text>
+            </Box>
+            <Box style={{ flex: 1, height: 300, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 14, padding: '0 18px' }}>
+                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑫</Text>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>休息建议卡片</Text>
+                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>建议画面：点「换个建议」后<br />出现的那一条建议</Text>
+            </Box>
+        </Box>
+        <Box style={{ flexDirection: 'row', gap: 24 }}>
+            <Box style={{ flex: 1, height: 130, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>休息节律：到点就提醒</Text>
+                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.45 }}>默认每 40 分钟一次，间隔和提示语随时改。</Text>
+            </Box>
+            <Box style={{ flex: 1, height: 130, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>休息建议：给一句能做的</Text>
+                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.45 }}>按你的间隔和已提醒次数，给一句具体动作。</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>25 / 30</Text>
+    </Box>
+</Slide>

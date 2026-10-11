@@ -1,0 +1,15 @@
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
+        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.15, lineHeight: 1 }}>03</Text>
+        <Box style={{ flexDirection: 'column', gap: 22, width: 620 }}>
+            <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.15 }}>成果：<br />成品演示与实际效果</Text>
+            <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
+            <Text style={{ fontSize: 30, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>六段真实演示，看完就知道它长什么样、<br />好不好用，最后摆完成度和对比。</Text>
+            <Text style={{ fontSize: 24, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>P20 – P29</Text>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>20 / 30</Text>
+    </Box>
+</Slide>

@@ -1,18 +1,43 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
-    <Box style={{ height: 680, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 20 }}>
-        <svg width={520} height={168} viewBox='0 0 520 168'>
-            <circle cx='260' cy='168' r='150' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.18' />
-            <circle cx='260' cy='168' r='112' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.30' />
-            <circle cx='260' cy='168' r='74' fill='none' stroke='#4FE0B0' strokeWidth='1.5' opacity='0.50' />
-            <path d='M110 168 A150 150 0 0 1 410 168' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.9' />
-            <circle cx='260' cy='18' r='6' fill='#4FE0B0' />
-            <path d='M260 18 L260 44' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.6' />
-        </svg>
-        <Text style={{ fontSize: 56, fontWeight: 'bold', color: '#E8EEF7', letterSpacing: 4 }}>知时而歇，张弛有度</Text>
-        <Text style={{ fontSize: 20, color: '#4FE0B0', letterSpacing: 2 }}>会听人话的桌面休息提醒</Text>
-        <Box style={{ height: 3, width: 140, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2, marginTop: 4 }} />
-        <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.62, marginTop: 4 }}>已经做完，官网可直接下载安装；Windows 和 macOS 都能用。</Text>
-        <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.62 }}>我们希望做的，不是一个催你干活的工具，而是一个提醒你停下来的工具。</Text>
-        <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1, marginTop: 8 }}>创新主赛道 · AIGC 创新组</Text>
+    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
+        <Box style={{ flexDirection: 'column', gap: 4 }}>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>迭代调试实录：「三十分钟后」</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>AI 写的代码，也要靠调试和测试才敢用</Text>
+        </Box>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>真实案例</Text>
+    </Box>
+    <Box style={{ height: 476, flexDirection: 'row', gap: 32 }}>
+        <Box style={{ width: 700, flexDirection: 'column', gap: 12 }}>
+            <Box style={{ height: 96, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 32, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', width: 118, lineHeight: 1 }}>现象</Text>
+                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.82, lineHeight: 1.5, flex: 1 }}>说「三十分钟后锁屏」，被排到了第二天早上 9 点。</Text>
+            </Box>
+            <Box style={{ height: 96, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 32, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', width: 118, lineHeight: 1 }}>定位</Text>
+                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.82, lineHeight: 1.5, flex: 1 }}>代码只认阿拉伯数字，"三十"取不到，当成没说时间。</Text>
+            </Box>
+            <Box style={{ height: 96, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 32, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', width: 118, lineHeight: 1 }}>修复</Text>
+                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.82, lineHeight: 1.5, flex: 1 }}>改成按「数量词 + 单位 + 后」扫，中文数字也能认。</Text>
+            </Box>
+            <Box style={{ height: 96, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 20px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
+                <Text style={{ fontSize: 32, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', width: 118, lineHeight: 1 }}>回归</Text>
+                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.88, lineHeight: 1.5, flex: 1 }}>补一条测试盯住这个偏移分钟数，以后改也不怕改坏。</Text>
+            </Box>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 12 }}>
+            <Box style={{ height: 250, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 12, padding: '0 16px' }}>
+                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑲</Text>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>修复前后的解析结果对比</Text>
+                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>建议画面：同一句话修复前（次日 09:00）<br />与修复后（30 分钟后）的结果并列</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '18px 20px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.55 }}>顺带揪出两个隐患：日期里"号 / 日"是三字节，取字符会越界崩溃；相对时长的半截词会留在标题里。</Text>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>18 / 30</Text>
     </Box>
 </Slide>

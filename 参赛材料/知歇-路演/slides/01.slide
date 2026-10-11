@@ -1,29 +1,29 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '64px 80px', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-    <Box style={{ width: 640, flexDirection: 'column', gap: 18 }}>
+    <Box style={{ width: 660, flexDirection: 'column', gap: 20 }}>
         <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
-            <svg width={40} height={40} viewBox='0 0 40 40'>
+            <svg width={44} height={44} viewBox='0 0 40 40'>
                 <circle cx='20' cy='20' r='17' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.45' />
                 <path d='M28 10 A17 17 0 1 0 28 30' fill='none' stroke='#4FE0B0' strokeWidth='2.5' />
                 <rect x='15' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' />
                 <rect x='20' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' />
             </svg>
-            <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.5, letterSpacing: 6 }}>Z H I X I E</Text>
+            <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, letterSpacing: 6 }}>Z H I X I E</Text>
         </Box>
-        <Text style={{ fontSize: 72, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.15 }}>知歇 <span style={{ color: '#4FE0B0' }}>ZhiXie</span></Text>
-        <Text style={{ fontSize: 26, color: '#4FE0B0', letterSpacing: 3 }}>知时而歇，张弛有度</Text>
+        <Text style={{ fontSize: 76, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.15 }}>知歇 <span style={{ color: '#4FE0B0' }}>ZhiXie</span></Text>
+        <Text style={{ fontSize: 30, color: '#4FE0B0', letterSpacing: 3 }}>知时而歇，张弛有度</Text>
         <Box style={{ height: 3, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
-        <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>会听人话的桌面休息提醒。<br />说一句话，它就把提醒给你设好，到点把人从屏幕前拉开。</Text>
-        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 6 }}>
-            <svg width={22} height={22} viewBox='0 0 22 22'>
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.55 }}>会听人话的桌面休息提醒。<br />说一句话，它就把提醒设好。</Text>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 8 }}>
+            <svg width={26} height={26} viewBox='0 0 22 22'>
                 <circle cx='11' cy='11' r='10' fill='rgba(79,224,176,0.14)' stroke='#4FE0B0' strokeWidth='1.5' />
                 <path d='M6 11 L9.5 14.5 L16 8' fill='none' stroke='#4FE0B0' strokeWidth='2' />
             </svg>
-            <Text style={{ fontSize: 18, color: '#4FE0B0' }}>已经做完 · 官网可直接下载安装</Text>
+            <Text style={{ fontSize: 26, color: '#4FE0B0' }}>已经做完 · 官网可直接下载安装</Text>
         </Box>
-        <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1, marginTop: 6 }}>创新主赛道 · AIGC 创新组</Text>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, letterSpacing: 1, marginTop: 8 }}>创新主赛道 · AIGC 创新组</Text>
     </Box>
-    <Box style={{ width: 440, height: 440, justifyContent: 'center', alignItems: 'center' }}>
-        <svg width={440} height={440} viewBox='0 0 440 440'>
+    <Box style={{ width: 420, height: 420, justifyContent: 'center', alignItems: 'center' }}>
+        <svg width={420} height={420} viewBox='0 0 440 440'>
             <circle cx='220' cy='220' r='200' fill='rgba(79,224,176,0.04)' />
             <circle cx='220' cy='220' r='200' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.16' />
             <circle cx='220' cy='220' r='146' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.26' />

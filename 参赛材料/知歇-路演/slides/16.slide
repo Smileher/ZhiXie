@@ -1,79 +1,46 @@
 <Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
-    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 18 }}>
-        <Box style={{ flexDirection: 'column', gap: 6 }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#E8EEF7' }}>AI 说的，软件会再核一遍</Text>
-            <Text style={{ fontSize: 16, color: '#E8EEF7', opacity: 0.55, letterSpacing: 1 }}>不管结果是谁给的，写进数据前都得过这一关</Text>
+    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
+        <Box style={{ flexDirection: 'column', gap: 4 }}>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>提示词怎么设计</Text>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>先约束输出格式，再谈理解力</Text>
         </Box>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>可靠性设计</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>AI 开发</Text>
     </Box>
-    <Box style={{ height: 500, flexDirection: 'row', gap: 28 }}>
-        <Box style={{ width: 700, flexDirection: 'column', gap: 12 }}>
-            <Text style={{ fontSize: 17, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>五类内容各有各的规矩：只认列举出来的这些，不合规就不写进去。</Text>
-            <Table
-                style={{ width: 700, height: 360 }}
-                defaultTextStyle={{ fontSize: 15, textAlign: 'left', color: '#E8EEF7' }}
-                defaultCellStyle={{
-                    border: {
-                        left: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                        right: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                        top: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                        bottom: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                    },
-                }}
-                cells={[
-                    [
-                        { text: '检查什么', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
-                        { text: '只认这些', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
-                        { text: '不合规怎么办', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
-                    ],
-                    [
-                        { text: '类型', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                        '单次 / 每天 / 每周 / 每月',
-                        { text: '退回「单次」', textStyle: { color: '#4FE0B0' } },
-                    ],
-                    [
-                        '时间',
-                        '合法的 时:分',
-                        { text: '退回早上 9:00', textStyle: { color: '#4FE0B0' } },
-                    ],
-                    [
-                        { text: '星期', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                        '只能是 0–6',
-                        { text: '越界的直接丢掉', textStyle: { color: '#4FE0B0' } },
-                    ],
-                    [
-                        '日期',
-                        '只能是 1–31',
-                        { text: '越界的直接丢掉', textStyle: { color: '#4FE0B0' } },
-                    ],
-                    [
-                        { text: '系统操作', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                        '锁屏 / 关机 / 重启',
-                        { text: '置空，不执行', textStyle: { color: '#4FE0B0' } },
-                    ],
-                    [
-                        '标题',
-                        '不能为空',
-                        { text: '用你原来那句话', textStyle: { color: '#4FE0B0' } },
-                    ],
-                ]}
-            />
+    <Box style={{ height: 476, flexDirection: 'column', gap: 18 }}>
+        <Box style={{ height: 140, justifyContent: 'center', alignItems: 'center' }}>
+            <svg width={1152} height={132} viewBox='0 0 1152 144'>
+                <rect x='0' y='46' width='230' height='58' rx='10' fill='rgba(232,238,247,0.07)' stroke='rgba(232,238,247,0.20)' />
+                <rect x='298' y='46' width='310' height='58' rx='10' fill='rgba(79,224,176,0.14)' stroke='rgba(79,224,176,0.55)' />
+                <rect x='676' y='46' width='230' height='58' rx='10' fill='rgba(79,224,176,0.22)' stroke='#4FE0B0' />
+                <rect x='974' y='46' width='178' height='58' rx='10' fill='rgba(232,238,247,0.07)' stroke='rgba(232,238,247,0.20)' />
+                <path d='M230 75 L288 75' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
+                <path d='M282 69 L294 75 L282 81 Z' fill='#4FE0B0' />
+                <path d='M608 75 L666 75' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
+                <path d='M660 69 L672 75 L660 81 Z' fill='#4FE0B0' />
+                <path d='M906 75 L964 75' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
+                <path d='M958 69 L970 75 L958 81 Z' fill='#4FE0B0' />
+            </svg>
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 14 }}>
-            <Box style={{ height: 200, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 6, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 10, padding: '0 14px' }}>
-                <Text style={{ fontSize: 13, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑯</Text>
-                <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>解析结果页（标注来源）</Text>
-                <Text style={{ fontSize: 12, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.5 }}>建议画面：展示结果旁边<br />「来自云端大模型 / 来自本机引擎」的标注</Text>
+        <Box style={{ flexDirection: 'row', gap: 24 }}>
+            <Box style={{ flex: 1, height: 190, flexDirection: 'column', gap: 10, padding: 18, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>01 先把规矩写死</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>只准输出：类型、时间、重复、系统操作、标题。</Text>
             </Box>
-            <Box style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', gap: 10, padding: '18px 20px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
-                <Text style={{ fontSize: 16, color: '#E8EEF7', lineHeight: 1.6 }}>大模型只负责<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>提个建议</span>，能不能写进去由<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>软件说了算</span>。</Text>
-                <Text style={{ fontSize: 16, color: '#E8EEF7', lineHeight: 1.6 }}>而且结果会先摆成一张表单，<span style={{ fontWeight: 'bold', color: '#4FE0B0' }}>你点确认才真的写进去</span>——人一直在最后一道。</Text>
-                <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.6, lineHeight: 1.5, marginTop: 4 }}>这一条不是嘴上说说：有专门的检查会故意喂进去一堆乱七八糟的字段，验证它们全被挡下。</Text>
+            <Box style={{ flex: 1, height: 190, flexDirection: 'column', gap: 10, padding: 18, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>02 再把随机性调低</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>同一句话多问几次，结果必须一致。</Text>
             </Box>
+            <Box style={{ flex: 1, height: 190, flexDirection: 'column', gap: 10, padding: 18, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>03 最后留退路</Text>
+                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>多说的废话能挑出来，挑不出就退回本机。</Text>
+            </Box>
+        </Box>
+        <Box style={{ padding: '16px 24px', background: 'rgba(79,224,176,0.10)', borderRadius: 12 }}>
+            <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.5 }}>顺序不能反：<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>先有固定格式，才谈得上让它理解</span>。</Text>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 14, color: '#E8EEF7', opacity: 0.42 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 14, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.42 }}>16 / 18</Text>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>16 / 30</Text>
     </Box>
 </Slide>
