@@ -9,9 +9,9 @@ on:
       - 'src-tauri/icons/128x128.png'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
-  # 便携包由标签触发；发版后重新构建官网并带上最新正式版本。
+  # 正式版本由标签触发打包；发版后重新构建官网，带上最新 Release 的下载信息。
   workflow_run:
-    workflows: [便携包构建]
+    workflows: [版本打包]
     types: [completed]
 
 permissions:
@@ -26,7 +26,7 @@ jobs:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      # 便携包从标签构建；官网始终取 main 分支的源码。
+      # 版本打包从标签构建；官网始终取 main 分支的源码。
       - uses: actions/checkout@v4
         with:
           ref: main

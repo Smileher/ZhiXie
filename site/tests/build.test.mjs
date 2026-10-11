@@ -4,24 +4,43 @@ import { assetNames, fetchLatestRelease, parseRelease } from '../build.mjs'
 import { locales } from '../content.mjs'
 import { basePath, renderPage } from '../template.mjs'
 
+const asset = (key, size) => ({
+  name: assetNames[key],
+  size,
+  browser_download_url: `https://github.com/Smileher/ZhiXie/releases/download/v1.0.0/${assetNames[key]}`,
+})
+
 const release = {
   tag_name: 'v1.0.0',
   draft: false,
   prerelease: false,
   published_at: '2026-10-12T00:00:00Z',
   html_url: 'https://github.com/Smileher/ZhiXie/releases/tag/v1.0.0',
-  assets: Object.entries(assetNames).map(([key, name]) => ({
-    name,
-    size: key === 'mac' ? 4_718_592 : 5_242_880,
-    browser_download_url: `https://github.com/Smileher/ZhiXie/releases/download/v1.0.0/${name}`,
-  })),
+  assets: [asset('windowsSetup', 6_553_600), asset('windowsPortable', 5_242_880), asset('macPortable', 4_718_592)],
 }
 
 test('parseRelease keeps the version and downloads together', () => {
   const parsed = parseRelease(release)
   assert.equal(parsed.version, '1.0.0')
-  assert.equal(parsed.downloads.windows.size, 5_242_880)
-  assert.equal(parsed.downloads.mac.url, release.assets[1].browser_download_url)
+  assert.equal(parsed.downloads.windowsSetup.size, 6_553_600)
+  assert.equal(parsed.downloads.macPortable.size, 4_718_592)
+})
+
+test('downloads always use the version-free latest path', () => {
+  const parsed = parseRelease(release)
+  for (const [key, name] of Object.entries(assetNames)) {
+    assert.equal(parsed.downloads[key].url, `https://github.com/Smileher/ZhiXie/releases/latest/download/${name}`, key)
+  }
+})
+
+test('parseRelease tolerates an optional installer being absent', () => {
+  const parsed = parseRelease({ ...release, assets: [asset('windowsPortable', 5_242_880), asset('macPortable', 4_718_592)] })
+  assert.equal(parsed.downloads.windowsSetup, undefined)
+  assert.ok(parsed.downloads.windowsPortable)
+})
+
+test('parseRelease rejects a release without any known package', () => {
+  assert.throws(() => parseRelease({ ...release, assets: [{ name: 'unknown.zip', size: 10 }] }), /No known package/)
 })
 
 for (const [label, patch] of [
@@ -29,7 +48,7 @@ for (const [label, patch] of [
   ['prereleases', { prerelease: true }],
   ['unversioned tags', { tag_name: 'nightly' }],
   ['missing dates', { published_at: undefined }],
-  ['renamed assets', { assets: [] }],
+  ['invalid sizes', { assets: [{ ...asset('macPortable', 0) }] }],
 ]) {
   test(`parseRelease rejects ${label}`, () => {
     assert.throws(() => parseRelease({ ...release, ...patch }), Error)
@@ -61,21 +80,37 @@ test('pages reference site assets and the canonical URL', () => {
 test('the download section falls back to the repository until a release exists', () => {
   const html = renderPage('zh', null)
   assert.ok(html.includes('https://github.com/Smileher/ZhiXie/releases'))
-  assert.ok(!html.includes('zhixie-windows-x64-portable.zip'))
+  assert.ok(!html.includes('latest/download/'))
 })
 
-test('a published release reaches the download buttons', () => {
+test('a published release puts stable links on both platform cards', () => {
   const html = renderPage('en', parseRelease(release))
-  assert.ok(html.includes(release.assets[0].browser_download_url))
+  assert.ok(html.includes('releases/latest/download/zhixie-windows-x64-setup.exe'))
+  assert.ok(html.includes('releases/latest/download/zhixie-macos-arm64-portable.zip'))
   assert.ok(html.includes('v1.0.0'))
   assert.ok(html.includes('October 12, 2026'))
+})
+
+test('each section is wrapped in the shared shell container', () => {
+  const html = renderPage('zh', null)
+  for (const section of ['<main id="main">', '<footer class="footer">']) {
+    assert.ok(html.includes(section), section)
+  }
+  const bodies = html.split('<section class="').slice(1)
+  assert.equal(bodies.length, 3)
+  for (const body of bodies) {
+    assert.ok(body.includes('<div class="shell'), 'missing shell wrapper')
+  }
 })
 
 test('locales keep the same shape', () => {
   const [zh, en] = Object.values(locales)
   assert.deepEqual(Object.keys(zh), Object.keys(en))
   assert.equal(zh.features.items.length, en.features.items.length)
-  assert.equal(zh.rhythm.steps.length, en.rhythm.steps.length)
-  assert.equal(zh.faq.items.length, en.faq.items.length)
+  assert.equal(zh.scenarios.items.length, en.scenarios.items.length)
   assert.deepEqual(zh.features.items.map((item) => item.icon), en.features.items.map((item) => item.icon))
+  assert.deepEqual(Object.keys(zh.mock), Object.keys(en.mock))
+  for (const locale of Object.values(locales)) {
+    assert.ok(locale.hero.titleLines.length >= 2, locale.lang)
+  }
 })

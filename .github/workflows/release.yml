@@ -1,0 +1,152 @@
+name: 版本打包
+
+# 打 v* 标签时自动构建 Windows x64 与 macOS Apple Silicon 产物，并以固定英文名
+# 上传到同一个 Release，使官网 /releases/latest/download/<附件名> 长期可用。
+# 手动触发只出产物（工作流 artifacts），不写 Release。
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows-x64:
+    name: Windows x64
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      # NSIS 打包在 CI 上偶发失败，失败时仍保留便携 exe，不让整条流水线挂掉。
+      - name: 构建（安装包 + 便携 exe）
+        continue-on-error: true
+        run: pnpm tauri build --target x86_64-pc-windows-msvc
+
+      - name: 组装便携包与安装包
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path packages | Out-Null
+          $release = "src-tauri/target/x86_64-pc-windows-msvc/release"
+          $exe = Get-ChildItem -Path $release -Filter *.exe -File |
+            Where-Object { $_.Name -notlike '*.visualelementsmanifest.xml' } |
+            Select-Object -First 1
+          if (-not $exe) { Write-Error "No portable executable produced" }
+          New-Item -ItemType Directory -Force -Path portable-stage | Out-Null
+          Copy-Item $exe.FullName "portable-stage/ZhiXie.exe"
+          Copy-Item README.md portable-stage/
+          Compress-Archive -Path "portable-stage/*" -DestinationPath "packages/zhixie-windows-x64-portable.zip" -Force
+          $setup = Get-ChildItem -Path "$release/bundle/nsis" -Filter *.exe -File -ErrorAction SilentlyContinue |
+            Where-Object { $_.Name -like '*setup*' } | Select-Object -First 1
+          if ($setup) {
+            Copy-Item $setup.FullName "packages/zhixie-windows-x64-setup.exe"
+          } else {
+            Write-Warning "NSIS installer not produced, publishing the portable package only"
+          }
+          Get-ChildItem packages
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zhixie-windows-x64
+          path: packages/*
+          if-no-files-found: error
+
+  macos-arm64:
+    name: macOS arm64
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 构建（只出 .app，不打 dmg）
+        run: pnpm tauri build --target aarch64-apple-darwin --bundles app
+
+      - name: 组装便携包
+        run: |
+          # 压缩包内直接放 .app，解压即用，不再套一层目录。
+          mkdir -p portable packages
+          cp -R src-tauri/target/aarch64-apple-darwin/release/bundle/macos/*.app portable/
+          cp README.md portable/
+          ls -la portable
+          (cd portable && zip -qry "$GITHUB_WORKSPACE/packages/zhixie-macos-arm64-portable.zip" .)
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zhixie-macos-arm64
+          path: packages/*
+          if-no-files-found: error
+
+  publish:
+    name: 上传到 Release
+    if: startsWith(github.ref, 'refs/tags/')
+    needs:
+      - windows-x64
+      - macos-arm64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: packages
+          merge-multiple: true
+
+      - name: 确认产物齐全
+        run: ls -la packages
+
+      - name: 上传发布附件（固定文件名，供 latest 路径长期使用）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
+                 --title "$GITHUB_REF_NAME" \
+                 --generate-notes
+          for file in packages/*; do
+            gh release upload "$GITHUB_REF_NAME" "$file" --repo "$GITHUB_REPOSITORY" --clobber
+          done
+          gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name'

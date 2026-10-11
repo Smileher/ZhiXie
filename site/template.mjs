@@ -22,18 +22,18 @@ const paths = {
   windows: '<path d="m3 5 8-1v7H3Zm10-1 8-1v8h-8ZM3 13h8v7l-8-1Zm10 0h8v8l-8-1Z"/>',
   apple: '<path d="M15 3c0 2-1.5 3-3 3 0-2 1-3 3-3Zm-3 5c-2-2-7-1-7 4 0 4 3 9 5 9 1 0 1-1 2-1s2 1 3 1c2 0 4-3 4-5-3-1-4-5-1-7-2-2-4-2-6-1Z"/>',
   check: '<path d="m5 12 4 4L19 6"/>',
-  send: '<path d="M4 12l16-8-6 16-2.5-6.5Z"/>',
   chevron: '<path d="m9 6 6 6-6 6"/>',
+  send: '<path d="M4 12l16-8-6 16-2.5-6.5Z"/>',
 }
 
 function icon(name, className = '', size = 24) {
   return `<svg class="icon ${className}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths[name]}</svg>`
 }
 
-// Packages keyed by build target; names must match the portable workflow output.
-export const packages = [
-  { key: 'windows', icon: 'windows', platform: 'windows' },
-  { key: 'mac', icon: 'apple', platform: 'macos' },
+// 每张下载卡片按优先级挑一个可用附件：安装包优先，其次便携包，都没有就退回版本列表页。
+const downloadTargets = [
+  { key: 'windows', icon: 'windows', platform: 'windows', candidates: ['windowsSetup', 'windowsPortable'] },
+  { key: 'mac', icon: 'apple', platform: 'macos', candidates: ['macPortable'] },
 ]
 
 function formatSize(bytes, locale) {
@@ -44,132 +44,92 @@ function formatDate(iso, locale) {
   return new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(iso))
 }
 
-function assetUrl(release, name) {
-  const asset = release?.downloads?.[name]
-  return typeof asset?.url === 'string' ? asset.url : ''
-}
-
 function renderDownload(t, release, e) {
-  const cards = packages
-    .map(({ key, icon: brand, platform }) => {
-      const name = t.download[platform]
-      const url = assetUrl(release, key)
-      const size = release?.downloads?.[key]?.size
+  const cards = downloadTargets
+    .map(({ key, icon: brand, platform, candidates }) => {
+      const picked = release ? candidates.find((name) => release.downloads[name]) : undefined
+      const asset = picked ? release.downloads[picked] : undefined
       const meta = []
       if (release) meta.push(`v${e(release.version)}`)
-      if (Number.isSafeInteger(size) && size > 0) meta.push(`${e(t.download.sizeLabel)} ${formatSize(size, t.lang)} MiB`)
+      if (asset) meta.push(`${e(t.download.sizeLabel)} ${formatSize(asset.size, t.lang)} MiB`)
+      if (release) meta.push(`${e(t.download.released)} ${e(formatDate(release.publishedAt, t.lang))}`)
       return `<article class="pkg reveal">
-        <span class="pkg-mark">${icon(brand, '', 28)}</span>
-        <h3 class="pkg-name">${e(name)}</h3>
-        <meta>${meta.join(' · ')}</p>
-        <ul class="pkg-notes">
-          <li>${e(t.download[`${platform}Note`])}</li>
-          ${release ? `<li>${e(t.download.released)} ${e(formatDate(release.publishedAt, t.lang))}</li>` : ''}
-        </ul>
-        <a class="btn ${release ? 'btn-solid' : 'btn-quiet'}" href="${e(url || `${repository}/releases`)}" rel="noopener">${icon('download', '', 18)}<span>${e(t.download.downloadLabel)}</span></a>
+        <div class="pkg-head">
+          <span class="pkg-mark">${icon(brand, '', 24)}</span>
+          <div class="pkg-id">
+            <h3 class="pkg-name">${e(t.download[platform])}</h3>
+            <p class="pkg-meta">${meta.join(' · ')}</p>
+          </div>
+        </div>
+        <p class="pkg-note">${e(t.download[`${platform}Note`])}</p>
+        <a class="btn ${asset ? 'btn-solid' : 'btn-quiet'}" href="${e(asset ? asset.url : `${repository}/releases`)}" rel="noopener">${icon('download', '', 18)}<span>${e(t.download.downloadLabel)}</span></a>
       </article>`
     })
     .join('')
 
-  return `<section class="section" id="download">
-    <div class="section-head reveal">
-      <p class="kicker">${e(t.download.kicker)}</p>
-      <h2>${e(t.download.title)}</h2>
-      <p class="lede">${e(t.download.subtitle)}</p>
+  const waiting = `<article class="pkg pkg-wait reveal">
+    <div class="pkg-head">
+      <span class="pkg-mark">${icon('send', '', 24)}</span>
+      <div class="pkg-id">
+        <h3 class="pkg-name">${e(t.download.waiting)}</h3>
+      </div>
     </div>
-    ${
-      release
-        ? `<div class="pkg-grid">${cards}</div>`
-        : `<div class="pkg-grid">
-            ${cards}
-            <article class="pkg pkg-wait reveal">
-              <span class="pkg-mark">${icon('send', '', 28)}</span>
-              <h3 class="pkg-name">${e(t.download.waiting)}</h3>
-              <p class="pkg-meta">${e(t.download.waitingBody)}</p>
-              <div class="pkg-actions">
-                <a class="btn btn-solid" href="${repository}/releases" rel="noopener">${icon('download', '', 18)}<span>${e(t.download.browseReleases)}</span></a>
-                <a class="btn btn-quiet" href="${repository}" rel="noopener">${icon('github', '', 18)}<span>${e(t.download.starRepo)}</span></a>
-              </div>
-            </article>
-          </div>`
-    }
+    <p class="pkg-note">${e(t.download.waitingBody)}</p>
+    <div class="pkg-actions">
+      <a class="btn btn-solid" href="${repository}/releases" rel="noopener">${icon('download', '', 18)}<span>${e(t.download.browseReleases)}</span></a>
+      <a class="btn btn-quiet" href="${repository}" rel="noopener">${icon('github', '', 18)}<span>${e(t.download.starRepo)}</span></a>
+    </div>
+  </article>`
+
+  return `<section class="section" id="download">
+    <div class="shell">
+      <div class="section-head reveal">
+        <h2>${e(t.download.title)}</h2>
+        <p class="lede">${e(t.download.subtitle)}</p>
+      </div>
+      <div class="pkg-grid">${release ? cards : `${cards}${waiting}`}</div>
+    </div>
   </section>`
 }
 
-function renderHeroMockup(t, e) {
-  const m = t.hero.mockup
-  const nav = `<nav class="mock-nav" aria-label="${e(m.navLabel)}">${m.nav
-    .map((label, index) => `<span${index === 0 ? ' class="active"' : ''}>${e(label)}</span>`)
-    .join('')}</nav>`
+// 弹窗只用纯 HTML/CSS 画，文案取自软件默认歇息文案。
+function renderMock(t, e) {
   return `<figure class="mock reveal">
-    <div class="mock-bar"><span class="mock-dot"></span><span class="mock-app">${e(m.appName)}</span><span class="mock-tag">${e(m.tagline)}</span></div>
+    <div class="mock-bar"><span class="mock-dot"></span><span class="mock-app">${e(t.mock.appName)}</span></div>
     <div class="mock-body">
-      ${nav}
-      <div class="mock-card">
-        <p class="mock-outlet">${e(m.outlet)}</p>
-        <div class="mock-breath" aria-hidden="true"><span></span><span></span><span></span></div>
-        <p class="mock-message">${e(m.message)}</p>
-        <div class="mock-actions"><span class="mock-btn">${e(m.snooze)}</span><span class="mock-btn mock-btn-solid">${e(m.finish)}</span></div>
-      </div>
-      <p class="mock-countdown"><span>${e(m.countdownLabel)}</span><strong>${e(m.countdown)}</strong></p>
+      <p class="mock-outlet">${e(t.mock.outlet)}</p>
+      <div class="mock-breath" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="mock-message">${e(t.mock.message)}</p>
+      <div class="mock-actions"><span class="mock-btn">${e(t.mock.snooze)}</span><span class="mock-btn mock-btn-solid">${e(t.mock.finish)}</span></div>
     </div>
-    <figcaption class="mock-caption">${e(t.hero.mockupLabel)}</figcaption>
   </figure>`
 }
 
 export function renderPage(language, release) {
   const t = locales[language]
   const e = escapeHtml
-  const other = Object.entries(locales).find(([key]) => key !== language)
+  const other = language === 'zh' ? ['en', locales.en] : ['zh', locales.zh]
   const url = `${origin}${basePath}${t.path}`
-  const otherUrl = `${origin}${basePath}${other[1].path}`
-  const primaryHref = release ? assetUrl(release, 'windows') || `${repository}/releases` : `${repository}/releases`
+  const primary = release
+    ? release.downloads.windowsSetup?.url ?? release.downloads.windowsPortable?.url ?? release.downloads.macPortable?.url ?? `${repository}/releases`
+    : `${repository}/releases`
 
-  const navSections = ['rhythm', 'features', 'agent', 'download', 'faq']
+  const navLinks = ['features', 'download']
     .map((key) => `<a class="nav-link" href="#${key}">${e(t.nav[key])}</a>`)
     .join('')
-
-  const chips = t.chips.map((chip) => `<li>${icon('check', 'chip-icon', 16)}<span>${e(chip)}</span></li>`).join('')
-
+  const chips = t.intro.chips.map((chip) => `<li>${icon('check', 'chip-icon', 15)}<span>${e(chip)}</span></li>`).join('')
   const features = t.features.items
     .map(
       (item) => `<article class="card reveal">
-        <span class="card-icon">${icon(item.icon, '', 22)}</span>
-        <h3>${e(item.title)}</h3>
-        <p>${e(item.body)}</p>
+        <span class="card-icon">${icon(item.icon, '', 20)}</span>
+        <div class="card-text"><h3>${e(item.title)}</h3><p>${e(item.hint)}</p></div>
       </article>`,
     )
     .join('')
-
-  const agentFields = t.agent.fields
-    .map((field) => `<div class="kv"><dt>${e(field.label)}</dt><dd>${e(field.value)}</dd></div>`)
-    .join('')
-
-  const steps = t.rhythm.steps
-    .map(
-      (step, index) => `<li class="reveal">
-        <span class="step-index">${index + 1}</span>
-        <h3>${e(step.title)}</h3>
-        <p>${e(step.body)}</p>
-      </li>`,
-    )
-    .join('')
-
-  const faq = t.faq.items
-    .map(
-      (item) => `<details class="faq-item reveal">
-        <summary>${e(item.q)}${icon('chevron', 'faq-arrow', 18)}</summary>
-        <p>${e(item.a)}</p>
-      </details>`,
-    )
-    .join('')
-
-  const tech = t.tech.items
-    .map((item) => `<div class="tech-row"><dt>${e(item.label)}</dt><dd>${e(item.value)}</dd></div>`)
-    .join('')
+  const scenarios = t.scenarios.items.map((item) => `<li>${e(item)}</li>`).join('')
 
   return `<!doctype html>
-<html lang="${t.lang}" dir="${t.htmlDir}" data-theme-mode="auto">
+<html lang="${t.lang}" data-theme-mode="auto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -203,15 +163,15 @@ export function renderPage(language, release) {
   <header class="topbar">
     <div class="shell topbar-inner">
       <a class="brand" href="${url}">
-        <img class="brand-mark" src="${basePath}assets/logo.svg" alt="" width="32" height="32">
+        <img class="brand-mark" src="${basePath}assets/logo.svg" alt="" width="30" height="30">
         <span class="brand-text"><strong>知歇</strong><em>ZhiXie</em></span>
       </a>
       <nav class="nav" aria-label="${e(t.nav.aria)}">
-        ${navSections}
-        <a class="nav-link nav-source" href="${repository}" rel="noopener">${icon('github', '', 17)}<span>${e(t.nav.source)}</span></a>
+        ${navLinks}
+        <a class="nav-link" href="${repository}" rel="noopener">${icon('github', '', 17)}<span>${e(t.nav.source)}</span></a>
       </nav>
       <div class="topbar-tools">
-        <a class="lang" href="${otherUrl}" hreflang="${other[1].lang}">${e(other[0] === 'zh' ? '简体中文' : 'English')}</a>
+        <a class="lang" href="${origin}${basePath}${other[1].path}" hreflang="${other[1].lang}">${e(other[0] === 'zh' ? '简体中文' : 'English')}</a>
         <button class="theme-btn" type="button" data-theme-toggle aria-label="${e(t.nav.theme)}">
           <span class="theme-icon theme-icon-sun">${icon('sun', '', 18)}</span>
           <span class="theme-icon theme-icon-moon">${icon('moon', '', 18)}</span>
@@ -227,86 +187,39 @@ export function renderPage(language, release) {
           <p class="kicker">${e(t.hero.kicker)}</p>
           <h1>${t.hero.titleLines.map((line) => e(line)).join('<br>')}</h1>
           <p class="lede">${e(t.hero.subtitle)}</p>
-          <ul class="chips">${chips}</ul>
           <div class="hero-actions">
-            <a class="btn btn-solid btn-lg" href="${e(primaryHref)}" rel="noopener">${icon('download', '', 19)}<span>${e(t.hero.primary)}</span></a>
+            <a class="btn btn-solid btn-lg" href="${e(primary)}" rel="noopener">${icon('download', '', 19)}<span>${e(t.hero.primary)}</span></a>
             <a class="btn btn-line btn-lg" href="${repository}" rel="noopener">${icon('github', '', 19)}<span>${e(t.hero.secondary)}</span></a>
           </div>
-          <p class="hero-note">${e(t.hero.note)}</p>
         </div>
-        ${renderHeroMockup(t, e)}
+        ${renderMock(t, e)}
       </div>
-    </section>
-
-    <section class="section" id="rhythm">
-      <div class="section-head reveal">
-        <p class="kicker">${e(t.rhythm.kicker)}</p>
-        <h2>${e(t.rhythm.title)}</h2>
-        <p class="lede">${e(t.rhythm.subtitle)}</p>
-      </div>
-      <ol class="steps">${steps}</ol>
     </section>
 
     <section class="section" id="features">
-      <div class="section-head reveal">
-        <p class="kicker">${e(t.features.kicker)}</p>
-        <h2>${e(t.features.title)}</h2>
-        <p class="lede">${e(t.features.subtitle)}</p>
-      </div>
-      <div class="cards">${features}</div>
-    </section>
-
-    <section class="section agent" id="agent">
-      <div class="section-head reveal">
-        <p class="kicker">${e(t.agent.kicker)}</p>
-        <h2>${e(t.agent.title)}</h2>
-        <p class="lede">${e(t.agent.subtitle)}</p>
-      </div>
-      <div class="agent-flow">
-        <div class="agent-say reveal">
-          <span class="card-icon">${icon('send', '', 20)}</span>
-          <p class="agent-label">${e(t.agent.inputLabel)}</p>
-          <blockquote class="agent-quote">${e(t.agent.sentence)}</blockquote>
+      <div class="shell">
+        <div class="section-head reveal">
+          <h2>${e(t.intro.title)}</h2>
+          <p class="lede">${e(t.intro.subtitle)}</p>
+          <ul class="chips">${chips}</ul>
         </div>
-        <div class="agent-arrow" aria-hidden="true">${icon('chevron', '', 22)}</div>
-        <div class="agent-result reveal">
-          <p class="agent-label">${e(t.agent.parsedLabel)}</p>
-          <dl class="agent-kv">${agentFields}</dl>
-          <p class="agent-status">${icon('shield', '', 16)}<span>${e(t.agent.note)}</span></p>
+        <div class="cards">${features}</div>
+        <div class="scenarios reveal">
+          <h3>${e(t.scenarios.title)}</h3>
+          <ul>${scenarios}</ul>
         </div>
       </div>
-      <p class="agent-check reveal">${icon('check', '', 17)}<span><strong>${e(t.agent.checkTitle)}</strong>${e(t.agent.checkBody)}</span></p>
     </section>
 
     ${renderDownload(t, release, e)}
-
-    <section class="section" id="faq">
-      <div class="section-head reveal">
-        <p class="kicker">${e(t.faq.kicker)}</p>
-        <h2>${e(t.faq.title)}</h2>
-      </div>
-      <div class="faq">${faq}</div>
-    </section>
-
-    <section class="section tech">
-      <div class="tech-card reveal">
-        <p class="kicker">${e(t.tech.kicker)}</p>
-        <dl class="tech-list">${tech}</dl>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
     <div class="shell footer-inner">
-      <div class="footer-brand">
-        <img class="brand-mark" src="${basePath}assets/logo.svg" alt="" width="28" height="28">
-        <p class="footer-tagline">${e(t.footer.tagline)}</p>
-        <p class="footer-made">${e(t.footer.made)}</p>
-      </div>
+      <p class="footer-tagline">${e(t.footer.tagline)}</p>
       <div class="footer-links">
-        <a href="${repository}" rel="noopener">${icon('github', '', 17)}<span>${e(t.footer.repository)}</span></a>
-        <a href="${repository}/releases" rel="noopener">${icon('download', '', 17)}<span>${e(t.footer.releases)}</span></a>
-        <a href="#top">${icon('chevron', 'up', 17)}<span>${e(t.footer.backToTop)}</span></a>
+        <a href="${repository}" rel="noopener">${icon('github', '', 16)}<span>${e(t.footer.repository)}</span></a>
+        <a href="${repository}/releases" rel="noopener">${icon('download', '', 16)}<span>${e(t.footer.releases)}</span></a>
       </div>
     </div>
     <p class="footer-copy">© ${new Date().getUTCFullYear()} ${e(t.footer.copyright)}</p>

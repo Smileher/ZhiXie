@@ -8,10 +8,17 @@ const siteDir = dirname(fileURLToPath(import.meta.url))
 export const outputDir = join(siteDir, 'dist')
 const latestReleaseApi = 'https://api.github.com/repos/Smileher/ZhiXie/releases/latest'
 
-// 便携包文件名由「便携包构建」工作流产出的附件决定。
+// 发布附件使用固定英文名（不含版本号），页面才能一直用 latest 路径，链接不随版本失效。
+// 名字必须与「版本打包」工作流上传的附件一致。
 export const assetNames = {
-  windows: 'zhixie-windows-x64-portable.zip',
-  mac: 'zhixie-macos-arm64-portable.zip',
+  windowsSetup: 'zhixie-windows-x64-setup.exe',
+  windowsPortable: 'zhixie-windows-x64-portable.zip',
+  macPortable: 'zhixie-macos-arm64-portable.zip',
+}
+
+// 附件以 latest 路径对外，绕过版本号，长期有效。
+export function downloadUrl(name) {
+  return `${repository}/releases/latest/download/${name}`
 }
 
 // 读到一条发布结果后，版本号、发布日期与全部下载必须来自同一个 Release。
@@ -29,10 +36,14 @@ export function parseRelease(release) {
   const downloads = {}
   for (const [key, name] of Object.entries(assetNames)) {
     const asset = release.assets.find((item) => item.name === name)
-    if (!asset || asset.browser_download_url !== `${repository}/releases/download/${release.tag_name}/${name}` || !Number.isSafeInteger(asset.size) || asset.size <= 0) {
-      throw new Error(`Missing or invalid release asset: ${name}`)
+    if (!asset) continue
+    if (!Number.isSafeInteger(asset.size) || asset.size <= 0) {
+      throw new Error(`Invalid release asset size: ${name}`)
     }
-    downloads[key] = { url: asset.browser_download_url, size: asset.size }
+    downloads[key] = { url: downloadUrl(name), size: asset.size }
+  }
+  if (Object.keys(downloads).length === 0) {
+    throw new Error(`No known package found in release ${release.tag_name}`)
   }
   return { version, publishedAt: release.published_at, url: release.html_url, downloads }
 }
@@ -44,8 +55,7 @@ export async function fetchLatestRelease(fetchImpl = fetch) {
   const response = await fetchImpl(latestReleaseApi, { headers, signal: AbortSignal.timeout(20000) })
   if (response.status === 404) return null
   if (!response.ok) throw new Error(`GitHub release request failed (HTTP ${response.status})`)
-  const release = await response.json()
-  return parseRelease(release)
+  return parseRelease(await response.json())
 }
 
 export async function buildSite(fetchImpl = fetch) {
