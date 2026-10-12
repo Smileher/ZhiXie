@@ -1,15 +1,45 @@
-<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
-    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
-        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', opacity: 0.18, lineHeight: 1 }}>03</Text>
-        <Box style={{ flexDirection: 'column', gap: 22, width: 640 }}>
-            <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#0B1220', lineHeight: 1.15 }}>目标用户群体</Text>
-            <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #0D9488 100%)', borderRadius: 2 }} />
-            <Text style={{ fontSize: 30, color: '#0B1220', opacity: 0.72, lineHeight: 1.6 }}>不是拍脑袋：<br />谁会用、规模有多大，用数据说话。</Text>
-            <Text style={{ fontSize: 24, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 2 }}>P12 – P15</Text>
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '16px 64px' }}>
+    <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(232,238,247,0.14)' }}>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <svg width={24} height={24} viewBox='0 0 40 40'><path d='M28 10 A17 17 0 1 0 28 30' fill='none' stroke='#4FE0B0' strokeWidth='2.5' /><rect x='15' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /><rect x='20' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /></svg>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>知歇 ZhiXie</Text>
+      </Box>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>项目背景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>目标用户群体</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用场景</Text>
+        <Text style={{ fontSize: 21.33, color: '#4FE0B0', fontWeight: 'bold' }}>智能体开发过程</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>实施计划</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>预期成果</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>创新点</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用价值</Text>
+      </Box>
+    </Box>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 14 }}>
+      <Box style={{ flexDirection: 'column', gap: 4 }}>
+        <Text style={{ fontSize: 21.33, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>04 · 智能体开发过程</Text>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#E8EEF7' }}>一个人 + AI 助手怎么配合</Text>
+      </Box>
+      <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>12</Text>
+    </Box>
+    <Box style={{ height: 470, flexDirection: 'row', gap: 28, alignItems: 'stretch' }}>
+      <Box style={{ background: '#1B2740', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 12, padding: '26px 28px'}}>
+          <Text style={{ fontSize: 34, fontWeight: 'bold', color: '#4FE0B0' }}>我（开发者）负责</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 定产品方向与功能边界</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 设计数据结构和交互</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 做关键判断与取舍</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 跑测试、把关质量</Text>
+        </Box>
+      <Box style={{ background: 'rgba(79,224,176,0.10)', border: '1px solid rgba(79,224,176,0.4)', borderRadius: 12, padding: '26px 28px'}}>
+          <Text style={{ fontSize: 34, fontWeight: 'bold', color: '#4FE0B0' }}>AI 助手负责</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 按需求写代码与界面</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 起草说明文档与文案</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 查资料、给实现建议</Text>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.55 }}>· 出初稿，我来审改</Text>
         </Box>
     </Box>
-    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>12 / 38</Text>
+    <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Text style={{ fontSize: 18, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+      <Text style={{ fontSize: 18, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>12 / 29</Text>
     </Box>
 </Slide>

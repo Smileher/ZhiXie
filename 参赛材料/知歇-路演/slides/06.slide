@@ -1,38 +1,67 @@
-<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
-    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
-        <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>换台电脑，它也跟着你</Text>
-            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>Windows 与 macOS 都能用，数据在本机不依赖云</Text>
-        </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>06</Text>
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '16px 64px' }}>
+    <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(232,238,247,0.14)' }}>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <svg width={24} height={24} viewBox='0 0 40 40'><path d='M28 10 A17 17 0 1 0 28 30' fill='none' stroke='#4FE0B0' strokeWidth='2.5' /><rect x='15' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /><rect x='20' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /></svg>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>知歇 ZhiXie</Text>
+      </Box>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>项目背景</Text>
+        <Text style={{ fontSize: 21.33, color: '#4FE0B0', fontWeight: 'bold' }}>目标用户群体</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用场景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>智能体开发过程</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>实施计划</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>预期成果</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>创新点</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用价值</Text>
+      </Box>
     </Box>
-    <Box style={{ height: 476, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 18, justifyContent: 'center' }}>
-            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#0D9488', lineHeight: 1.4 }}>同一套提醒，<br />两套系统都能跑。</Text>
-            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}> Windows x64 / ARM64 与 macOS 都提供支持。</Text>
-            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}>提醒数据存在本机，不上传、不绑定账号。</Text>
-            <Box style={{ padding: '18px 22px', background: 'rgba(79,224,176,0.16)', border: '1px solid rgba(13,148,136,0.35)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 28, color: '#0B1220', lineHeight: 1.5 }}>隐私立场：<span style={{ color: '#0D9488', fontWeight: 'bold' }}>数据留在本机，你说了算</span></Text>
-            </Box>
-        </Box>
-        <Box style={{ width: 560, height: 420, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 16, background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-            <svg width={500} height={260} viewBox='0 0 500 260'>
-                <rect x='20' y='30' width='200' height='150' rx='10' fill='#F5F9FC' stroke='rgba(11,18,32,0.12)' strokeWidth='1.5' />
-                <rect x='20' y='30' width='200' height='28' rx='10' fill='rgba(13,148,136,0.12)' />
-                <circle cx='38' cy='44' r='4' fill='#0D9488' /><circle cx='54' cy='44' r='4' fill='#4FE0B0' />
-                <text x='120' y='120' fontFamily='微软雅黑' fontSize='22' fill='#0B1220'>Windows</text>
-                <rect x='280' y='30' width='200' height='150' rx='10' fill='#F5F9FC' stroke='rgba(11,18,32,0.12)' strokeWidth='1.5' />
-                <rect x='280' y='30' width='200' height='28' rx='10' fill='rgba(13,148,136,0.12)' />
-                <circle cx='298' cy='44' r='4' fill='#0D9488' /><circle cx='314' cy='44' r='4' fill='#4FE0B0' />
-                <text x='380' y='120' fontFamily='微软雅黑' fontSize='22' fill='#0B1220'>macOS</text>
-                <circle cx='250' cy='105' r='17' fill='rgba(79,224,176,0.20)' stroke='#0D9488' strokeWidth='1.5' />
-                <path d='M242 105 L247 110 L257 99' stroke='#0D9488' strokeWidth='2.5' fill='none' />
-            </svg>
-            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.7, textAlign: 'center', lineHeight: 1.5 }}>双平台安装包，下载即用</Text>
-        </Box>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 14 }}>
+      <Box style={{ flexDirection: 'column', gap: 4 }}>
+        <Text style={{ fontSize: 21.33, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>02 · 目标用户群体</Text>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#E8EEF7' }}>用户画像 · 学生群体</Text>
+      </Box>
+      <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>6</Text>
     </Box>
-    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>06 / 38</Text>
+    <Box style={{ height: 470, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
+      <Box style={{ width: 540, height: 440, background: '#1B2740', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 14, padding: '24px 24px', flexDirection: 'column', gap: 14 }}>
+        <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>高等教育在学规模 · 2024</Text>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 30 }}>
+          <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.75, width: '140' }}>在学总规模</Text>
+          <Box style={{ width: 230, height: 22, borderRadius: 6, background: 'rgba(232,238,247,0.08)' }}>
+            <Box style={{ width: 230, height: 22, borderRadius: 6, background: 'linear-gradient(90deg, #4FE0B0, #2E9E8F)' }} />
+          </Box>
+          <Text style={{ fontSize: 19, fontFamily: 'Consolas', color: '#4FE0B0', fontWeight: 'bold' }}>4846万</Text>
+        </Box>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 30 }}>
+          <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.75, width: '140' }}>本专科在校</Text>
+          <Box style={{ width: 230, height: 22, borderRadius: 6, background: 'rgba(232,238,247,0.08)' }}>
+            <Box style={{ width: 185, height: 22, borderRadius: 6, background: 'linear-gradient(90deg, #4FE0B0, #2E9E8F)' }} />
+          </Box>
+          <Text style={{ fontSize: 19, fontFamily: 'Consolas', color: '#4FE0B0', fontWeight: 'bold' }}>3891万</Text>
+        </Box>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 30 }}>
+          <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.75, width: '140' }}>在学研究生</Text>
+          <Box style={{ width: 230, height: 22, borderRadius: 6, background: 'rgba(232,238,247,0.08)' }}>
+            <Box style={{ width: 22, height: 22, borderRadius: 6, background: 'linear-gradient(90deg, #4FE0B0, #2E9E8F)' }} />
+          </Box>
+          <Text style={{ fontSize: 19, fontFamily: 'Consolas', color: '#4FE0B0', fontWeight: 'bold' }}>410万</Text>
+        </Box>
+        <Box style={{ height: 1, background: 'rgba(232,238,247,0.10)' }} />
+        <Text style={{ fontSize: 22, color: '#E8EEF7' }}>毛入学率 <span style={{ fontSize: 30, color: '#4FE0B0', fontWeight: 'bold' }}>60.8%</span>，进入普及化阶段</Text>
+        <Text style={{ fontSize: 19, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>2025 备考人群：考研报名 <span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>388 万</span><br />国考报名 <span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>341.6 万</span>，人群持续扩大</Text>
+        <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.5 }}>数据来源：教育部《2024 年全国教育事业发展统计公报》</Text>
+      </Box>
+      <Box style={{ flex: 1, flexDirection: 'column', gap: 18 }}>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#4FE0B0', lineHeight: 1.4 }}>最容易坐忘的，<br />是在校生。</Text>
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>备考、写论文、做实验，一坐一整天。</Text>
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>有手机有电脑，却少一个提醒自己休息的。</Text>
+        <Box style={{ background: 'rgba(79,224,176,0.10)', border: '1px solid rgba(79,224,176,0.4)', borderRadius: 12, padding: '18px 22px'}}>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.5 }}>典型：<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>大学生、考研 / 考公族</span></Text>
+        </Box>
+      </Box>
+    </Box>
+    <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Text style={{ fontSize: 18, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+      <Text style={{ fontSize: 18, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>6 / 29</Text>
     </Box>
 </Slide>

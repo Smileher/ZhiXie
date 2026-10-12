@@ -1,59 +1,57 @@
-<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
-    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
-        <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>目录</Text>
-            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>八章主线：从为什么需要，到值不值得</Text>
-        </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>02</Text>
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '0 80px', flexDirection: 'row', alignItems: 'center', gap: 60 }}>
+    <Box style={{ width: 340, flexDirection: 'column', gap: 8 }}>
+      <Text style={{ fontSize: 56, fontWeight: 'bold', color: '#E8EEF7' }}>Contents</Text>
+      <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#4FE0B0' }}>// 目录</Text>
+      <Box style={{ height: 3, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2, marginTop: 10 }} />
+      <svg width={200} height={140} viewBox='0 0 220 150' style={{ marginTop: 24 }}>
+        <circle cx='110' cy='75' r='66' fill='none' stroke='#4FE0B0' strokeWidth='1' opacity='0.3' />
+        <circle cx='110' cy='75' r='40' fill='none' stroke='#4FE0B0' strokeWidth='1.5' opacity='0.45' />
+        <path d='M110 75 L164 44' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.7' />
+        <path d='M146 51 A66 66 0 0 1 164 84' fill='none' stroke='#4FE0B0' strokeWidth='2.5' />
+        <circle cx='110' cy='75' r='4' fill='#4FE0B0' />
+      </svg>
+      <Text style={{ fontSize: 20, color: '#4FE0B0', opacity: 0.5, letterSpacing: 1, marginTop: 20 }}>创新主赛道 · AIGC 创新组</Text>
     </Box>
-    <Box style={{ height: 476, flexDirection: 'row', gap: 20 }}>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 12 }}>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>01</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>应用场景</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P03–P06</Text>
-            </Box>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>02</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>项目概述</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P07–P11</Text>
-            </Box>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>03</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>目标用户群体</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P12–P15</Text>
-            </Box>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>04</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>智能体开发过程</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P16–P23</Text>
-            </Box>
-        </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 12 }}>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>05</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>实施计划</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P24–P26</Text>
-            </Box>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>06</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>预期成果</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P27–P29</Text>
-            </Box>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: 'rgba(79,224,176,0.16)', border: '1px solid rgba(13,148,136,0.35)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>07</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>创新点</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P30–P35</Text>
-            </Box>
-            <Box style={{ height: 110, flexDirection: 'row', alignItems: 'center', gap: 18, padding: '0 22px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 42, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', width: 60 }}>08</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>应用价值</Text>
-                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, fontFamily: 'Consolas' }}>P36–P38</Text>
-            </Box>
-        </Box>
-    </Box>
-    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>02 / 38</Text>
+    <Box style={{ flex: 1, flexDirection: 'column' }}>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid rgba(232,238,247,0.10)', }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>01</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>项目背景</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P03–P05</Text>
+      </Box>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid rgba(232,238,247,0.10)', }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>02</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>目标用户群体</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P06–P08</Text>
+      </Box>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid rgba(232,238,247,0.10)', }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>03</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>应用场景</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P09–P11</Text>
+      </Box>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid rgba(232,238,247,0.10)', }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>04</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>智能体开发过程</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P12–P16</Text>
+      </Box>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid rgba(232,238,247,0.10)', }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>05</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>实施计划</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P17–P21</Text>
+      </Box>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid rgba(232,238,247,0.10)', }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>06</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>预期成果</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P22–P23</Text>
+      </Box>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid rgba(232,238,247,0.10)', }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>07</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>创新点</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P24–P26</Text>
+      </Box>
+      <Box style={{ height: 54, flexDirection: 'row', alignItems: 'center', gap: 18, }}>
+        <Text style={{ fontSize: 30, fontFamily: 'Consolas', color: '#4FE0B0', width: 56 }}>08</Text>
+        <Text style={{ fontSize: 26, color: '#E8EEF7', flex: 1 }}>应用价值</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>P27–P28</Text>
+      </Box>
     </Box>
 </Slide>

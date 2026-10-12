@@ -1,1 +1,2 @@
 {"ts":"2026-10-12 09:23:05.695","cmd":"screenshot","ms":73,"input":{"file":"/tmp/test.pptx","pageIndex":1,"output":"/tmp/test2.png"},"output":{"ok":false,"error":"page_index 1 out of range (total 1 page(s))"}}
+{"ts":"2026-10-12 10:44:13.491","cmd":"create","ms":101,"input":{"file":"/Users/smileher/Desktop/ZhiXie/参赛材料/知歇-交互演示-PPT/知歇-交互演示.pptx"},"output":{"ok":true,"file_id":"93D54374-11A1-44F6-B233-995D8E52FFA7","file_path":"/Users/smileher/Desktop/ZhiXie/参赛材料/知歇-交互演示-PPT/知歇-交互演示.pptx","latest_version":0}}

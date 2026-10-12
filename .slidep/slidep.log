@@ -1,3 +1,5 @@
 === boot pid=18887 ts=2026-10-12 09:23:05.706 cwd=/Users/smileher/Desktop/ZhiXie argv=/Users/smileher/.workbuddy/binaries/node/versions/22.22.2-6/lib/node_modules/@tencent/slidep/dist/index.js screenshot /tmp/test.pptx --page-index 1 --out /tmp/test2.png --base-url http://localhost:39100 ===
 [2026-10-12 09:23:05.701] [INFO ] [pid=18887] [server-url] baseUrl=http://127.0.0.1:39100 source=env
 [2026-10-12 09:23:05.740] [INFO ] [pid=18887] [slide-version] fileId=8F142FB1 version=1 filePath=/tmp/test.pptx
+=== boot pid=27040 ts=2026-10-12 10:44:13.502 cwd=/Users/smileher/Desktop/ZhiXie argv=/Users/smileher/.workbuddy/binaries/node/versions/22.22.2-6/lib/node_modules/@tencent/slidep/dist/index.js create /Users/smileher/Desktop/ZhiXie/参赛材料/知歇-交互演示-PPT/知歇-交互演示.pptx ===
+[2026-10-12 10:44:13.495] [INFO ] [pid=27040] [server-url] baseUrl=http://127.0.0.1:39100 source=env

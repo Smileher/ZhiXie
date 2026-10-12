@@ -1,46 +1,45 @@
-<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
-    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
-        <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>校验层 · AI 说的先核一遍</Text>
-            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>只认列举出来的，不合规就不写进去</Text>
-        </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>22</Text>
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '16px 64px' }}>
+    <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(232,238,247,0.14)' }}>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <svg width={24} height={24} viewBox='0 0 40 40'><path d='M28 10 A17 17 0 1 0 28 30' fill='none' stroke='#4FE0B0' strokeWidth='2.5' /><rect x='15' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /><rect x='20' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /></svg>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>知歇 ZhiXie</Text>
+      </Box>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>项目背景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>目标用户群体</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用场景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>智能体开发过程</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>实施计划</Text>
+        <Text style={{ fontSize: 21.33, color: '#4FE0B0', fontWeight: 'bold' }}>预期成果</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>创新点</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用价值</Text>
+      </Box>
     </Box>
-    <Box style={{ height: 476, flexDirection: 'row', gap: 36, alignItems: 'center' }}>
-        <Box style={{ width: 660, flexDirection: 'column', gap: 8 }}>
-            <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', padding: '0 20px', background: 'rgba(13,148,136,0.12)', borderRadius: '10px 10px 0 0' }}>
-                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0B1220', width: 220 }}>检查项</Text>
-                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0B1220', flex: 1 }}>规则</Text>
-            </Box>
-            <Box style={{ height: 58, flexDirection: 'row', alignItems: 'center', padding: '0 20px', background: '#FFFFFF', borderBottom: '1px solid rgba(11,18,32,0.08)' }}>
-                <Text style={{ fontSize: 28, color: '#0B1220', width: 220 }}>类型</Text>
-                <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, flex: 1 }}>只收 rest / notify 等白名单</Text>
-            </Box>
-            <Box style={{ height: 58, flexDirection: 'row', alignItems: 'center', padding: '0 20px', background: '#FFFFFF', borderBottom: '1px solid rgba(11,18,32,0.08)' }}>
-                <Text style={{ fontSize: 28, color: '#0B1220', width: 220 }}>时间</Text>
-                <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, flex: 1 }}>必须能解析为具体时刻</Text>
-            </Box>
-            <Box style={{ height: 58, flexDirection: 'row', alignItems: 'center', padding: '0 20px', background: '#FFFFFF', borderBottom: '1px solid rgba(11,18,32,0.08)' }}>
-                <Text style={{ fontSize: 28, color: '#0B1220', width: 220 }}>重复</Text>
-                <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, flex: 1 }}>限定在枚举值内</Text>
-            </Box>
-            <Box style={{ height: 58, flexDirection: 'row', alignItems: 'center', padding: '0 20px', background: '#FFFFFF', borderBottom: '1px solid rgba(11,18,32,0.08)' }}>
-                <Text style={{ fontSize: 28, color: '#0B1220', width: 220 }}>系统操作</Text>
-                <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, flex: 1 }}>锁屏 / 关机走白名单</Text>
-            </Box>
-            <Box style={{ height: 58, flexDirection: 'row', alignItems: 'center', padding: '0 20px', background: '#FFFFFF', borderRadius: '0 0 10px 10px' }}>
-                <Text style={{ fontSize: 28, color: '#0B1220', width: 220 }}>越界</Text>
-                <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, flex: 1 }}>一律丢弃，不写进列表</Text>
-            </Box>
-        </Box>
-        <Box style={{ width: 440, height: 420, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 12, background: 'rgba(13,148,136,0.07)', border: '2px dashed rgba(13,148,136,0.5)', borderRadius: 12, padding: '0 20px' }}>
-            <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 1 }}>截图 ⑮</Text>
-            <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>解析结果页（标注来源）</Text>
-            <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>建议画面：结果旁标注<br />"来自云端 / 本机"</Text>
-        </Box>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 14 }}>
+      <Box style={{ flexDirection: 'column', gap: 4 }}>
+        <Text style={{ fontSize: 21.33, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>06 · 预期成果</Text>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#E8EEF7' }}>已经做成的成果</Text>
+      </Box>
+      <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>22</Text>
     </Box>
-    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>22 / 38</Text>
+    <Box style={{ height: 470, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
+      <Box style={{ width: 400, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
+        <Text style={{ fontSize: 150, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', lineHeight: 1 }}>138</Text>
+        <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, textAlign: 'center' }}>项自动化测试 · 全部通过</Text>
+        <Text style={{ fontSize: 25, color: '#E8EEF7', opacity: 0.65, textAlign: 'center' }}>77 前端 + 61 Rust</Text>
+      </Box>
+      <Box style={{ flex: 1, flexDirection: 'column', gap: 14 }}>
+        <Box style={{ height: 360, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(79,224,176,0.06)', border: '2px dashed rgba(79,224,176,0.45)', borderRadius: 12, padding: '0 20px' }}>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑰</Text>
+        <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>双平台下载页</Text>
+        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.55, textAlign: 'center', lineHeight: 1.6 }}>建议画面：Windows 与 macOS<br />两个下载入口同框</Text>
+      </Box>
+        <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.6, textAlign: 'center' }}>装上就能用，不用注册、不用配置</Text>
+      </Box>
+    </Box>
+    <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Text style={{ fontSize: 18, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+      <Text style={{ fontSize: 18, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>22 / 29</Text>
     </Box>
 </Slide>

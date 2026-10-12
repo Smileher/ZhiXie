@@ -1,15 +1,62 @@
-<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
-    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
-        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', opacity: 0.18, lineHeight: 1 }}>01</Text>
-        <Box style={{ flexDirection: 'column', gap: 22, width: 640 }}>
-            <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#0B1220', lineHeight: 1.15 }}>应用场景</Text>
-            <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #0D9488 100%)', borderRadius: 2 }} />
-            <Text style={{ fontSize: 30, color: '#0B1220', opacity: 0.72, lineHeight: 1.6 }}>先讲清楚：<br />谁会在什么情况下需要它。</Text>
-            <Text style={{ fontSize: 24, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 2 }}>P03 – P06</Text>
-        </Box>
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '16px 64px' }}>
+    <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(232,238,247,0.14)' }}>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <svg width={24} height={24} viewBox='0 0 40 40'><path d='M28 10 A17 17 0 1 0 28 30' fill='none' stroke='#4FE0B0' strokeWidth='2.5' /><rect x='15' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /><rect x='20' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /></svg>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>知歇 ZhiXie</Text>
+      </Box>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+        <Text style={{ fontSize: 21.33, color: '#4FE0B0', fontWeight: 'bold' }}>项目背景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>目标用户群体</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用场景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>智能体开发过程</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>实施计划</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>预期成果</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>创新点</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用价值</Text>
+      </Box>
     </Box>
-    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>03 / 38</Text>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 14 }}>
+      <Box style={{ flexDirection: 'column', gap: 4 }}>
+        <Text style={{ fontSize: 21.33, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>01 · 项目背景</Text>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#E8EEF7' }}>一坐就是三四个小时</Text>
+      </Box>
+      <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>3</Text>
+    </Box>
+    <Box style={{ height: 470, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
+      <Box style={{ flex: 1, flexDirection: 'column', gap: 18 }}>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#4FE0B0', lineHeight: 1.4 }}>您上一次连续坐在电脑前，<br />是多久？</Text>
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>一进入专注，时间感就没了。</Text>
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>身体一直在发信号，只是被忽略。</Text>
+        <Box style={{ background: 'rgba(79,224,176,0.10)', border: '1px solid rgba(79,224,176,0.4)', borderRadius: 12, padding: '18px 22px'}}>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.5 }}>谁能用上：<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>学生、久坐办公的人</span></Text>
+        </Box>
+      </Box>
+      <Box style={{ width: 520, flexDirection: 'column', gap: 20 }}>
+      <Box style={{ height: 130, background: '#1B2740', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 12, padding: '0 24px'}}>
+        <Text style={{ fontSize: 40, fontFamily: 'Consolas', color: '#4FE0B0' }}>1</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 6 }}>
+          <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#E8EEF7' }}>眼睛先报警</Text>
+          <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.65 }}>干涩、发胀、看东西发花</Text>
+        </Box>
+      </Box>
+      <Box style={{ height: 130, background: '#1B2740', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 12, padding: '0 24px'}}>
+        <Text style={{ fontSize: 40, fontFamily: 'Consolas', color: '#4FE0B0' }}>2</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 6 }}>
+          <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#E8EEF7' }}>肩颈变僵硬</Text>
+          <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.65 }}>一动脖子就咔咔响</Text>
+        </Box>
+      </Box>
+      <Box style={{ height: 130, background: '#1B2740', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 12, padding: '0 24px'}}>
+        <Text style={{ fontSize: 40, fontFamily: 'Consolas', color: '#4FE0B0' }}>3</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 6 }}>
+          <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#E8EEF7' }}>腰背会发麻</Text>
+          <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.65 }}>起身才知道坐了多久</Text>
+        </Box>
+      </Box>
+      </Box>
+    </Box>
+    <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Text style={{ fontSize: 18, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+      <Text style={{ fontSize: 18, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>3 / 29</Text>
     </Box>
 </Slide>

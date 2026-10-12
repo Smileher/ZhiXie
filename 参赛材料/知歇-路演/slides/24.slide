@@ -1,15 +1,67 @@
-<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
-    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
-        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', opacity: 0.18, lineHeight: 1 }}>05</Text>
-        <Box style={{ flexDirection: 'column', gap: 22, width: 640 }}>
-            <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#0B1220', lineHeight: 1.15 }}>实施计划</Text>
-            <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #0D9488 100%)', borderRadius: 2 }} />
-            <Text style={{ fontSize: 30, color: '#0B1220', opacity: 0.72, lineHeight: 1.6 }}>什么时候做完、<br />怎么一步步走到参赛。</Text>
-            <Text style={{ fontSize: 24, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 2 }}>P24 – P26</Text>
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '16px 64px' }}>
+    <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(232,238,247,0.14)' }}>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <svg width={24} height={24} viewBox='0 0 40 40'><path d='M28 10 A17 17 0 1 0 28 30' fill='none' stroke='#4FE0B0' strokeWidth='2.5' /><rect x='15' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /><rect x='20' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /></svg>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>知歇 ZhiXie</Text>
+      </Box>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>项目背景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>目标用户群体</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用场景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>智能体开发过程</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>实施计划</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>预期成果</Text>
+        <Text style={{ fontSize: 21.33, color: '#4FE0B0', fontWeight: 'bold' }}>创新点</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用价值</Text>
+      </Box>
+    </Box>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 14 }}>
+      <Box style={{ flexDirection: 'column', gap: 4 }}>
+        <Text style={{ fontSize: 21.33, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>07 · 创新点</Text>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#E8EEF7' }}>创新①② · 一句话建提醒 + AI 校验</Text>
+      </Box>
+      <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>24</Text>
+    </Box>
+    <Box style={{ height: 470, flexDirection: 'row', gap: 24, alignItems: 'stretch' }}>
+      <Box style={{ background: 'rgba(79,224,176,0.10)', border: '1px solid rgba(79,224,176,0.4)', borderRadius: 12, padding: '24px 26px'}}>
+          <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+            <Text style={{ fontSize: 36, fontFamily: 'Consolas', color: '#4FE0B0' }}>①</Text>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7' }}>说一句话建提醒</Text>
+          </Box>
+          <Text style={{ fontSize: 25, color: '#E8EEF7', opacity: 0.75, lineHeight: 1.5 }}>自然语言替代一堆表单，第一次用就会。</Text>
+          <Box style={{ flexDirection: 'row', gap: 14, marginTop: 6 }}>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: '16px', background: 'rgba(79,224,176,0.14)', borderRadius: 10 }}>
+              <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#4FE0B0' }}>你做的</Text>
+              <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.9, lineHeight: 1.45 }}>「每久坐 50 分钟提醒我」</Text>
+            </Box>
+            <Box style={{ flex: 1, flexDirection: 'column', gap: 8, padding: '16px', background: '#0B1220', borderRadius: 10 }}>
+              <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#E8EEF7', opacity: 0.6 }}>传统做法</Text>
+              <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.75, lineHeight: 1.45 }}>时间 / 重复 / 类型 / 操作……逐个填</Text>
+            </Box>
+          </Box>
+          <Text style={{ fontSize: 25, color: '#E8EEF7', opacity: 0.75, lineHeight: 1.5 }}>门槛只有一个：<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>会说中文</span>。</Text>
+        </Box>
+      <Box style={{ background: '#1B2740', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 12, padding: '24px 26px'}}>
+          <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+            <Text style={{ fontSize: 36, fontFamily: 'Consolas', color: '#4FE0B0' }}>②</Text>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7' }}>AI 校验机制</Text>
+          </Box>
+          <Text style={{ fontSize: 25, color: '#E8EEF7', opacity: 0.75, lineHeight: 1.5 }}>大模型只提建议，软件把关不让胡说写进列表。</Text>
+          <Box style={{ flexDirection: 'column', gap: 10, marginTop: 6 }}>
+            <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: '#0B1220', borderRadius: 10 }}>
+              <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.85 }}>大模型：理解你的话，出一份结构化建议</Text>
+            </Box>
+            <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: 'rgba(79,224,176,0.12)', borderRadius: 10 }}>
+              <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.85 }}>校验层：类型 / 时间 / 操作，白名单才放行</Text>
+            </Box>
+            <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', padding: '0 18px', background: '#0B1220', borderRadius: 10 }}>
+              <Text style={{ fontSize: 24, color: '#E8EEF7', opacity: 0.85 }}>越界一律丢弃，<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>提醒列表永远干净</span></Text>
+            </Box>
+          </Box>
         </Box>
     </Box>
-    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>24 / 38</Text>
+    <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Text style={{ fontSize: 18, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+      <Text style={{ fontSize: 18, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>24 / 29</Text>
     </Box>
 </Slide>

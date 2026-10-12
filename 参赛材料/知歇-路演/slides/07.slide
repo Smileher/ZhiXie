@@ -1,15 +1,73 @@
-<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
-    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
-        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', opacity: 0.18, lineHeight: 1 }}>02</Text>
-        <Box style={{ flexDirection: 'column', gap: 22, width: 640 }}>
-            <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#0B1220', lineHeight: 1.15 }}>项目概述</Text>
-            <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #0D9488 100%)', borderRadius: 2 }} />
-            <Text style={{ fontSize: 30, color: '#0B1220', opacity: 0.72, lineHeight: 1.6 }}>这东西到底是什么、<br />做成了什么程度。</Text>
-            <Text style={{ fontSize: 24, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 2 }}>P07 – P11</Text>
-        </Box>
+<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '16px 64px' }}>
+    <Box style={{ height: 56, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(232,238,247,0.14)' }}>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <svg width={24} height={24} viewBox='0 0 40 40'><path d='M28 10 A17 17 0 1 0 28 30' fill='none' stroke='#4FE0B0' strokeWidth='2.5' /><rect x='15' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /><rect x='20' y='15' width='2.4' height='10' rx='1.2' fill='#4FE0B0' /></svg>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#4FE0B0' }}>知歇 ZhiXie</Text>
+      </Box>
+      <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>项目背景</Text>
+        <Text style={{ fontSize: 21.33, color: '#4FE0B0', fontWeight: 'bold' }}>目标用户群体</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用场景</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>智能体开发过程</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>实施计划</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>预期成果</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>创新点</Text>
+        <Text style={{ fontSize: 21.33, color: '#E8EEF7', opacity: 0.5 }}>应用价值</Text>
+      </Box>
     </Box>
-    <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>07 / 38</Text>
+    <Box style={{ height: 100, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 14 }}>
+      <Box style={{ flexDirection: 'column', gap: 4 }}>
+        <Text style={{ fontSize: 21.33, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>02 · 目标用户群体</Text>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#E8EEF7' }}>用户画像 · 职场人群</Text>
+      </Box>
+      <Text style={{ fontSize: 20, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>7</Text>
+    </Box>
+    <Box style={{ height: 470, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
+      <Box style={{ width: 540, height: 440, background: '#1B2740', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 14, padding: '24px 24px', flexDirection: 'column', gap: 12 }}>
+        <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#E8EEF7' }}>职场久坐 · 关键数据</Text>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 30 }}>
+          <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.75, width: '170' }}>日均久坐超 6 小时</Text>
+          <Box style={{ width: 180, height: 22, borderRadius: 6, background: 'rgba(232,238,247,0.08)' }}>
+            <Box style={{ width: 73, height: 22, borderRadius: 6, background: 'linear-gradient(90deg, #4FE0B0, #2E9E8F)' }} />
+          </Box>
+          <Text style={{ fontSize: 19, fontFamily: 'Consolas', color: '#4FE0B0', fontWeight: 'bold' }}>28.8%</Text>
+        </Box>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 30 }}>
+          <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.75, width: '170' }}>单次久坐 2 小时+</Text>
+          <Box style={{ width: 180, height: 22, borderRadius: 6, background: 'rgba(232,238,247,0.08)' }}>
+            <Box style={{ width: 180, height: 22, borderRadius: 6, background: 'linear-gradient(90deg, #4FE0B0, #2E9E8F)' }} />
+          </Box>
+          <Text style={{ fontSize: 19, fontFamily: 'Consolas', color: '#4FE0B0', fontWeight: 'bold' }}>71.4%</Text>
+        </Box>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 30 }}>
+          <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.75, width: '170' }}>视力疲劳</Text>
+          <Box style={{ width: 180, height: 22, borderRadius: 6, background: 'rgba(232,238,247,0.08)' }}>
+            <Box style={{ width: 134, height: 22, borderRadius: 6, background: 'linear-gradient(90deg, #4FE0B0, #2E9E8F)' }} />
+          </Box>
+          <Text style={{ fontSize: 19, fontFamily: 'Consolas', color: '#4FE0B0', fontWeight: 'bold' }}>53.1%</Text>
+        </Box>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 30 }}>
+          <Text style={{ fontSize: 20, color: '#E8EEF7', opacity: 0.75, width: '170' }}>颈椎腰椎不适</Text>
+          <Box style={{ width: 180, height: 22, borderRadius: 6, background: 'rgba(232,238,247,0.08)' }}>
+            <Box style={{ width: 123, height: 22, borderRadius: 6, background: 'linear-gradient(90deg, #4FE0B0, #2E9E8F)' }} />
+          </Box>
+          <Text style={{ fontSize: 19, fontFamily: 'Consolas', color: '#4FE0B0', fontWeight: 'bold' }}>48.9%</Text>
+        </Box>
+        <Box style={{ height: 1, background: 'rgba(232,238,247,0.10)' }} />
+        <Text style={{ fontSize: 22, color: '#E8EEF7', lineHeight: 1.5 }}>每日久坐超过 8 小时，心血管事件风险<br />升高约 <span style={{ fontSize: 28, color: '#4FE0B0', fontWeight: 'bold' }}>86%</span></Text>
+        <Text style={{ fontSize: 15, color: '#E8EEF7', opacity: 0.5 }}>数据来源：中国居民慢性病与营养监测 · 智联招聘职场调研</Text>
+      </Box>
+      <Box style={{ flex: 1, flexDirection: 'column', gap: 18 }}>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#4FE0B0', lineHeight: 1.4 }}>久坐办公族，<br />负担最重。</Text>
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>视疲劳、肩颈问题，常年排在前面。</Text>
+        <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>他们要的是不打断、又能见效的提醒。</Text>
+        <Box style={{ background: 'rgba(79,224,176,0.10)', border: '1px solid rgba(79,224,176,0.4)', borderRadius: 12, padding: '18px 22px'}}>
+          <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.5 }}>典型：<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>程序、文案、设计、运营</span></Text>
+        </Box>
+      </Box>
+    </Box>
+    <Box style={{ height: 40, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Text style={{ fontSize: 18, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
+      <Text style={{ fontSize: 18, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>7 / 29</Text>
     </Box>
 </Slide>
