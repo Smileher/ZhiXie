@@ -1,15 +1,35 @@
-<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
-    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
-        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.15, lineHeight: 1 }}>02</Text>
-        <Box style={{ flexDirection: 'column', gap: 22, width: 620 }}>
-            <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#E8EEF7', lineHeight: 1.15 }}>实现：<br />怎么做出来的</Text>
-            <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #2E9E8F 100%)', borderRadius: 2 }} />
-            <Text style={{ fontSize: 30, color: '#E8EEF7', opacity: 0.72, lineHeight: 1.6 }}>这一章讲两件事：<br />软件的结构怎么搭的，以及我是怎么用 AI 工具把它做出来的。</Text>
-            <Text style={{ fontSize: 24, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 2 }}>P08 – P19</Text>
+<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
+    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
+        <Box style={{ flexDirection: 'column', gap: 4 }}>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>它到底是什么</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>一个会听人话的桌面休息提醒，已经能下载安装</Text>
+        </Box>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>08</Text>
+    </Box>
+    <Box style={{ height: 476, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
+        <Box style={{ width: 560, flexDirection: 'column', gap: 20 }}>
+            <Box style={{ width: 560, height: 200, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(13,148,136,0.07)', border: '2px dashed rgba(13,148,136,0.5)', borderRadius: 12, padding: '0 20px' }}>
+                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 1 }}>截图 ③</Text>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>知歇官网首页</Text>
+                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>首屏产品名 + 口号 + 下载按钮</Text>
+            </Box>
+            <Box style={{ width: 560, height: 200, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(13,148,136,0.07)', border: '2px dashed rgba(13,148,136,0.5)', borderRadius: 12, padding: '0 20px' }}>
+                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 1 }}>截图 ④</Text>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>安装包 / 安装完成</Text>
+                <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>安装向导完成页或桌面图标</Text>
+            </Box>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 18, justifyContent: 'center' }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#0D9488', lineHeight: 1.4 }}>说一句话，<br />提醒就建好了。</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}>「每久坐 50 分钟提醒我」——不必填表单。</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}>到点弹窗，可推迟，也能顺带锁屏。</Text>
+            <Box style={{ padding: '18px 22px', background: 'rgba(79,224,176,0.16)', border: '1px solid rgba(13,148,136,0.35)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 28, color: '#0B1220', lineHeight: 1.5 }}>状态：<span style={{ color: '#0D9488', fontWeight: 'bold' }}>官网可直接下载，装上就能用</span></Text>
+            </Box>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>08 / 30</Text>
+        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>08 / 38</Text>
     </Box>
 </Slide>

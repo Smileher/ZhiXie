@@ -1,65 +1,35 @@
-<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
     <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
         <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>和常用工具比</Text>
-            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>别人填表单，我们说一句话</Text>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>可交付物清单</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>软件 / 官网 / 文档 / 测试，四件套齐备</Text>
         </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>29</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>29</Text>
     </Box>
-    <Box style={{ height: 476, flexDirection: 'row', gap: 36 }}>
-        <Box style={{ width: 720, flexDirection: 'column', gap: 14 }}>
-            <Table
-                style={{ width: 720, height: 380 }}
-                defaultTextStyle={{ fontSize: 28, textAlign: 'left', color: '#E8EEF7' }}
-                defaultCellStyle={{
-                    border: {
-                        left: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                        right: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                        top: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                        bottom: { width: 1, color: 'rgba(232,238,247,0.12)' },
-                    },
-                }}
-                cells={[
-                    [
-                        { text: '对比项', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
-                        { text: '常用工具', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
-                        { text: '知歇', textStyle: { bold: true, color: '#0B1220' }, cellStyle: { background: { color: '#4FE0B0' } } },
-                    ],
-                    [
-                        { text: '建一条提醒', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                        '填一堆表单',
-                        { text: '说一句话', textStyle: { bold: true, color: '#4FE0B0' } },
-                    ],
-                    [
-                        '断网的时候',
-                        '多半歇菜',
-                        { text: '照样能用', textStyle: { bold: true, color: '#4FE0B0' } },
-                    ],
-                    [
-                        { text: '到点锁屏 / 关机', cellStyle: { background: { color: 'rgba(232,238,247,0.05)' } } },
-                        '基本没有',
-                        { text: '有，留 60 秒反悔', textStyle: { bold: true, color: '#4FE0B0' } },
-                    ],
-                    [
-                        '要不要账号',
-                        '不少要登录',
-                        { text: '不要，数据在本机', textStyle: { bold: true, color: '#4FE0B0' } },
-                    ],
-                ]}
-            />
+    <Box style={{ height: 476, flexDirection: 'row', gap: 18, alignItems: 'stretch', justifyContent: 'center' }}>
+        <Box style={{ width: 264, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '32px 16px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Text style={{ fontSize: 44, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>01</Text>
+            <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>软件</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.72, textAlign: 'center', lineHeight: 1.45 }}>双平台安装包</Text>
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 18 }}>
-            <Box style={{ flexDirection: 'column', gap: 10, padding: '22px 24px', background: 'rgba(232,238,247,0.05)', border: '1px solid rgba(232,238,247,0.12)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#4FE0B0' }}>价值在哪</Text>
-                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.8, lineHeight: 1.5 }}>学生机房、备考自学、久坐办公都能用；零账号、默认零联网，适合批量部署。</Text>
-            </Box>
-            <Box style={{ flexDirection: 'column', justifyContent: 'center', gap: 10, padding: '22px 24px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.55 }}>说到底就一句：把一件"知道该做、却懒得去设"的事，变成<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>说一句话</span>的事。</Text>
-            </Box>
+        <Box style={{ width: 264, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '32px 16px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Text style={{ fontSize: 44, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>02</Text>
+            <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>官网</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.72, textAlign: 'center', lineHeight: 1.45 }}>下载与介绍页</Text>
+        </Box>
+        <Box style={{ width: 264, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '32px 16px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Text style={{ fontSize: 44, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>03</Text>
+            <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>文档</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.72, textAlign: 'center', lineHeight: 1.45 }}>计划书与使用说明</Text>
+        </Box>
+        <Box style={{ width: 264, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '32px 16px', background: 'rgba(79,224,176,0.16)', border: '1px solid rgba(13,148,136,0.35)', borderRadius: 12 }}>
+            <Text style={{ fontSize: 44, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>04</Text>
+            <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>测试</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.72, textAlign: 'center', lineHeight: 1.45 }}>138 项自动检查</Text>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>29 / 30</Text>
+        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>29 / 38</Text>
     </Box>
 </Slide>

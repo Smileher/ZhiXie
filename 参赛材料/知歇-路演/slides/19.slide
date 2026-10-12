@@ -1,50 +1,38 @@
-<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
     <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
         <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>用 138 项检查把代码兜住</Text>
-            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>每改一次自动跑一遍，有一项不过就不算完</Text>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>模型选型：选谁、怎么换</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>不绑定一家，改两格就能换</Text>
         </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>AI 开发</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>19</Text>
     </Box>
     <Box style={{ height: 476, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 16 }}>
-            <Box style={{ height: 112, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>常规检查</Text>
-                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.5 }}>界面逻辑和核心逻辑分开跑，每次改动全量重跑。</Text>
-            </Box>
-            <Box style={{ height: 112, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>故意喂脏数据</Text>
-                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.5 }}>构造一堆乱七八糟的字段，验证它们全被挡下。</Text>
-            </Box>
-            <Box style={{ height: 112, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>改完就回归</Text>
-                <Text style={{ fontSize: 26, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.5 }}>修一个 bug 就补一条测试，防止下次又坏回去。</Text>
-            </Box>
-            <Box style={{ padding: '14px 22px', background: 'rgba(79,224,176,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.5 }}>AI 写得快，但<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>敢不敢用，是测试说了算</span>。</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 18, justifyContent: 'center' }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#0D9488', lineHeight: 1.4 }}>不绑定某一家。</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}>云端地址、模型名、密钥，三格配置。</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}>想换 DeepSeek / 通义 / 本地模型，改一下就行。</Text>
+            <Box style={{ padding: '18px 22px', background: 'rgba(79,224,176,0.16)', border: '1px solid rgba(13,148,136,0.35)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 28, color: '#0B1220', lineHeight: 1.5 }}>换模型 = <span style={{ color: '#0D9488', fontWeight: 'bold' }}>改配置，不重写</span></Text>
             </Box>
         </Box>
-        <Box style={{ width: 460, flexDirection: 'column', gap: 14 }}>
-            <Box style={{ height: 300, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 14, padding: '0 20px' }}>
-                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ⑱</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>测试通过截图</Text>
-                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.7 }}>建议画面：pnpm test / cargo test 的<br />通过结果，或 CI 构建成功页</Text>
+        <Box style={{ width: 560, height: 420, flexDirection: 'column', gap: 16, padding: '28px 30px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12, justifyContent: 'center' }}>
+            <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#0D9488' }}>配置（三格）</Text>
+            <Box style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid rgba(11,18,32,0.08)' }}>
+                <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.6 }}>服务商</Text>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0B1220' }}>DeepSeek（可改）</Text>
             </Box>
-            <Box style={{ flexDirection: 'row', gap: 10 }}>
-                <Box style={{ flex: 1, padding: '14px 8px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.9, textAlign: 'center' }}>界面 77 项</Text>
-                </Box>
-                <Box style={{ flex: 1, padding: '14px 8px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.9, textAlign: 'center' }}>核心 61 项</Text>
-                </Box>
-                <Box style={{ flex: 1, padding: '14px 8px', background: 'rgba(79,224,176,0.10)', borderRadius: 10, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.9, textAlign: 'center' }}>通过率 100%</Text>
-                </Box>
+            <Box style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid rgba(11,18,32,0.08)' }}>
+                <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.6 }}>接口地址</Text>
+                <Text style={{ fontSize: 26, color: '#0B1220' }}>/v1/chat/completions</Text>
+            </Box>
+            <Box style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0' }}>
+                <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.6 }}>密钥</Text>
+                <Text style={{ fontSize: 26, color: '#0B1220' }}>sk-****（本地保存）</Text>
             </Box>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>19 / 30</Text>
+        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>19 / 38</Text>
     </Box>
 </Slide>

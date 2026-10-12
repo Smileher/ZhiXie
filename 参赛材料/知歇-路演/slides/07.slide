@@ -1,55 +1,15 @@
-<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
-    <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
-        <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>它是什么，去哪下载</Text>
-            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>会听人话的桌面休息提醒，官网直接下载</Text>
-        </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>07</Text>
-    </Box>
-    <Box style={{ height: 476, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
-        <Box style={{ width: 620, flexDirection: 'column', gap: 14 }}>
-            <Box style={{ height: 280, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ③</Text>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>知歇官网首页</Text>
-                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>建议画面：首屏能看到产品名、<br />口号与下载按钮</Text>
-            </Box>
-            <Box style={{ height: 140, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 8, background: 'rgba(79,224,176,0.05)', border: '2px dashed rgba(79,224,176,0.55)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', letterSpacing: 1 }}>截图 ④</Text>
-                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#E8EEF7', textAlign: 'center' }}>安装包 / 安装完成界面</Text>
-                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.5, textAlign: 'center' }}>建议画面：安装向导完成页，或桌面上的知歇图标</Text>
-            </Box>
-        </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 10 }}>
-            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>说一句话，它就帮你把提醒设好，<br />到点用弹窗把人从屏幕前拉开。</Text>
-            <Box style={{ flexDirection: 'row', gap: 14, alignItems: 'center' }}>
-                <svg width={34} height={34} viewBox='0 0 30 30'>
-                    <circle cx='15' cy='15' r='13' fill='none' stroke='#4FE0B0' strokeWidth='1.5' />
-                    <path d='M9 15 L13.5 20 L21 11' fill='none' stroke='#4FE0B0' strokeWidth='2.5' />
-                </svg>
-                <Text style={{ fontSize: 28, color: '#E8EEF7' }}>说一句话，提醒就设好了</Text>
-            </Box>
-            <Box style={{ flexDirection: 'row', gap: 14, alignItems: 'center' }}>
-                <svg width={34} height={34} viewBox='0 0 30 30'>
-                    <circle cx='15' cy='15' r='13' fill='none' stroke='#4FE0B0' strokeWidth='1.5' />
-                    <path d='M9 15 L13.5 20 L21 11' fill='none' stroke='#4FE0B0' strokeWidth='2.5' />
-                </svg>
-                <Text style={{ fontSize: 28, color: '#E8EEF7' }}>没网也照样能用</Text>
-            </Box>
-            <Box style={{ flexDirection: 'row', gap: 14, alignItems: 'center' }}>
-                <svg width={34} height={34} viewBox='0 0 30 30'>
-                    <circle cx='15' cy='15' r='13' fill='none' stroke='#4FE0B0' strokeWidth='1.5' />
-                    <path d='M9 15 L13.5 20 L21 11' fill='none' stroke='#4FE0B0' strokeWidth='2.5' />
-                </svg>
-                <Text style={{ fontSize: 28, color: '#E8EEF7' }}>数据在自己电脑里，不用注册</Text>
-            </Box>
-            <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.55, lineHeight: 1.5 }}>注：智能体 = 软件里那个帮你把话变成提醒的小助手。</Text>
-            <Box style={{ padding: '16px 20px', background: 'rgba(79,224,176,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', lineHeight: 1.5 }}>Windows 和 macOS 都能装，<span style={{ color: '#4FE0B0', fontWeight: 'bold' }}>官网直接下载</span>。</Text>
-            </Box>
+<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
+    <Box style={{ height: 600, flexDirection: 'row', alignItems: 'center', gap: 64 }}>
+        <Text style={{ fontSize: 230, fontWeight: 'bold', fontFamily: 'Consolas', color: '#0D9488', opacity: 0.18, lineHeight: 1 }}>02</Text>
+        <Box style={{ flexDirection: 'column', gap: 22, width: 640 }}>
+            <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#0B1220', lineHeight: 1.15 }}>项目概述</Text>
+            <Box style={{ height: 4, width: 120, background: 'linear-gradient(135deg, #4FE0B0 0%, #0D9488 100%)', borderRadius: 2 }} />
+            <Text style={{ fontSize: 30, color: '#0B1220', opacity: 0.72, lineHeight: 1.6 }}>这东西到底是什么、<br />做成了什么程度。</Text>
+            <Text style={{ fontSize: 24, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 2 }}>P07 – P11</Text>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>07 / 30</Text>
+        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>07 / 38</Text>
     </Box>
 </Slide>

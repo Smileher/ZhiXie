@@ -1,50 +1,29 @@
-<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
     <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
         <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>弹窗和 60 秒倒计时</Text>
-            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>整屏覆盖，两个选择，危险操作留反悔时间</Text>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>用户画像 · 职场人群</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>久坐办公族，视疲劳与颈椎负担最重</Text>
         </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.35 }}>14</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>14</Text>
     </Box>
     <Box style={{ height: 476, flexDirection: 'row', gap: 40, alignItems: 'center' }}>
-        <Box style={{ width: 560, height: 420, justifyContent: 'center', alignItems: 'center', background: 'rgba(232,238,247,0.03)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 14 }}>
-            <svg width={500} height={400} viewBox='0 0 500 400'>
-                <rect x='20' y='40' width='460' height='230' rx='12' fill='rgba(232,238,247,0.05)' stroke='rgba(232,238,247,0.16)' />
-                <rect x='48' y='66' width='150' height='16' rx='8' fill='rgba(232,238,247,0.22)' />
-                <rect x='48' y='100' width='300' height='16' rx='8' fill='rgba(232,238,247,0.14)' />
-                <rect x='48' y='134' width='220' height='16' rx='8' fill='rgba(232,238,247,0.14)' />
-                <rect x='48' y='186' width='120' height='34' rx='17' fill='rgba(79,224,176,0.18)' stroke='#4FE0B0' />
-                <rect x='48' y='232' width='404' height='14' rx='7' fill='rgba(232,238,247,0.10)' />
-                <rect x='100' y='140' width='300' height='130' rx='12' fill='rgba(11,18,32,0.88)' stroke='#4FE0B0' strokeWidth='2' />
-                <rect x='150' y='180' width='200' height='16' rx='8' fill='rgba(232,238,247,0.75)' />
-                <rect x='190' y='216' width='120' height='14' rx='7' fill='rgba(79,224,176,0.85)' />
-                <circle cx='352' cy='248' r='20' fill='none' stroke='#4FE0B0' strokeWidth='3' />
-                <path d='M352 232 A16 16 0 1 1 340 254' fill='none' stroke='#4FE0B0' strokeWidth='3' />
-                <rect x='330' y='290' width='150' height='40' rx='8' fill='rgba(79,224,176,0.14)' stroke='#4FE0B0' />
-                <rect x='350' y='304' width='110' height='12' rx='6' fill='#4FE0B0' opacity='0.8' />
-                <path d='M250 270 L250 288' fill='none' stroke='#4FE0B0' strokeWidth='2' opacity='0.6' />
-                <path d='M244 282 L250 290 L256 282 Z' fill='#4FE0B0' opacity='0.8' />
-                <rect x='330' y='340' width='150' height='10' rx='5' fill='rgba(232,238,247,0.12)' />
-                <rect x='100' y='340' width='180' height='10' rx='5' fill='rgba(232,238,247,0.12)' />
-            </svg>
+        <Box style={{ width: 560, height: 420, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 12, background: 'rgba(13,148,136,0.07)', border: '2px dashed rgba(13,148,136,0.5)', borderRadius: 12, padding: '0 20px' }}>
+            <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0D9488', letterSpacing: 1 }}>数据图 ⑫</Text>
+            <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>职场久坐人群规模</Text>
+            <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.5, textAlign: 'center', lineHeight: 1.6 }}>建议画面：办公族久坐时长的<br />分布（如日均久坐小时数）</Text>
+            <Text style={{ fontSize: 22, color: '#0D9488', textAlign: 'center', lineHeight: 1.5 }}>※ 建议补充真实调研数据，不编造</Text>
         </Box>
-        <Box style={{ flex: 1, flexDirection: 'column', gap: 16 }}>
-            <Box style={{ height: 118, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>整屏覆盖</Text>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.5 }}>别的窗口先靠边，没法假装没看见。</Text>
-            </Box>
-            <Box style={{ height: 118, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>两个选择</Text>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.78, lineHeight: 1.5 }}>「稍后提醒」，或直接结束这次休息。</Text>
-            </Box>
-            <Box style={{ height: 146, flexDirection: 'column', justifyContent: 'center', gap: 8, padding: '0 22px', background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>锁屏 / 关机前，先倒数 60 秒</Text>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>倒计时里随时能点掉；失败会留着让你重试。</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', gap: 18, justifyContent: 'center' }}>
+            <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#0D9488', lineHeight: 1.4 }}>久坐办公族，<br />负担最重。</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}>视疲劳、肩颈问题，常年排在前面。</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.8, lineHeight: 1.5 }}>他们要的是不打断、又能见效的提醒。</Text>
+            <Box style={{ padding: '18px 22px', background: 'rgba(79,224,176,0.16)', border: '1px solid rgba(13,148,136,0.35)', borderRadius: 12 }}>
+                <Text style={{ fontSize: 28, color: '#0B1220', lineHeight: 1.5 }}>典型：<span style={{ color: '#0D9488', fontWeight: 'bold' }}>程序、文案、设计、运营</span></Text>
             </Box>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>14 / 30</Text>
+        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>14 / 38</Text>
     </Box>
 </Slide>

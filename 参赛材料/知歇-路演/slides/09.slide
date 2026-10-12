@@ -1,53 +1,50 @@
-<Slide style={{ width: 1280, height: 720, background: '#0B1220', padding: '20px 64px' }}>
+<Slide style={{ width: 1280, height: 720, background: '#F5F9FC', padding: '20px 64px' }}>
     <Box style={{ height: 124, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', paddingBottom: 16 }}>
         <Box style={{ flexDirection: 'column', gap: 4 }}>
-            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#E8EEF7' }}>整体架构</Text>
-            <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.6, letterSpacing: 1 }}>一句话进来，一条提醒出去：两条路，同一道检查</Text>
+            <Text style={{ fontSize: 46, fontWeight: 'bold', color: '#0B1220' }}>核心功能一览</Text>
+            <Text style={{ fontSize: 28, color: '#0B1220', opacity: 0.6, letterSpacing: 1 }}>五个入口，各管一件事</Text>
         </Box>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#4FE0B0', opacity: 0.8 }}>架构</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.35 }}>09</Text>
     </Box>
-    <Box style={{ height: 476, flexDirection: 'column', gap: 16 }}>
-        <Box style={{ height: 164, justifyContent: 'center', alignItems: 'center' }}>
-            <svg width={1152} height={156} viewBox='0 0 1152 170'>
-                <rect x='6' y='58' width='230' height='58' rx='10' fill='rgba(232,238,247,0.07)' stroke='rgba(232,238,247,0.20)' />
-                <rect x='316' y='10' width='290' height='58' rx='10' fill='rgba(79,224,176,0.12)' stroke='rgba(79,224,176,0.55)' />
-                <rect x='316' y='106' width='290' height='58' rx='10' fill='rgba(79,224,176,0.12)' stroke='rgba(79,224,176,0.55)' />
-                <rect x='676' y='58' width='240' height='58' rx='10' fill='rgba(79,224,176,0.22)' stroke='#4FE0B0' />
-                <rect x='986' y='58' width='160' height='58' rx='10' fill='rgba(232,238,247,0.07)' stroke='rgba(232,238,247,0.20)' />
-                <path d='M236 87 L308 87' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
-                <path d='M236 87 L308 39' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
-                <path d='M236 87 L308 135' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
-                <path d='M606 39 L668 39 L668 87' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
-                <path d='M606 135 L668 135 L668 87' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
-                <path d='M916 87 L978 87' fill='none' stroke='#4FE0B0' strokeWidth='3' opacity='0.85' />
-                <path d='M972 81 L986 87 L972 93 Z' fill='#4FE0B0' />
-            </svg>
+    <Box style={{ height: 476, flexDirection: 'row', gap: 18, alignItems: 'stretch' }}>
+        <Box style={{ flex: 1, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '30px 14px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: 'rgba(13,148,136,0.12)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>1</Text>
+            </Box>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>休息节律</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.7, textAlign: 'center', lineHeight: 1.45 }}>定下工作与休息的节奏</Text>
         </Box>
-        <Box style={{ flexDirection: 'row', gap: 20 }}>
-            <Box style={{ flex: 1, height: 164, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>通道一 · 联网</Text>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.75, lineHeight: 1.5 }}>交给网上的大模型理解，说法更自由。</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '30px 14px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: 'rgba(13,148,136,0.12)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>2</Text>
             </Box>
-            <Box style={{ flex: 1, height: 164, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(232,238,247,0.04)', border: '1px solid rgba(232,238,247,0.10)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>通道二 · 离线</Text>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.75, lineHeight: 1.5 }}>软件自带规则，断网照样解析。</Text>
-            </Box>
-            <Box style={{ flex: 1, height: 164, flexDirection: 'column', gap: 8, padding: 18, background: 'rgba(79,224,176,0.12)', border: '1px solid #4FE0B0', borderRadius: 12 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#4FE0B0' }}>统一检查</Text>
-                <Text style={{ fontSize: 28, color: '#E8EEF7', opacity: 0.85, lineHeight: 1.5 }}>两条路的结果都要过这关才写入。</Text>
-            </Box>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>时间锚点</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.7, textAlign: 'center', lineHeight: 1.45 }}>到固定时刻就提醒你</Text>
         </Box>
-        <Box style={{ flexDirection: 'row', gap: 20 }}>
-            <Box style={{ flex: 1, padding: '14px 20px', background: 'rgba(232,238,247,0.04)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.5 }}>用什么做的：Tauri 2 + Vue 3 + TypeScript + Rust，一套代码同时出 Windows 与 macOS 两版。</Text>
+        <Box style={{ flex: 1, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '30px 14px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: 'rgba(13,148,136,0.12)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>3</Text>
             </Box>
-            <Box style={{ flex: 1, padding: '14px 20px', background: 'rgba(232,238,247,0.04)', borderRadius: 12 }}>
-                <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.7, lineHeight: 1.5 }}>数据存在你自己电脑的一个文件里：先写临时文件再替换，写到一半断电也不会坏。</Text>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>智能体</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.7, textAlign: 'center', lineHeight: 1.45 }}>说一句话就建好提醒</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '30px 14px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: 'rgba(13,148,136,0.12)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>4</Text>
             </Box>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>偏好调校</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.7, textAlign: 'center', lineHeight: 1.45 }}>主题、音效、可推迟</Text>
+        </Box>
+        <Box style={{ flex: 1, flexDirection: 'column', alignItems: 'center', gap: 14, padding: '30px 14px', background: '#FFFFFF', border: '1px solid rgba(11,18,32,0.10)', borderRadius: 12 }}>
+            <Box style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: 'rgba(13,148,136,0.12)', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#0D9488', fontFamily: 'Consolas' }}>5</Text>
+            </Box>
+            <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#0B1220', textAlign: 'center' }}>本机数据</Text>
+            <Text style={{ fontSize: 26, color: '#0B1220', opacity: 0.7, textAlign: 'center', lineHeight: 1.45 }}>提醒记录留在本机</Text>
         </Box>
     </Box>
     <Box style={{ height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 22, color: '#E8EEF7', opacity: 0.45 }}>知歇 ZhiXie · V1.0.0</Text>
-        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#E8EEF7', opacity: 0.45 }}>09 / 30</Text>
+        <Text style={{ fontSize: 22, color: '#0B1220', opacity: 0.4 }}>知歇 ZhiXie · V1.0.0</Text>
+        <Text style={{ fontSize: 22, fontFamily: 'Consolas', color: '#0B1220', opacity: 0.4 }}>09 / 38</Text>
     </Box>
 </Slide>
