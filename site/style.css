@@ -734,9 +734,10 @@ img {
 .footer-links a {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--muted);
 }
 
 .footer-links a:hover {

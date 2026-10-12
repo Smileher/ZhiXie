@@ -77,7 +77,6 @@ function renderDownload(t, release, e) {
     <p class="pkg-note">${e(t.download.waitingBody)}</p>
     <div class="pkg-actions">
       <a class="btn btn-solid" href="${repository}/releases" rel="noopener">${icon('download', '', 18)}<span>${e(t.download.browseReleases)}</span></a>
-      <a class="btn btn-quiet" href="${repository}" rel="noopener">${icon('github', '', 18)}<span>${e(t.download.starRepo)}</span></a>
     </div>
   </article>`
 
@@ -168,7 +167,6 @@ export function renderPage(language, release) {
       </a>
       <nav class="nav" aria-label="${e(t.nav.aria)}">
         ${navLinks}
-        <a class="nav-link" href="${repository}" rel="noopener">${icon('github', '', 17)}<span>${e(t.nav.source)}</span></a>
       </nav>
       <div class="topbar-tools">
         <a class="lang" href="${origin}${basePath}${other[1].path}" hreflang="${other[1].lang}">${e(other[0] === 'zh' ? '简体中文' : 'English')}</a>
@@ -189,7 +187,6 @@ export function renderPage(language, release) {
           <p class="lede">${e(t.hero.subtitle)}</p>
           <div class="hero-actions">
             <a class="btn btn-solid btn-lg" href="${e(primary)}" rel="noopener">${icon('download', '', 19)}<span>${e(t.hero.primary)}</span></a>
-            <a class="btn btn-line btn-lg" href="${repository}" rel="noopener">${icon('github', '', 19)}<span>${e(t.hero.secondary)}</span></a>
           </div>
         </div>
         ${renderMock(t, e)}
@@ -218,8 +215,7 @@ export function renderPage(language, release) {
     <div class="shell footer-inner">
       <p class="footer-tagline">${e(t.footer.tagline)}</p>
       <div class="footer-links">
-        <a href="${repository}" rel="noopener">${icon('github', '', 16)}<span>${e(t.footer.repository)}</span></a>
-        <a href="${repository}/releases" rel="noopener">${icon('download', '', 16)}<span>${e(t.footer.releases)}</span></a>
+        <a href="${repository}" rel="noopener" aria-label="${e(t.footer.repository)}" title="${e(t.footer.repository)}">${icon('github', '', 16)}</a>
       </div>
     </div>
     <p class="footer-copy">© ${new Date().getUTCFullYear()} ${e(t.footer.copyright)}</p>
